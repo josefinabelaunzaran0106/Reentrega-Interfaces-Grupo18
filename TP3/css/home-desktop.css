@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #261818;
+    width: 100%;
+}
+:root {
+    /* seccion colores */
+    --acento-luz: #E63946;
+    --acento: #A12831;
+    --acento-oscuro: #271010;
+    --prim: #271010;
+    --prim-luz1: #261818;
+    --prim-luz2: #393131;
+    --prim-luz3: #0D85F5;
+    --prim-sombra1: #FEF9F9;
+    --prim-sombra2:  #374957;
+    --prim-sombra3: #746464;
+    --blanco: #FEF9F9;
+    --blanco-oscuro: #E5F4FF;
+    --negro: #23282B;
+    --especial: #34D919; 
+    --acentonuevo: #6700dd;
+    --error: #f50606;
+}
+
+/* LOADER */
+.all {
+    visibility: hidden;
+}
+.all.show {
+    visibility: visible;
+}
+#percentage {
+    display: flex;
+    color: white; /* Asegúrate de que los números sean blancos */
+    font-size: 24px;
+    margin-top: 10px;
+    justify-content: center;
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #271010;
+    transition: visibility 5s;
+    z-index: 1000;
+}
+.loader-hidden {
+    visibility: hidden;
+}
+.progress-bar-container {
+    position: relative;
+    width: 500px;
+    height: 40px;
+    background-color: var(--acento); /* Color de fondo para la barra */
+    overflow: hidden;
+    margin-top: 1em;
+}
+.progress-bar {
+    width: 0; /* Comienza desde 0% */
+    height: 100%;
+    background-color: var(--acento-luz); /* Cambia a rosa */
+    transition: width 0.1s ease;
+    transform-origin: left;
+}
+
+/*NAV-HOME*/
+/* Nav Header */
+.navhome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.8125rem;
+    background-color: rgba(57, 49, 49, 1);
+    padding: 0 1em;
+    z-index: 1000;
+}
+/* Logo */
+.logoretrogemas {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+.titulo {
+    display: flex;
+    align-items: center;
+    height: 4.6em;
+}
+#imgburguer {
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+    margin-right: 1em;
+}
+.imglogoretrogemas {
+    width: 40%;
+    display: block;
+}
+/* Barra de Búsqueda */
+.buscarnav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+.img-buscar {
+    width: 75%;
+    display: block;
+}
+/* Iconos de Navegación (Perfil y Carrito) */
+.iconosnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+    gap: 1.5em; /* Añade espacio entre los íconos */
+}
+.perfil button,
+.carrito button {
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    margin-left: 1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Imagen del Perfil */
+.perfil button img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+/* Imagen del Carrito */
+.carrito button img {
+    width: 2.5rem;  /* Ajusta la imagen del carrito */
+    height: 2.5rem;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    display: block;
+}
+/* Menús Desplegables */
+.perfilDesplegado,
+.carritoDesplegado,
+.hamburguer-menu-desplegado {
+    display: none; /* Ocultos por defecto */
+    position: absolute;
+    background-color: rgba(57, 49, 49, 1);
+    color: var(--blanco);
+    padding: 1em;
+    z-index: 3;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+.perfilDesplegado ul,
+.carritoDesplegado ul,
+.hamburguer-menu-desplegado ul {
+    list-style: none;
+}
+.perfilDesplegado ul li,
+.carritoDesplegado ul li,
+.hamburguer-menu-desplegado ul li {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0.8em 0;
+    cursor: pointer;
+}
+header ul a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+/* Mostrar Menús Desplegables */
+.perfilDesplegado.show {
+    display: block;
+    top: 4.8125rem;
+    right: 0;
+    width: 8rem;
+}
+.carritoDesplegado.show {
+    display: block;
+    top: 4.8125rem;
+    right: 7.5em; /* Mejor alineación */
+    width: 8rem; 
+    padding: 1em;
+    height: auto;
+}
+.hamburguer-menu-desplegado.show {
+    display: block;
+    top: 4.8125rem;
+    left: 0;
+    width: 8rem;
+}
+/* Hover Effects */
+.navhome button:hover img,
+.perfil button:hover img,
+.carrito button:hover img {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+.perfilDesplegado ul li:hover,
+.carritoDesplegado ul li:hover,
+.hamburguer-menu-desplegado ul li:hover {
+    color: var(--acento-luz);
+    transition: color 0.2s ease-in-out;
+}
+.perfilDesplegado ul li:hover a {
+    color: var(--acento-luz);
+    transition: color 0.2s ease-in-out;
+}
+/* Menu Hamburguesa */
+.hamburguer-menu button {
+    background: none; /* Sin fondo */
+    border: none; /* Elimina el borde */
+    outline: none; /* Elimina cualquier contorno */
+    padding: 0; /* Elimina el padding extra */
+    cursor: pointer;
+}
+.hamburguer-menu img {
+    width: 3em;
+    height: 3em;
+    object-fit: contain; /* Asegura que la imagen no se distorsione */
+}
+.hamburguer-menu img,
+.hamburguer-menu button {
+    border: 0; /* Sin borde */
+    outline: none; /* Sin contorno */
+}
+
+/* SLIDER */
+.container-carousel {
+    position: relative;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 50vh; /* Altura fija para el slider */
+    background-color: #261818;
+    overflow: hidden;
+}
+.carruseles {
+    display: flex;
+    width: 400%; /* Ajuste automático */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    transition: transform 0.5s ease; /* Movimiento suave */
+}
+.slider-section {
+    flex: 0 0 25%; /* Cada sección ocupa el 25% del ancho total (100% dividido entre 4) */
+    height: 100%;
+}
+.slider-section img {
+    width: 100%; /* La imagen ocupa todo el ancho de la sección */
+    height: 100%; /* La imagen ocupa toda la altura de la sección */
+    object-fit:fill; /* Ajusta la imagen para cubrir el área sin deformarse */
+}
+/* Botones del Slider */
+.btn-left,
+.btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease; /* Cambio de color suave */
+    user-select: none;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.btn-left {
+    left: 3em;
+}
+
+.btn-right {
+    right: 3em;
+}
+
+.btn-left {
+    left: 0.3em;
+
+}
+
+.btn-right {
+    right: 0.3em;
+  
+}
+
+.btn-left img {
+    width: 3em;
+    height: 3em;
+}
+
+.btn-right img {
+    width: 3em;
+    height: 3em;
+}
+
+
+.btn-left img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    opacity: 30%;
+}
+.btn-left img:hover {
+    opacity: 70%;
+}
+.btn-right img:hover {
+    opacity: 70%;
+}
+
+.btn-right img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    opacity: 30%;
+}
+
+/*CARRUSELES*/
+.tituloCars {
+    margin-top: 1.5em;
+    color: var(--blanco);
+    font-size: 12px;
+    text-align: left; 
+    width: 100%; 
+    margin-left: 0; 
+}
+
+.tituloCars h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    text-align: left !important; 
+}
+
+
+/* Carrusel */
+.carruselprincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200%;
+    height: auto;
+    flex-wrap: nowrap;
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 2em 0;
+    overflow: hidden; /* Oculta contenido fuera del carrusel */
+    margin-top: 0em;
+    margin-bottom: 1.6em;
+}
+
+.cincocards {
+    display: flex;
+    flex-wrap: wrap; /* Las cards se distribuyen en varias filas */
+    width: 100%;
+    transition: transform 0.5s ease; /* Movimiento suave */
+    gap: 1em; /* Espaciado entre las cards */
+}
+
+.card {
+    flex: 1 0 calc(20% - 1em); /* 5 cards visibles */
+    background-color: #746464;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    padding: 1em;
+    transition: transform 0.3s ease-in-out;
+    width: 15em;
+    height: 21em;
+    margin-left: 1.5em;
+    border: 1px solid var(--negro);
+    z-index: 1;
+    position: relative;
+    max-width: 200px; /* Limita el tamaño de cada card */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.cardhidden{
+    display: block;
+}
+
+.carruselscroll {
+    width: 100%;
+    height: 16em;
+}
+
+.carruselcompleto {
+    width: 100%;
+    height: auto;
+}
+.card {
+    /*width 15em*/
+    width: 15em;
+    height: 21em;
+    margin-left: 1.5em;
+    background-color:#746464;
+    box-shadow: 1px 0px 5px var(--prim-sombra3);
+    border: 1px solid var(--negro);
+    z-index: 1;
+    position: relative;
+}
+.carrusel h3 {
+    width: auto;
+    margin-left: 1em;
+}
+
+.gratis p {
+    text-align: center;
+    
+}
+
+.gratis p, .jugar button, .btnañadiralcarro, .sacardelcarro button {
+    font-size: large;
+}
+
+.jugargratis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1em;
+}
+
+
+.jugar button, .btnañadiralcarro, .btnsacardelcarro {
+    border: 0;
+    width: 100%;
+    background-color: #E63946;
+    height: 3em; 
+}
+
+.gratis , .jugar{
+    margin-top: 0.5em;
+    text-align: center;
+    width: 6em;
+    height: 3em;
+}
+.gratis{
+    margin-bottom: 1.5em;
+    margin-right: 5em;
+}
+.jugar{
+    margin-bottom: 0.25em;
+
+}
+.jugar button img {
+    margin-right: 0.25em;
+}
+
+.jugar button {
+    height: 2em;
+}
+
+
+.imgcardsresponsive {
+    margin: 1em; 
+    width: 13em;
+    height: 13em;
+}
+
+.precio {
+    display: flex;
+    align-items: flex-start;
+    width: 13.5em;
+    margin-top: 0.7em;
+    margin-left: 0.5em;
+    justify-content: left;
+}
+
+.ofertaprecio {
+    display: flex;
+    flex-direction: column;
+}
+.precio button {
+    width: 100%;
+    height: 2em;
+}
+
+.precio div {
+    display: flex;
+    align-items: center;
+}
+
+.h3 {
+    font-size: 1em;
+}
+
+
+
+.sacardelcarro{
+    padding: 0.7em;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.sacardelcarro button {
+    height: 2em;
+}
+
+.imgincart{
+    width: 1.9em;
+    height: 2em;
+}
+.h2 {
+    margin-left: 1em;
+    font-size: 14px;
+}
+
+
+.registroexitoso{
+    background-color: var(--acento-luz);
+    width: 25em;
+    height: 2.5em;
+    text-align: center;
+    border-radius: 2em;
+    color: #000;
+   
+}
+
+.pulse{
+  animation: pulse 1.5s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--acento-luz); }
+
+}
+
+
+.añadiralcarro button{
+    margin-top: 0em;
+    padding: 0 0.2em;
+    width: auto;
+}
+
+.btnsacardelcarro{
+    width: auto;
+    margin-left: 0em;
+    padding: 0 0.2em;
+}
+
+
+.btnanadiralineado{
+    margin-bottom: 1em;
+}
+
+/*FOOTER*/
+.footerhome{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: rgba(57, 49, 49, 1);
+    width: auto;
+}
+.footerhome button {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: auto;
+    background-color: rgba(57, 49, 49, 1);;
+    color: var(--blanco);
+    cursor: pointer;
+}
+.footerhome{
+    padding-left: 5%;
+}
+.footerhome div ul.show {
+    display: block;
+    color: var(--blanco);
+    font-size: 8px;
+    margin-left: 1.5em;
+    list-style: none;
+}
+.footerhome div ul li:hover {
+    color: var(--prim);
+}
+.footerhome div ul li {
+    margin-bottom: 0.5em;
+    color: var(--blanco);
+}
+.footerhome{   
+    display: flex;
+    flex-direction: row;
+    height: 12em;
+}
+.footerhome button {
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: 7em;
+    margin-left: 0;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: default;
+    margin-bottom: 0.5em;
+}
+.footerhome button img {
+    display: none;
+}
+.footerhome .footerulhidden {
+    display: flex;
+}
+.footerhome {
+    width: 100%;
+    justify-content: space-evenly;
+}
+.footerulhidden {
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+}
+.footerhome div {
+    text-align: left;
+    margin-top: 1em;
+}
+.footerhome ul li {
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5em;
+}
+.footerhome ul {
+    margin-right: 1em;
+}
+.footerhome div ul.show {
+   margin: 0;
+}

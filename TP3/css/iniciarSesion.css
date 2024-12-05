@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  
+}
+:root {
+    /* seccion colores */
+    --acento-luz: #E63946;
+    --acento: #A12831;
+    --acento-oscuro: #271010;
+    --prim: #271010;
+    --prim-luz1: #261818;
+    --prim-luz2: #393131;
+    --prim-luz3: #0D85F5;
+    --prim-sombra1: #FEF9F9;
+    --prim-sombra2:  #374957;
+    --prim-sombra3: #746464;
+    --blanco: #FEF9F9;
+    --blanco-oscuro: #E5F4FF;
+    --negro: #23282B;
+    --especial: #34D919; 
+    --acentonuevo: #6700dd;
+    --error: #f50606;
+}
+.inicio-container{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    background-image: url(../asset/images/fondo.png);
+    background-size:cover;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-inicio-container{
+    width: 500px;
+    height: 521px;
+    padding: 5%;
+    display: flex;
+    justify-content:center;
+    background-color:#261818;
+    flex-direction: column;
+    align-items:center;
+}
+.form-inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    margin-left: 1em;
+    width: 400px;
+    height: 300px;
+ 
+    border-radius: 2%;
+    padding: 4%;
+    margin-top: 2px;
+}
+.form-inicio label{
+    color:var(--blanco);
+}
+
+.emailInput{
+    padding-bottom: 20px;
+}
+.retrogema-logo-inicio{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    justify-content:center;
+    padding-bottom: 30px;   
+}
+.inputForm {
+    margin-top: 0em;
+    width: 370px;
+    border-radius: 1em;
+    background-color: white;
+    border: 1px solid var(--blanco-oscuro);
+    border-radius: 0.5rem;
+    font-family: Roboto;
+    color: var(--gris);
+    margin-bottom: 1em;
+    padding: 0.7em;
+    margin-bottom: 0.8em;
+}
+.btn-inises-container button {
+    width: 370px;
+    height: 44px;
+    background-color:#E63946;
+    border-radius: 1em;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 15px;
+    margin-bottom: 1.5em;
+    color: var(--blanco);
+}
+.btn-inises-container button:hover {
+    background-color: #A12831;
+    width: 370px;
+    height: 44px;
+    border-radius: 1em;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: normal;
+    margin-bottom: 1.5em;
+    color: var(--blanco);
+    cursor: pointer;
+  }
+.olvidasteContraseña{
+    text-decoration: underline;
+    color: var(--blanco);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*footer*/
+.footerhome{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: rgba(57, 49, 49, 1);
+    width: auto;
+}
+.footerhome button {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: auto;
+    background-color: rgba(57, 49, 49, 1);;
+    color: var(--blanco);
+    cursor: pointer;
+}
+.footerhome{
+    padding-left: 5%;
+}
+.footerhome div ul.show {
+    display: block;
+    color: var(--blanco);
+    font-size: 8px;
+    margin-left: 1.5em;
+    list-style: none;
+}
+.footerhome div ul li:hover {
+    color: var(--prim);
+}
+.footerhome div ul li {
+    margin-bottom: 0.5em;
+    color: var(--blanco);
+}
+.footerhome{   
+    display: flex;
+    flex-direction: row;
+    height: 12em;
+}
+.footerhome button {
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: 7em;
+    margin-left: 0;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: default;
+    margin-bottom: 0.5em;
+}
+.footerhome button img {
+    display: none;
+}
+.footerhome .footerulhidden {
+    display: flex;
+}
+.footerhome {
+    width: 100%;
+    justify-content: space-evenly;
+}
+.footerulhidden {
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+}
+.footerhome div {
+    text-align: left;
+    margin-top: 1em;
+}
+.footerhome ul li {
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5em;
+}
+.footerhome ul {
+    margin-right: 1em;
+}
+.diverror {
+    background-color: red;
+}
+.footerhome div ul.show {
+   margin: 0;
+}
+/*popup*/
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el popup */
+    width: 35vw; /* Tamaño más pequeño */
+    height: 10vh;
+    background-color: var(--prim); /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* se asegura de que esté encima de otros elementos */
+    padding: 0; /* Sin padding adicional */
+    border-radius: 20px; /* Redondea bordes del popup */
+}
+/* Estilos del contenido del popup */
+.popup-content {
+    background-color: var(--acentonuevo);
+    opacity: 0.8;
+    color: var(--blanco);
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%; /* Ocupa todo el ancho del popup */
+    height: 100%; /* Ocupa todo el alto del popup */
+    text-align: center;
+    box-sizing: border-box; /* Incluye padding dentro de width y height */
+}
+#popup-success {
+    background-color: #e0f7e0;
+    border: 1px solid #28a745;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 10px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+.check-icon {
+    font-size: 1.5em;
+    color: #28a745;
+}
+.hidden {
+    display: none;
+}
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 16px;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+.popup-message{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 50px;
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+}
+/* Ocultar el pop-up */
+.hidden {
+    display: none;
+}
+.diverror{
+    width: 500px;
+    height: 100px;
+}
+
