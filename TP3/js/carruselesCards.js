@@ -1,51 +1,67 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const btnRight = document.querySelector(".btn-right-cards");
-    const btnLeft = document.querySelector(".btn-left-cards");
-    const carrusel = document.querySelector(".cincocards");
-    const allCards = document.querySelectorAll(".card");
-    let currentIndex = 0;
+const btnLeft = document.querySelector(".btn-left-cards"),
+      btnRight = document.querySelector(".btn-right-cards"),
+      slider = document.querySelector(".cincocards"),
+      sliderOculto = document.querySelector(".cincocards-ocultas"); // El contenedor de las tarjetas ocultas
 
-    // Inicialmente, solo las primeras 5 cards son visibles
-    for (let i = 5; i < allCards.length; i++) {
-        allCards[i].classList.add("cardhidden");
+let currentIndex = 0;
+const cardsToShow = 5; // Número de tarjetas visibles
+const cardWidth = document.querySelector('.card').offsetWidth + 30; // Ancho de la tarjeta + márgenes
+
+// Inicialmente ocultamos el botón izquierdo
+btnLeft.style.display = 'none';
+
+// Manejamos el clic en la flecha derecha
+btnRight.addEventListener("click", () => moveToRight());
+
+// Manejamos el clic en la flecha izquierda
+btnLeft.addEventListener("click", () => moveToLeft());
+
+function moveToRight() {
+    // Aseguramos que no se mueva más allá de la cantidad de tarjetas visibles
+    if (currentIndex >= slider.children.length - cardsToShow) {
+        currentIndex = 0;
+        slider.style.transform = `translateX(0)`;
+        slider.style.transition = "none"; // Elimina la transición para un salto directo
+        return;
+    }
+    currentIndex++; // Avanzamos al siguiente conjunto de tarjetas
+    let offset = currentIndex * cardWidth;
+    slider.style.transform = `translateX(-${offset}px)`; // Desplazamos el carrusel
+    slider.style.transition = "all ease .6s"; // Agregamos una transición suave
+
+    // Mostramos la flecha izquierda cuando estamos más allá de la primera tarjeta
+    if (currentIndex > 0) {
+        btnLeft.style.display = 'block';
     }
 
-    // Muestra las siguientes 5 cards al hacer clic en la flecha derecha
-    btnRight.addEventListener("click", function() {
-        // Mostrar las siguientes 5 cards
-        const hiddenCards = document.querySelectorAll(".cardhidden");
-        if (hiddenCards.length > 0) {
-            for (let i = currentIndex + 5; i < currentIndex + 10 && i < allCards.length; i++) {
-                allCards[i].classList.remove("cardhidden");
-            }
-            currentIndex += 5;
+    // Si estamos al final de las tarjetas, ocultamos la flecha derecha
+    if (currentIndex >= slider.children.length - cardsToShow) {
+        btnRight.style.display = 'none';
+    }
+}
 
-            // Si no hay más cards ocultas, desactivar el botón derecho
-            if (currentIndex + 5 >= allCards.length) {
-                btnRight.style.display = "none";
-            }
+function moveToLeft() {
+    // Si estamos al principio, regresamos al final
+    if (currentIndex <= 0) {
+        currentIndex = slider.children.length - cardsToShow;
+        slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        slider.style.transition = "none"; // Elimina la transición para un salto directo
+        return;
+    }
+    currentIndex--; // Retrocedemos al conjunto de tarjetas anterior
+    let offset = currentIndex * cardWidth;
+    slider.style.transform = `translateX(-${offset}px)`; // Desplazamos el carrusel
+    slider.style.transition = "all ease .6s"; // Transición suave
 
-            // Mostrar el botón izquierdo
-            btnLeft.style.display = "flex";
-        }
-    });
+    // Mostramos la flecha derecha si no estamos en el primer grupo
+    if (currentIndex < slider.children.length - cardsToShow) {
+        btnRight.style.display = 'block';
+    }
 
-    // Muestra las cards anteriores al hacer clic en la flecha izquierda
-    btnLeft.addEventListener("click", function() {
-        if (currentIndex > 5) {
-            for (let i = currentIndex - 1; i >= currentIndex - 5; i--) {
-                allCards[i].classList.add("cardhidden");
-            }
-            currentIndex -= 5;
+    // Si estamos en el primer conjunto de tarjetas, ocultamos la flecha izquierda
+    if (currentIndex === 0) {
+        btnLeft.style.display = 'none';
+    }
+}
 
-            // Si las cards han vuelto al principio, ocultar el botón izquierdo
-            if (currentIndex <= 0) {
-                btnLeft.style.display = "none";
-            }
-
-            // Mostrar el botón derecho
-            btnRight.style.display = "flex";
-        }
-    });
-});
 

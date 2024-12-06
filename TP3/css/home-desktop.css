@@ -280,7 +280,7 @@ header ul a {
 }
 /* Botones del Slider */
 .btn-left,
-.btn-right {
+.btn-right, .btn-left-cards, .btn-right-cards {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -295,299 +295,344 @@ header ul a {
 }
 
 .btn-left:hover,
-.btn-right:hover {
+.btn-right:hover, .btn-left-cards, .btn-right-cards {
     background-color: rgba(0, 0, 0, 0.8);
 }
-.btn-left {
-    left: 3em;
-}
 
-.btn-right {
-    right: 3em;
-}
-
-.btn-left {
+.btn-left, .btn-left-cards {
     left: 0.3em;
 
 }
-
-.btn-right {
+.btn-right, .btn-right-cards {
     right: 0.3em;
   
 }
-
-.btn-left img {
-    width: 3em;
-    height: 3em;
-}
-
-.btn-right img {
-    width: 3em;
-    height: 3em;
-}
-
-
-.btn-left img {
+.btn-left img, .btn-left-cards img {
     width: 3em;
     height: 3em;
     border-radius: 50%;
     opacity: 30%;
 }
-.btn-left img:hover {
-    opacity: 70%;
-}
-.btn-right img:hover {
-    opacity: 70%;
-}
 
-.btn-right img {
+.btn-right img, .btn-right-cards img {
     width: 3em;
     height: 3em;
     border-radius: 50%;
     opacity: 30%;
 }
+
+.btn-left img:hover, .btn-left-cards:hover {
+    opacity: 70%;
+}
+.btn-right img:hover, .btn-right-cards:hover {
+    opacity: 70%;
+}
+
 
 /*CARRUSELES*/
-.tituloCars {
-    margin-top: 1.5em;
-    color: var(--blanco);
-    font-size: 12px;
-    text-align: left; 
-    width: 100%; 
-    margin-left: 0; 
+/*titulo*/
+.tituloCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-top: 10px;
+    margin-right: 950px;
 }
 
-.tituloCars h2 {
+.tituloCard h2 {
     margin: 0;
+    color: var(--blanco);
     padding: 0;
     font-size: 16px;
     text-align: left !important; 
 }
 
-
-/* Carrusel */
-.carruselprincipal {
+h1 {
+    font-size: 24px;
+    margin: 20px;
+}
+/*Contenedor carruseles*/
+.carruseles-home{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 200%;
-    height: auto;
-    flex-wrap: nowrap;
-    max-width: 1200px; /* Limita el ancho máximo */
-    margin: 2em 0;
-    overflow: hidden; /* Oculta contenido fuera del carrusel */
-    margin-top: 0em;
-    margin-bottom: 1.6em;
+    background-color: #261818;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho */
 }
 
+/* Carrusel contenedor */
+.carruselprincipal {
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo si es necesario */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Carrusel */
 .cincocards {
     display: flex;
-    flex-wrap: wrap; /* Las cards se distribuyen en varias filas */
-    width: 100%;
-    transition: transform 0.5s ease; /* Movimiento suave */
-    gap: 1em; /* Espaciado entre las cards */
+    transition: transform 0.5s ease; /* Animación de movimiento */
+    width: 100%; /* Asegura que ocupe todo el espacio */
+    overflow: hidden; /* Oculta las tarjetas que están fuera del contenedor */
 }
 
+.cincocards-ocultas {
+    display: flex;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    width: 100%;
+}
+
+.cincocards-ocultas.mostrar {
+    opacity: 1;
+}
+
+
+/* Card individual */
+/* Efecto en la card al pasar el mouse */
 .card {
-    flex: 1 0 calc(20% - 1em); /* 5 cards visibles */
+    width: 15em;
+    height: 21em;
+    margin-left: 1.5em;
     background-color: #746464;
-    border-radius: 0.5em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-    padding: 1em;
-    transition: transform 0.3s ease-in-out;
-    width: 15em;
-    height: 21em;
-    margin-left: 1.5em;
-    border: 1px solid var(--negro);
-    z-index: 1;
-    position: relative;
-    max-width: 200px; /* Limita el tamaño de cada card */
-}
-
-.card:hover {
-    transform: scale(1.05); /* Efecto de hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-}
-
-.cardhidden{
-    display: block;
-}
-
-.carruselscroll {
-    width: 100%;
-    height: 16em;
-}
-
-.carruselcompleto {
-    width: 100%;
-    height: auto;
-}
-.card {
-    /*width 15em*/
-    width: 15em;
-    height: 21em;
-    margin-left: 1.5em;
-    background-color:#746464;
     box-shadow: 1px 0px 5px var(--prim-sombra3);
     border: 1px solid var(--negro);
     z-index: 1;
     position: relative;
-}
-.carrusel h3 {
-    width: auto;
-    margin-left: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
-.gratis p {
-    text-align: center;
-    
+.card:hover {
+    transform: scale(1.05) translateY(-5px); /* Aumenta el tamaño y se desplaza hacia arriba */
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
 }
 
-.gratis p, .jugar button, .btnañadiralcarro, .sacardelcarro button {
-    font-size: large;
+.nombreCard{
+    margin-left: 0.50em;
+    height: auto;
+    font-size: 1em;
+    padding-left: 10px;
+    padding-bottom: 5px;
 }
 
-.jugargratis {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.1em;
-}
-
-
-.jugar button, .btnañadiralcarro, .btnsacardelcarro {
-    border: 0;
-    width: 100%;
-    background-color: #E63946;
-    height: 3em; 
-}
-
-.gratis , .jugar{
-    margin-top: 0.5em;
-    text-align: center;
-    width: 6em;
-    height: 3em;
-}
-.gratis{
-    margin-bottom: 1.5em;
-    margin-right: 5em;
-}
-.jugar{
-    margin-bottom: 0.25em;
-
-}
-.jugar button img {
-    margin-right: 0.25em;
-}
-
-.jugar button {
-    height: 2em;
-}
-
-
-.imgcardsresponsive {
+/* Imagen dentro de cada card */
+.card img {
     margin: 1em; 
     width: 13em;
     height: 13em;
 }
-
-.precio {
+.jugargratis {
     display: flex;
-    align-items: flex-start;
-    width: 13.5em;
-    margin-top: 0.7em;
-    margin-left: 0.5em;
-    justify-content: left;
+    flex-direction: row; /* Cambiamos a "row" para que estén en la misma línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Separa los elementos hacia los extremos */
+    padding: 0 1em; /* Añade un pequeño espacio interno para que no toquen los bordes */
 }
 
-.ofertaprecio {
-    display: flex;
-    flex-direction: column;
-}
-.precio button {
-    width: 100%;
-    height: 2em;
-}
-
-.precio div {
+/* Botón "Gratis" */
+.gratis {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 4em; /* Ajusta el ancho para mantener la consistencia */
+    height: 2em; /* Asegúrate de que el alto sea consistente */
+    color: var(--blanco);
+    background-color: #374957;
+    border-radius: 0.2em;
 }
 
-.h3 {
+/* Botón "Jugar" */
+.jugar {
+    display: flex;
+    align-items: center; /* Asegura que el botón esté centrado verticalmente */
+}
+
+.jugar button {
+    width: auto; /* Ajusta automáticamente el ancho */
+    padding: 0.5em 1em; /* Tamaño del botón */
+    background-color: rgb(230, 57, 70); /* Color base */
+    border: 2px solid transparent; /* Borde inicial invisible */
+    color: var(--blanco); /* Texto blanco */
+    border-radius: 0.2em;
     font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    position: relative;
 }
 
+/* Hover con cambio de color y borde */
+.jugar button:hover {
+    background-color: #A12831; /* Cambia al nuevo tono */
+    border-color: #ff4c4c; /* Añade un borde rojo claro */
+    transform: translateY(-2px); /* Eleva ligeramente el botón */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra para el efecto de elevación */
+}
 
+/* Efecto de foco (opcional) */
+.jugar button:focus {
+    outline: none; /* Elimina el contorno por defecto */
+    box-shadow: 0 0 0 3px rgba(161, 40, 49, 0.5); /* Añade un contorno con el tono seleccionado */
+}
 
+.jugar button a {
+    text-decoration: none;
+    color: var(--blanco);
+}
 .sacardelcarro{
-    padding: 0.7em;
-    margin-top: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Asegura que el botón esté centrado verticalmente */
+    padding: 0 1em; /* Añade un pequeño espacio interno para que no toquen los bordes */
 }
 .sacardelcarro button {
-    height: 2em;
-}
-
-.imgincart{
-    width: 1.9em;
-    height: 2em;
-}
-.h2 {
-    margin-left: 1em;
-    font-size: 14px;
-}
-
-
-.registroexitoso{
-    background-color: var(--acento-luz);
-    width: 25em;
-    height: 2.5em;
-    text-align: center;
-    border-radius: 2em;
-    color: #000;
-   
-}
-
-.pulse{
-  animation: pulse 1.5s;
-  box-shadow: 0 0 0 2em transparent;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--acento-luz); }
-
-}
-
-
-.añadiralcarro button{
-    margin-top: 0em;
-    padding: 0 0.2em;
     width: auto;
+    padding: 0.5em 1em;
+    background-color: rgb(230, 57, 70); /* Color base */
+    border: none;
+    color: var(--blanco);
+    border-radius: 0.2em;
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Contiene el efecto dentro del botón */
+    z-index: 1;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza los cambios */
 }
 
-.btnsacardelcarro{
-    width: auto;
-    margin-left: 0em;
-    padding: 0 0.2em;
+/* Hover con degradado animado */
+.sacardelcarro button:hover {
+    background: linear-gradient(135deg, #A12831, #e53935); /* Degradado dinámico */
+    color: white; /* Contraste para el texto */
+    transform: scale(1.05); /* Crece ligeramente */
+    box-shadow: 0 4px 10px rgba(161, 40, 49, 0.5); /* Agrega una sombra suave */
+}
+
+/* Animación interna */
+.sacardelcarro button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 40%);
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(0.8); /* Inicia más pequeño */
+}
+/* Activación del efecto al hover */
+.sacardelcarro button:hover::after {
+    opacity: 1; /* Hace visible el efecto radial */
+    transform: scale(1.5); /* Expande el efecto */
+}
+.añadiralcarro{
+    display: flex;
+    flex-direction: row; /* Cambiamos a "row" para que estén en la misma línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Separa los elementos hacia los extremos */
+    padding: 0 1em; /* Añade un pequeño espacio interno para que no toquen los bordes */
+}
+.precio{ 
+    display: flex;
+    align-items: center;
+}
+
+.btn-aniadir{ 
+    display: flex;
+    align-items: center;
+}
+/* Estilo base del botón */
+.btn-aniadir button {
+    padding: 0.5em 1em;
+    background-color: rgb(230, 57, 70); /* Color base */
+    border: 2px solid transparent; /* Borde inicial invisible */
+    color: var(--blanco); /* Texto blanco */
+    border-radius: 0.2em;
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Contiene efectos internos */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+/* Hover: Fondo dinámico y animación */
+.btn-aniadir button:hover {
+    background: linear-gradient(45deg, #A12831, #e53935, #ff6f61);
+    background-size: 300%; /* Amplía el tamaño para hacer la animación más fluida */
+    animation: gradientMove 1s linear infinite; /* Movimiento del fondo */
+    color: white; /* Mantiene contraste en el texto */
+    transform: scale(1.1); /* Expande ligeramente el botón */
+    box-shadow: 0 8px 15px rgba(230, 57, 70, 0.5); /* Sombra suave */
+}
+
+/* Pulsación interna al hover */
+.btn-aniadir button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3); /* Color semitransparente */
+    border-radius: 50%; /* Forma circular */
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn-aniadir button:hover::after {
+    width: 300%; /* Se expande para cubrir el botón */
+    height: 300%;
+}
+
+/* Animación de fondo en degradado */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Contenedor oculto inicialmente */
+.cincocards-ocultas {
+    display: none; /* Ocultamos inicialmente el segundo grupo */
+    opacity: 0; /* Para transiciones suaves */
+    transition: opacity 0.5s ease;
+}
+
+.cincocards-ocultas.mostrar {
+    display: flex; /* Cambiamos el display a flex */
+    opacity: 1; /* Hacemos visible */
 }
 
 
-.btnanadiralineado{
-    margin-bottom: 1em;
+/* botones posicion */
+
+
+.primero {
+    top: 36.5em;
 }
+
+.segundo {
+    top: 62.5em;
+}
+
+.tercero {
+    top: 87.5em; /* 58.5em + 26em */
+}
+
+.cuarto {
+    top: 114.5em; /* 84.5em + 26em */
+}
+ 
+
 
 /*FOOTER*/
 .footerhome{
