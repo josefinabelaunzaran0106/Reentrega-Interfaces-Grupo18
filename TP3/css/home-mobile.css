@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  
+}
+:root {
+    /* seccion colores */
+    --acento-luz: #E63946;
+    --acento: #A12831;
+    --acento-oscuro: #271010;
+    --prim: #271010;
+    --prim-luz1: #261818;
+    --prim-luz2: #393131;
+    --prim-luz3: #0D85F5;
+    --prim-sombra1: #FEF9F9;
+    --prim-sombra2:  #374957;
+    --prim-sombra3: #746464;
+    --blanco: #FEF9F9;
+    --blanco-oscuro: #E5F4FF;
+    --negro: #23282B;
+    --especial: #34D919; 
+    --acentonuevo: #6700dd;
+    --error: #f50606;
+}
+/* Loader */
+.all {
+    visibility: hidden;
+}
+.all.show {
+    visibility: visible;
+}
+#percentage {
+    display: flex;
+    color: white; /* Asegúrate de que los números sean blancos */
+    font-size: 24px;
+    margin-top: 10px;
+    justify-content: center;
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #271010;
+    transition: visibility 5s;
+    z-index: 1000;
+}
+.loader-hidden {
+    visibility: hidden;
+}
+.progress-bar-container {
+    position: relative;
+    width: 500px;
+    height: 40px;
+    background-color: var(--acento); /* Color de fondo para la barra */
+    overflow: hidden;
+    margin-top: 1em;
+}
+.progress-bar {
+    width: 0; /* Comienza desde 0% */
+    height: 100%;
+    background-color: var(--acento-luz); /* Cambia a rosa */
+    transition: width 0.1s ease;
+    transform-origin: left;
+}
