@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS para móviles -->
+    <link rel="stylesheet" href="css/style.css" media="(max-width: 1023px)">
+    
+    <!-- CSS para escritorio -->
+    <link rel="stylesheet" href="css/styles-desktop.css" media="(min-width: 1024px)">
+    
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="loader">
+        <div>
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div id="percentage">0%</div>
+        </div>
+    </div> 
+
+    <main class="all">
+        <header>
+            <nav class="navhome primariosombra2">
+                <div class="logoretrogemas">
+                    <div class="hamburguer-menu">
+                        <button class="primariosombra2" type="button" id="menu-burguer">
+                            <img src="imgs/iconos/hamburguesa.png" id="imgburguer">
+                        </button>
+                    </div>
+                    <div class="hamburguer-menu-desplegado btn" id="menuH">
+                        <ul>
+                            <li>De moda</li>
+                            <li>Favoritos</li>
+                            <li>Originales</li>
+                            <li>Mas jugados</li>
+                            <li>Acción</li>
+                        </ul>
+                    </div>
+                    <div class="titulo">
+                        
+                        <a href="home.html"><img src="imgs/iconos/retrogemas.png" class="imglogoretrogemas"></a>
+                    </div>
+                </div>
+                <div class="buscarnav">
+                    <img class = "img-buscar" src="imgs/iconos/buscar.png" alt="">
+                </div>
+                <div class="iconosnav">
+                    <div class="carrito">
+                        <button type="button" class="primariosombra2" id="menu-nav">
+                            <img src="imgs\iconos\carrito.png"></button>
+                    </div>
+                    <div class="carritoDesplegado btn">
+                        <ul>
+                            <li>Mi carrito</li>
+                            <li>Mis compras</li>
+                        </ul>
+                    </div>
+                    <div class="perfil">
+                        <button type="button" class="primariosombra2" id="menu-nav">
+                            <img src="imgs/iconos/user.png"></button>
+                    </div>
+                    <div class="perfilDesplegado btn">
+                        <ul>
+                            <li>Mi cuenta</li>
+                            <li>Mensajes</li>
+                            <li>Mis favoritos</li>
+                            <li>Mis logros</li>
+                            <li><a class="cerrarSesion" href="index.html">Cerrar sesion</a></li>
+                        </ul>
+                    </div>
+    
+                </div>
+            </nav>
+        </header>
+        
+ 
+
+        <section class="main">
+
+            <section class="container-carousel">
+                <div class="carruseles" id="slider">
+                    <div class="slider-section">
+                        <img src="./asset/images/Fondo juego 4 en linea pacman.jpg">
+                    </div>
+                    <div class="slider-section">
+                      <img src="./asset/images/smario.webp">
+            
+                    </div>
+                    <div class="slider-section">
+                      <img src="./asset/images/mortalKombat.jpg">
+                    </div>
+                    <div class="slider-section">
+                        <img src="./asset/images/crash.jpg">
+                      </div>
+                </div>
+                <div class="btn-left"><img src="./asset/icons/flechaAtras.png"><i class='bx bx-chevron-left'></i></div>
+                <div class="btn-right"><img src="./asset/icons/flechaAdelante.png"><i class='bx bx-chevron-right'></i></div>
+            </section>
+
+                        <section>
+                            <div class="h2 colorblanco"><h2>Destacados de la semana</h2></div>
+                            <article class="carruselprincipal">
+
+                                <div class="cincocards">
+                                    
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/pacman.png" class="imgcardsresponsive" alt="pacman">
+                                        <h3 class="h3">4 en Linea</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton"><a href="juego.html"> Jugar</a></button>
+                                            </div>
+                                        </div>  
+                                    </div>
+
+                                    <div class="btn card">
+                                        <img src="./asset/images/super mario.jpg" class="imgcardsresponsive" alt="superMario">
+                                        <h3 class="h3">Super Mario</h3>
+                                            <div class="sacardelcarro">
+                                                <button class="btn colorblanco btnsacardelcarro h4 primer-hover-boton">Sacar del carro</button>
+                                            </div> 
+                                    </div>
+                        
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/streer fighter.webp" class="imgcardsresponsive" alt="streerFighter">
+                                        <h3 class="h3">Streer Fighter</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                               
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/mario-bros-atari.jpg" class="imgcardsresponsive" alt="Mario Broos Atari">
+                                        <h3 class="h3">Mario Bross</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                     
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/galactic.jpg" class="imgcardsresponsive" alt="galactic">
+                                        <h3 class="h3">Galactic</h3>
+                                            <div class="sacardelcarro">   
+                                                <img src="imgs\iconos\carrito.png">
+                                                    <button class="btn colorblanco btnsacardelcarro h4 primer-hover-boton">Sacar del carro</button>
+                                            </div>
+                                    </div>
+
+                                </div>
+                        
+                                <div class="cincocards">
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/autito.jpg" class="imgcardsresponsive" alt="outRunStart">
+                                        <h3 class="h3">Out Run Star</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton"><a href="juego.html">Jugar</a></button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/contra.jpg" class="imgcardsresponsive" alt="contra">
+                                        <h3 class="h3">Contra</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/crash.webp" class="imgcardsresponsive" alt="crash"> 
+                                        <h3 class="h3">Crash</h3>
+                                            <div class="sacardelcarro">
+                                                <button class="btn colorblanco btnsacardelcarro h4 primer-hover-boton">Sacar del carro</button>
+                                            </div> 
+                                    </div>
+                               
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/galaxia.jpg" class="imgcardsresponsive" alt="StarForces">
+                                        <h3 class="h3">Galaxia</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/mickie.jpg" class="imgcardsresponsive">
+                                        <h3 class="h3">MiKie</h3>
+                                            <div class="sacardelcarro">   
+                                                <img src="imgs\iconos\carrito.png">
+                                                    <button class="btn colorblanco btnsacardelcarro h4 primer-hover-boton">Sacar del carro</button>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="btn-left-cards primero"><img src="./asset/icons/flechaAtras.png"><i class='bx bx-chevron-left'></i></div>
+                                <div class="btn-right-cards primero"><img src="./asset/icons/flechaAdelante.png"><i class='bx bx-chevron-right'></i></div>
+                            </article>
+
+                            
+
+                            <div class="h2 colorblanco"><h2>Destacados del mes</h2></div>
+                            <article class="carruselprincipal">
+
+                                <div class="cincocards">
+                                    
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/mortalKombat.jpg" class="imgcardsresponsive" alt="mortalKomat">
+                                        <h3 class="h3">Mortal Kombat</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton"><a href="juego.html">Jugar</a></button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/pacman.png" class="imgcardsresponsive" alt="StarForces">
+                                        <h3 class="h3">Pacman</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/popeye.jpg" class="imgcardsresponsive" alt="popeye">
+                                        <h3 class="h3">Popeye</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/rayman.jpg" class="imgcardsresponsive" alt="rayman">
+                                        <h3 class="h3">Rayman</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/retrobarcelona.jpg" class="imgcardsresponsive" alt="retroBarcelona">
+                                        <h3 class="h3">Retro Barcelona</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                        
+                                <div class="cincocards">
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/sonic.jpg" class="imgcardsresponsive" alt="Sonic3">
+                                        <h3 class="h3">Sonic 3</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/street.jpg" class="imgcardsresponsive" alt="Street">
+                                        <h3 class="h3">Street</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    
+                                    <div class="btn card">
+                                        <img src="./asset/images/super mario.jpg" class="imgcardsresponsive" alt="superMario">
+                                        <h3 class="h3">Super Mario</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/tetris.jpg" class="imgcardsresponsive" alt="tetris">
+                                        <h3 class="h3">Tetris</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/tortugas.jpg" class="imgcardsresponsive" alt="tortugasNinjas">
+                                        <h3 class="h3">Tortugas Ninjas</h3>
+                                        <div class="jugargratis">
+                                            <div class="btn gratis h4"><p>Gratis</p></div>
+                                            <div class="jugar">
+                                                <button class="btn colorblanco h4 cuarto-hover-boton">Jugar</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="btn-left-cards segundo"><img src="./asset/icons/flechaAtras.png"><i class='bx bx-chevron-left'></i></div>
+                                <div class="btn-right-cards segundo"><img src="./asset/icons/flechaAdelante.png"><i class='bx bx-chevron-right'></i></div>
+                            </article>
+
+        
+
+
+                            <div class="h2 colorblanco"><h2>Jugados recientemente por ti</h2></div>
+                            <article class="carruselprincipal">
+
+                                <div class="cincocards">
+                        
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/afterthewarcover.jpg" class="imgcardsresponsive" alt="affterTheWar">
+                                        <h3 class="h3">After the war</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/BomberMan.jpg" class="imgcardsresponsive" alt="bomberMan">
+                                        <h3 class="h3">Bomber Man</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/capitanComando.jpg" class="imgcardsresponsive" alt="capitanComando">
+                                        <h3 class="h3">Capitan Comando</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                               
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/Doom-1.webp" class="imgcardsresponsive" alt="doom">
+                                        <h3 class="h3">Doom 1</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/farcry.jpg" class="imgcardsresponsive" alt="Farcry">
+                                        <h3 class="h3">Farcry</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                        
+                                <div class="cincocards">
+                                    
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/grand.jpg" class="imgcardsresponsive" alt="grand">
+                                        <h3 class="h3">Grand theft auto</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/Greg-2.jpg" class="imgcardsresponsive" alt="AeroTheAcrobat">
+                                        <h3 class="h3">Aero The Acrobat 2</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/Greg-3.jpg" class="imgcardsresponsive" alt="Grag3">
+                                        <h3 class="h3">The Jetsons</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                               
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/madmix.png" class="imgcardsresponsive" alt="madmix">
+                                        <h3 class="h3">Madmix</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/megaman3.jpg" class="imgcardsresponsive" alt="MegaMan3">
+                                        <h3 class="h3">Mega Man 3</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="btn-left-cards tercero"><img src="./asset/icons/flechaAtras.png"><i class='bx bx-chevron-left'></i></div>
+                                <div class="btn-right-cards tercero"><img src="./asset/icons/flechaAdelante.png"><i class='bx bx-chevron-right'></i></div>
+                            </article>
+
+                            <div class="h2 colorblanco"><h2>Juegos de acción</h2></div>
+                            <article class="carruselprincipal">
+
+                                <div class="cincocards">
+                        
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/MegaMancover.webp" class="imgcardsresponsive" alt="megaman">
+                                        <h3 class="h3">Mega Man</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/Sonic2.jpg" class="imgcardsresponsive" alt="sonic2">
+                                        <h3 class="h3">Sonic 2</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/start.jpg" class="imgcardsresponsive" alt="Start">
+                                        <h3 class="h3">Start</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                               
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/street.jpg" class="imgcardsresponsive" alt="StreetOfRage">
+                                        <h3 class="h3">Street of Rage</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/tumblr-myursrbjg.jpg" class="imgcardsresponsive" alt="abuSymbrel">
+                                        <h3 class="h3">Abu Simbel</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                        
+                                <div class="cincocards">
+                                    
+                                    <div class="btn card firstcard">
+                                        <img src="./asset/images/turrican2.jpg" class="imgcardsresponsive" alt="turrican2">
+                                        <h3 class="h3">Turrican 2</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/wheretime.jpg" class="imgcardsresponsive" alt="wheretime">
+                                        <h3 class="h3">Wheretime</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card">
+                                        <img src="./asset/images/Doom-videojuego-1.jpg" class="imgcardsresponsive" alt="Doom">
+                                        <h3 class="h3">Doom VideoJuego</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                               
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/simpsons.jpg" class="imgcardsresponsive" alt="simpsons">
+                                        <h3 class="h3">The Simpsons</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                        
+                                    <div class="btn card cardhidden">
+                                        <img src="./asset/images/Greg-4.jpg" class="imgcardsresponsive" alt="Greg4">
+                                        <h3 class="h3">Greg 4</h3>
+                                        <div class="añadiralcarro">
+                                            <div class="precio">
+                                                <div>
+                                                    <p class="h3">$535.33</p>
+                                                    <button class="btn colorblanco btnañadiralcarro h4 tercer-hover-boton">Añadir al carro</button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                
+                                <div class="btn-left-cards cuarto"><img src="./asset/icons/flechaAtras.png"><i class='bx bx-chevron-left'></i></div>
+                                <div class="btn-right-cards cuarto"><img src="./asset/icons/flechaAdelante.png"><i class='bx bx-chevron-right'></i></div>
+                                
+                            </article>
+                        </section>
+        </section>
+        
+        <footer class="footerhome">
+            <div>
+                <div class="btnfooter">
+                    <button type="button">Categorias<img src="imgs/iconos/desplegablehaciaabajo.png"
+                            id="footer-btn"></button>
+                    <ul class="footerulhidden colorblanco">
+                        <li>Lanzamientos</li>
+                        <li>Todos los juegos</li>
+                        <li>Top 100 juegos</li>
+                        <li>Valoración</li>
+                    </ul>
+                </div>
+    
+            </div>
+    
+            <div>
+                <button type="button">Redes Sociales <img src="imgs/iconos/desplegablehaciaabajo.png"
+                        id="footer-btn"></button>
+                <ul class="footerulhidden colorblanco">
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+    
+            <div>
+                <button type="button">Mi cuenta <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
+                <ul class="footerulhidden colorblanco">
+                    <li>Ingresá</li>
+                    <li>Comprar</li>
+                    <li>Favoritos</li>
+                </ul>
+            </div>
+    
+            <div>
+                <button type="button">Ayuda <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
+                <ul class="footerulhidden colorblanco">
+                    <li>Terminos y condiciones</li>
+                    <li>Como cuidamos tu privacidad</li>
+                    <li>Resolución de problemas</li>
+                    <li>Centro de seguridad</li>
+                </ul>
+            </div>
+    
+        </footer>
+        
+            
+    </main>
+         <script src="js/nav-loader.js"></script> 
+         <script src="js/slider.js"></script>
+         <script src="js/carruselesCards.js"></script>
+</body>
+</html>

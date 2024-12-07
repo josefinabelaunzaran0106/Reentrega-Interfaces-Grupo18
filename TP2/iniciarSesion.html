@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresá</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="inicio-container">
+        <div class="form-inicio-container">
+            <div class="retrogema-logo-inicio">
+                <img src="./asset/images/tituloRetrogemas.png" alt="">
+            </div>
+            <form class="form-inicio" id="formlogin">
+                <label> Email*</label>
+                <input class="inputForm" type="text" placeholder="usuario" name="name" required>
+    
+                <label>Password*</label>
+                <input class="inputForm" placeholder="1234" type="text" name="password"required>
+                <a class="olvidasteContraseña" href="index.html">Olvidaste tu contraseña?</a>
+                <div class="btn-inises-container h4">
+                    <button type="submit" class="btn-inisesion-container">Iniciar Sesión</button>
+                    <div id="diverror">
+                        <div id="popup-error" class="popup hidden">
+                            <div class="popup-content">
+                                <span id="close-btn" class="close-btn">&times;</span>
+                                <p id="popup-message"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+  
+            </form>
+        </div>
+    </section>     
+ 
+    <footer class="footerhome">
+        <div>
+            <div class="btnfooter">
+                <button type="button">Categorias<img src="imgs/iconos/desplegablehaciaabajo.png"
+                        id="footer-btn"></button>
+                <ul class="footerulhidden colorblanco">
+                    <li>Lanzamientos</li>
+                    <li>Todos los juegos</li>
+                    <li>Top 100 juegos</li>
+                    <li>Valoración</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div>
+            <button type="button">Redes Sociales <img src="imgs/iconos/desplegablehaciaabajo.png"
+                    id="footer-btn"></button>
+            <ul class="footerulhidden colorblanco">
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Youtube</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+
+        <div>
+            <button type="button">Mi cuenta <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
+            <ul class="footerulhidden colorblanco">
+                <li>Ingresá</li>
+                <li>Comprar</li>
+                <li>Favoritos</li>
+            </ul>
+        </div>
+
+        <div>
+            <button type="button">Ayuda <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
+            <ul class="footerulhidden colorblanco">
+                <li>Terminos y condiciones</li>
+                <li>Como cuidamos tu privacidad</li>
+                <li>Resolución de problemas</li>
+                <li>Centro de seguridad</li>
+            </ul>
+        </div>
+
+    </footer>
+    <script src="js/login.js"></script>
+
+</body>
+</html>

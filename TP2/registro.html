@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.cdnfonts.com/css/super-pixel" rel="style">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Registro</title>
+</head>
+
+<body>
+    <section class="registro">
+        <div class="registro-container">
+
+            <div class="retrogema-logo-registrate">
+                <img src="./asset/images/tituloRetrogemas.png" alt="">
+            </div>
+
+            <div class="formularioRegistro">
+                <div class="tituloRegistrate">
+                    <h3>Registrate</h3>
+                    <p class="obligatorio">*Datos obligatorios</p>
+                </div>
+                
+
+                <form id="formregister">
+                    <div class="espacioInput">
+                        <label class="fname" for="fname">Nombre*</label><label for="lname">Apellido*</label><br>
+                        <input  class="inputForm" type="text" id="fname"placeholder="Ingrese su nombre"  name="fname"  required><input class="inputForm" type="text" id="lname" name="lname" placeholder="Ingrese su apellido" required><br>
+                    </div>
+                    <div class="espacioInput">
+                        <label class="nickname" for="nickname">Nickname</label><br>
+                        <input class="inputForm" type="text" id="nickname" name="nickname"placeholder="Ingrese su nombre de usuario" ><br>
+                    </div>
+                    <div class="espacioInput">
+                        <label class="edad" for="edad">Edad*</label> <label class="mail" for="mail">Correo electrónico*</label><br>
+                        <input class="inputForm" type="number" id="edad" name="edad"placeholder="edad" maxlength="3" required><input type="email" class="inputForm" id="mail" name="mail" placeholder="Ingrese su e-mail"required><br>
+                    </div>
+                    <div class="espacioInput">
+                        <label for="contraseña">Contraseña*</label><br>
+                        <input class="inputForm" id="contraseña" name="contraseña"placeholder="Ingrese su contraseña" type="password" minlength="6" required><br>
+                    </div>
+                    <div class="espacioInput">
+                        <div class="labelflex"><label><span id="labelerror">Repetir Contraseña *</span></label> <div class="diverrorcontravis"></div><img src="imgs/iconos/errorform.png" class="icoerrorhidden"></div> 
+                        <input class="inputForm contraseñaerror" placeholder="Repita su contraseña" type="password" minlength="6"  name="password2" required>
+                    </div>
+               
+                    
+                    <div class="btn-captcha-container">
+                        <button class="rectanguloCaptcha colorblanco" id="captcharectangulo" type="button"><img src="imgs/iconos/tick.png" class="icoerrorhidden"></button>
+                        <p class="texto">No soy un robot</p>
+                        <img class="img-captcha" src="imgs/iconos/logos_recaptcha.png">
+                    </div>
+                    <div id="diverror">
+                        <div id="popup-error" class="popup hidden">
+                            <div class="popup-content">
+                                <span id="close-btn" class="close-btn">&times;</span>
+                                <p id="popup-message"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-registrarse-container">
+                        <button class="texto btn h3" id="btnsubmit" >Registrarse</button>
+                    </div>
+
+                    <div class="registroexitosoflex"> <div class="hidden registroexitoso colorblanco">Se ha registrado con exito</div> </div>
+            
+        </form>
+        </div>
+        </div>
+
+    </section>
+
+
+ 
+    <footer class="footerhome">
+        <div>
+            <div class="btnfooter">
+                <button type="button">Categorias<img src="imgs/iconos/desplegablehaciaabajo.png"
+                        id="footer-btn"></button>
+                <ul class="footerulhidden colorblanco">
+                    <li>Lanzamientos</li>
+                    <li>Todos los juegos</li>
+                    <li>Top 100 juegos</li>
+                    <li>Valoración</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div>
+            <button type="button">Redes Sociales <img src="imgs/iconos/desplegablehaciaabajo.png"
+                    id="footer-btn"></button>
+            <ul class="footerulhidden colorblanco">
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Youtube</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+
+        <div>
+            <button type="button">Mi cuenta <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
+            <ul class="footerulhidden colorblanco">
+                <li>Ingresá</li>
+                <li>Comprar</li>
+                <li>Favoritos</li>
+            </ul>
+        </div>
+
+        <div>
+            <button type="button">Ayuda <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
+            <ul class="footerulhidden colorblanco">
+                <li>Terminos y condiciones</li>
+                <li>Como cuidamos tu privacidad</li>
+                <li>Resolución de problemas</li>
+                <li>Centro de seguridad</li>
+            </ul>
+        </div>
+
+    </footer>
+
+
+<script src="js/main.js"></script>
+<script src="js/nav-loader.js"></script>
+
+</body>
+</html>
