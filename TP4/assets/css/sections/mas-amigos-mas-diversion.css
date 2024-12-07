@@ -1,0 +1,74 @@
+/* Sección principal */
+#mas-amigos-mas-diversion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Oculta el contenido fuera del viewport */
+    position: relative;
+}
+
+/* Cada contenedor */
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Ocultos inicialmente */
+    transform: translateY(50px); /* Mueve hacia abajo inicialmente */
+    transition: opacity 1s ease, transform 1s ease;
+    height: 80vh; /* Cada contenedor ocupa una altura parcial */
+    width: 100%;
+}
+
+/* Contenedor activo */
+.contenedor.active {
+    opacity: 1; /* Aparece */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* Imagen con transición combinada */
+#imagen-izq img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    transform: scale(0.8); /* Inicia con un zoom menor */
+    opacity: 0; /* Empieza invisible */
+    transition: transform 1.2s ease, opacity 1.2s ease; /* Transiciones combinadas */
+}
+
+/* Cuando el contenedor es visible */
+.contenedor.active #imagen-izq img {
+    transform: scale(1); /* Regresa al tamaño original */
+    opacity: 1; /* Se hace visible */
+}
+
+
+/* Columna de texto */
+#texto-derecha {
+    margin-left: 20px;
+    text-align: left;
+    max-width: 600px;
+}
+
+#texto-derecha h2 {
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 37.8px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+#texto-derecha p {
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.9px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+

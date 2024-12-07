@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+#hero {
+    background-image: url("../../images/Section HERO/bg1.png");
+
+    height: 959px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+}
+
+
+/*   --------------------------------------------------------------------------------------   */
+/*   -HEADER-   */
+
+/*   -HEADER-   */
+#header {
+    background-image: url("../../images/Section HERO/nav.png");
+    background-size: cover;
+    position: fixed; 
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 100%; 
+    max-width: 1080px;
+    z-index:100;
+    transition: all 0.3s ease;  /* Transición suave para cambios de estilo */
+    top: 0;
+}
+/*   --------------------------------------------------------------------------------------   */
+
+/*   --------------------------------------------------------------------------------------   */
+/* -HEADER / MENU HAMBURGUESA- */
+#menu-cerrado {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 34px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.bar {
+    background-color: #F39E46;
+    height: 4px;
+    width: 100%;
+    transition: all 0.3s ease;
+    border-radius: 111px;
+    outline: 4px solid white;
+    box-shadow: 5px 4px 0px 3px #02187E;
+}
+
+/* Cuando el menú hamburguesa se convierte en cruz */
+#menu-cerrado.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 8px); /* Ajusta los valores para centrar mejor */
+    box-shadow: 2px 4px 0px 3px #02187E; /* cambio la sombra porque cambia la posicion*/
+}
+
+#menu-cerrado.active .bar:nth-child(2) {
+    opacity: 0; /* Segunda barra desaparece */
+}
+
+#menu-cerrado.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -8px); /* Ajusta los valores para centrar mejor */
+    box-shadow: 0px 4px 0px 3px #02187E; /* cambio la sombra porque cambia la posicion*/
+}
+
+/* Estilo para el menú abierto */
+#menu-abierto {
+    position: absolute;
+    width: 210px;
+    height: auto; /* Ajustar según el contenido */
+    top: 12px; /* Alinear verticalmente con el menú cerrado */
+    left: 12px;
+    background-color: bisque;
+    padding-top: 55px;
+    padding-bottom: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+    opacity: 0; /* Oculto inicialmente */
+    animation: fade-in 0.3s ease forwards;
+    z-index: 0; 
+  
+}
+#menu-abierto p {
+    margin: 0;
+    text-align: left; /* Centrar texto horizontalmente */
+    font-size: 18px;
+    padding: 22px;
+    color: #02187E;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    opacity: 0; /* Oculto inicialmente */
+    transform: translateY(10px); /* Posición inicial */
+    animation: slide-in 0.5s ease forwards;
+}
+
+#menu-abierto a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: inherit; /* Mantiene el color del texto sin alterar */
+}
+
+#menu-cerrado.active + #menu-abierto {
+    display: flex; /* Mostrar el menú al activarse */
+}
+
+
+/* Retrasos progresivos para cada opción */
+#menu-abierto p:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+#menu-abierto p:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+#menu-abierto p:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+
+/* Animaciones */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-100px); /* Comienza desde la izquierda, viene desde afuera de la pantalla */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Llega a su posición final */
+    }
+}
+
+/*   --------------------------------------------------------------------------------------   */
+
+/*   --------------------------------------------------------------------------------------   */
+/*   -HEADER / LOGO-   */
+#logo-hero {
+    position: sticky;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.logo-hero-big {
+    position: absolute;
+    height: 320px;
+    width: 473px; 
+    left: 304px;
+    transform: translate(-50%, 0);
+}
+
+.logo-hero-small {
+    position: absolute;
+    top: 6px;
+    height: 86px;
+    width: 150px; 
+    left: 497px;
+    transform: translate(-50%, 0);
+}
+/*   --------------------------------------------------------------------------------------   */
+
+/*   --------------------------------------------------------------------------------------   */
+/*   -HEADER / BOTON COMPRAR-   */
+#boton-comprar { 
+    position: absolute;
+    height: 50px;
+    width: 200px; 
+    top: 20px;
+    right: 100px;
+    background-color: #83C252; /* Color de fondo original */
+    display: flex;
+    justify-content: center;
+    outline: 8px solid white;
+    border-radius: 111px;
+    box-shadow: 8px 8px 0px 3px #02187E;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#boton-comprar p{
+    font-size: 20px;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#boton-comprar:hover {
+    transform: scale(1.1) rotate(4deg);
+    box-shadow: 12px 12px 0px 5px #02187E;
+    background-color: #c4f5bd; /* Nuevo color al hacer hover */
+}
+
+#boton-comprar:hover p {
+    transform: scale(1.1);
+    color: #02187E;
+}
+
+
+/*   --------------------------------------------------------------------------------------   */
+
+/*   --------------------------------------------------------------------------------------   */
+/*   -ARBOLES-   */
+#img-arbol1 {
+    position: absolute;
+    top: 0px;
+    left: -135px; 
+    z-index: 2;
+}
+
+#img-arbol2 {
+    position: absolute;
+    top: 107px;
+    right: -31px; 
+    z-index: 3;
+}
+
+#img-arbol3 {
+    position: absolute;
+    top: 278.5px;
+    right: -67px; 
+    z-index: 1;
+}
+/*   --------------------------------------------------------------------------------------   */
+
+/*   --------------------------------------------------------------------------------------   */
+/*   -NUBES-   */
+#img-nube1 {
+    position: absolute;
+    opacity: 50%;
+    left: 136px; 
+    top: 718.3px;
+    z-index: 0;
+}
+
+#img-nubegris2 {
+    position: absolute;
+    left: 109px; 
+    top: 793.7px;
+    z-index: 3;
+}
+
+#img-nube2 {
+    position: absolute;
+    left: 167px; 
+    top: 822px;
+    z-index: 4;
+}
+
+#img-nube4 {
+    position: absolute;
+    right: 50px; 
+    top: 630.79px;
+    z-index: 0;
+}
+
+#img-nube3 {
+    position: absolute;
+    right: -39px; 
+    top: 662.43px;
+    z-index: 2;
+}
+
+#img-nubegris3 {
+    position: absolute;
+    right: 78px;
+    top: 737.82px;
+    z-index: 4;
+}
+
+#img-nubegris4 {
+    position: absolute;
+    right: 146px; 
+    top: 737.82px;
+    z-index: 3;
+}
+
+#img-nubegris5 {
+    position: absolute;
+    right: 149px; 
+    top: 787px;
+    z-index: 5;
+}
+/*   --------------------------------------------------------------------------------------   */
+
+/*   --------------------------------------------------------------------------------------   */
+/*   -PERSONAJES-   */
+#img-personajerojo {
+    position: absolute;
+    left: 347px; 
+    top: 500px;
+    z-index: 2;
+}
+
+#img-personajenaranja {
+    position: absolute;
+    left: 452px; 
+    top: 403px;
+    z-index: 1;
+}
+
+#img-personajeamarillo {
+    position: absolute;
+    left: 586px;
+    top: 338px;
+    z-index: 0;
+}
+/*   --------------------------------------------------------------------------------------   */

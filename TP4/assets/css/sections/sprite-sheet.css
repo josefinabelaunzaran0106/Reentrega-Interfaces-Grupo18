@@ -1,0 +1,125 @@
+#sprite-sheet {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    text-align: center; /* Centra todo el contenido dentro de #sprite-sheet */
+    padding-bottom: 20px;
+}
+
+#container-sheet {
+    display: flex;
+    flex-direction: column; /* Asegura que el texto y los sprites estén en columnas */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+#texto-sheet {
+    margin-bottom: 20px; /* Espacio entre el texto y los sprites */
+}
+
+#texto-sheet h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #9D2121;
+    margin-bottom: 20px;
+}
+
+#texto-sheet p {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #000;
+    margin: 0;
+}
+
+/* Contenedor de los sprites */
+#sprites-container {
+    display: flex;
+    justify-content: center; /* Alinea los sprites en el centro */
+    align-items: center;
+    gap: 20px; /* Espacio entre los sprites */
+    width: 100%;
+}
+
+/* Contenedor izquierdo del spritesheet */
+#animation-container-left {
+    width: 250px; /* Ancho reducido para el primer spritesheet */
+    height: 450px; /* Altura reducida */
+    overflow: hidden; /* Oculta el resto del spritesheet */
+    position: relative;
+}
+
+/* Spritesheet 1 (izquierda) */
+#animation-container-left .character {
+    width: 2000px; /* Ancho total del spritesheet (sin cambiar) */
+    height: 900px; /* Altura del spritesheet (sin cambiar) */
+    background-image: url('../../images/Seccion sprite-sheet/sps/spritesheet_dynamic1.png'); /* Ruta al spritesheet 1 */
+    background-repeat: no-repeat;
+    background-position: 0 0; /* Posición inicial */
+    background-size: 1000px 450px; /* Escala a la mitad (2000px ÷ 2, 900px ÷ 2) */
+    animation: walk1 1s steps(4) infinite; /* Animación con 4 frames */
+}
+
+/* Animación de cambio de frames para spritesheet 1 */
+@keyframes walk1 {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -1000px 0; /* Mover el fondo proporcionalmente reducido */
+    }
+}
+
+/* Imagen central */
+#sprite-sheett {
+    width: 250px; /* Ajusta el tamaño de la imagen central */
+    height: auto;
+}
+
+/* Contenedor derecho del spritesheet */
+#animation-container-right {
+    width: 250px; /* Ancho reducido para el segundo spritesheet */
+    height: 450px; /* Altura reducida */
+    overflow: hidden; /* Oculta el resto del spritesheet */
+    position: relative;
+}
+
+/* Spritesheet 2 (derecha) */
+#animation-container-right .character {
+    width: 2000px; /* Ancho total del spritesheet (sin cambiar) */
+    height: 900px; /* Altura del spritesheet (sin cambiar) */
+    background-image: url('../../images/Seccion sprite-sheet/sps/spritesheet_dynamic2.png'); /* Ruta al spritesheet 2 */
+    background-repeat: no-repeat;
+    background-position: 0 0; /* Posición inicial */
+    background-size: 1000px 450px; /* Escala a la mitad (2000px ÷ 2, 900px ÷ 2) */
+    animation: walk2 1s steps(4) infinite; /* Animación con 4 frames */
+}
+
+/* Animación de cambio de frames para spritesheet 2 */
+@keyframes walk2 {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -1000px 0; /* Mover el fondo proporcionalmente reducido */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

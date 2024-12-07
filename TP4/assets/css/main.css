@@ -1,0 +1,15 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #1A1A1D;
+}
+
+#container-main{
+    width: 1080px;
+    height: auto;
+    background-color: #FFFFFF;
+    overflow: hidden;
+
+}

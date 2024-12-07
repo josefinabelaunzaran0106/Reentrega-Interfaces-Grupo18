@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+#la-app-mas-divertida{
+    background-image: url("../../images/Section\ La\ app\ más\ divertida\ y\ educativa\ y\ para\ niños\ de\ 3\ años/bg.png");
+    height: 894px;
+    background-size: cover;
+    position: relative;
+
+     
+}
+
+/*   --------------------------------------------------------------------------------------   */
+/*   -TEXTOS ARRIBA-   */
+#text-container1{
+    width: 428.5px;
+    height: 111.3x;
+    position: absolute;
+    top: 50.5px;
+    left: 84px;
+}
+
+#text-container1 p{
+    font-size: 39.5px;
+    color: #1B428F;
+    margin: 0;
+    padding: 0;
+    
+
+    font-family: "Lato", sans-serif;
+    font-weight: 550;
+    font-style: SemiBold;
+}
+
+#text-container2{
+    width: 595px;
+    height: 130px;
+    position: absolute;
+    top: 200.5px;
+    left: 84px;
+
+}
+
+#text-container2 p{
+    font-size: 16.85px;
+    color: #1B428F;
+
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-style: Regular;
+    margin: 0;
+    padding: 0;
+}
+/*   --------------------------------------------------------------------------------------   */
+
+/*   --------------------------------------------------------------------------------------   */
+/* -SLIDER- */
+#slider-img{
+    width: 485px;
+    height: 275px;
+    border-radius: 77px;
+    position: absolute;
+    top: 336px;
+    left: 168.5px;
+
+    outline: 24px solid #1B5F99;
+    outline-offset: 0px;
+}
+/*   --------------------------------------------------------------------------------------   */
+
+
+
+
+/*   --------------------------------------------------------------------------------------   */
+/* -SECTION: LA APP MAS DIVERTIDA PARTE DE ABAJO  //  CARDS- */
+#la-app-mas-divertida2{
+    height: 890px;
+    position: relative;
+    z-index: 0;
+}
+
+#img-personajeverde{
+    height: 505px;
+    width: 510px;
+    position: absolute;
+    top: -370px;
+}
+
+#img-personajeazul {
+    width: 386px;
+    height: 1150px;
+    position: absolute;
+    top: -975px;
+    right: 0;
+}
+
+
+#img-cards-1{
+    position: absolute;
+    width: 280px;
+    height: 180px;
+    outline: 7.5px solid #1B5F99;
+    border-radius: 41px;
+    left: 84.5px;
+    top: 220px;
+}
+
+#img-cards-2{
+    position: absolute;
+    width: 280px;
+    height: 180px;
+    outline: 7.5px solid #1B5F99;
+    border-radius: 41px;
+    left: 399.5px;
+    top: 220px;
+}
+
+#img-cards-3{
+    position: absolute;
+    width: 280px;
+    height: 180px;
+    outline: 7.5px solid #1B5F99;
+    border-radius: 41px;
+    left: 714.5px;
+    top: 220px;
+}
+
+
+/*   --------------------------------------------------------------------------------------   */
+
+/*   --------------------------------------------------------------------------------------   */
+/* -TEXTOS CARDS- */
+
+#p-card1{
+    font-size: 16.85px;
+    color: #1B428F;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-style: Regular;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    width: 280px;
+    height: 184px;
+    bottom: 260px;
+    left: 84.5px;
+}
+#p-card2{
+    font-size: 16.85px;
+    color: #1B428F;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-style: Regular;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    width: 280px;
+    height: 184px;
+    bottom: 260px;
+    left: 399.5px;
+}
+#p-card3{
+    font-size: 16.85px;
+    color: #1B428F;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-style: Regular;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    width: 280px;
+    height: 184px;
+    bottom: 260px;
+    left: 714.5px;
+}
+
+

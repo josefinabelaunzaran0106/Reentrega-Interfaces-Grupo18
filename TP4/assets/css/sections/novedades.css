@@ -1,0 +1,181 @@
+#novedades {
+    background: linear-gradient(180deg, #E0D299 0%, #ADF8FD 47.09%, #EDFDFF 88.29%, #FFFFFF 107.02%);
+    height: 1500px; /* Ajusta según necesites */
+    position: relative; /* Contenedor principal relativo */
+    overflow: hidden; /* Oculta cualquier elemento que sobresalga */
+    z-index: 0;
+}
+
+#contenedorNumeros {
+    position: absolute;
+    bottom: 100px; /* Ajusta según sea necesario para posicionar los números */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra los números horizontalmente */
+    gap: 30px; /* Espaciado entre números */
+    z-index: 2; /* Encima del césped */
+}
+
+#contenedorNumeros div img {
+    width: 400px; /* Cambia este valor para aumentar el tamaño */
+    height: auto; /* Mantén las proporciones originales */
+    z-index: 2;
+    position: relative;
+}
+
+#dos img {
+    position: absolute;
+    top: 900px;
+    z-index: 3;
+    left:100px;
+
+}
+
+#tres img {
+    position: absolute;
+    top: 900px;
+
+    z-index: 3;
+}
+
+#siete img {
+    margin-top: 500px;
+    top: 120px;
+    z-index: 3;
+}
+
+
+
+
+
+#cesped {
+    position: absolute;
+    bottom: 0; /* Posiciónalo al final del contenedor principal */
+    left: 0;
+    width: 100%; /* Asegura que el césped ocupe todo el ancho */
+    z-index: 1; /* Debajo de los números */
+}
+#cesped img {
+    width: 100%;
+    /* Mantén el ancho completo del contenedor */
+    height: 300px;
+    /* Cambia este valor según necesites */
+    object-fit: cover;
+    /* Asegura que la imagen mantenga un buen ajuste */
+    display: block;
+    /* Elimina el espacio extra alrededor de la imagen */
+}
+
+#textoPrincipal {
+    font-family: Lato;
+    font-size: 50px;
+    font-weight: 420;
+    line-height: 56.7px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 675px;
+    height: 171px;
+    left: 100px;
+    gap: 0px;
+    opacity: 0px;
+    margin-left: 60px;
+    margin-bottom: 35px;
+    z-index: 2;
+
+}
+
+#textoSuscripcion{
+    position: absolute;
+    z-index: 2;
+}
+
+/* Contenedor */
+.input-button-container {
+    display: flex;
+    /* Alinea los elementos horizontalmente */
+    align-items: center;
+    width: 100%;
+    /* Ajusta el tamaño del contenedor si es necesario */
+}
+
+/* Estilo del input */
+.input-field {
+    padding-left: 20px;
+    width: 658px;
+    height: 65px;
+    left: 100px;
+    gap: 0px;
+    border-radius: 50px 0px 0px 50px;
+    opacity: 0px;
+    border-width: 9px, 0px, 9px, 9px;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    border-color: #FFFFFF;
+    background: #ECECEC;
+    border: 9px solid #FFFFFF;
+    margin-left: 60px;
+    z-index: 3; /* Asegura que el input esté encima de las imágenes */
+
+}
+
+
+/* Estilo del botón */
+.btn-novedades {
+    width: 218px;
+    height: 83px;
+    left: 880px;
+    gap: 0px;
+    border-radius: 0px 50px 50px 0px;
+ 
+    opacity: 0px;
+    padding: 10px 20px;
+    background: #83C252;
+    border: 9px solid #FFFFFF;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+
+}
+
+
+#footer-img-teen{
+    margin-left: 60px;
+    position: absolute;
+    z-index: 2;
+    top:500px;
+}
+
+
+
+
+#fn1{
+    position: absolute;
+    bottom: 1000px;
+    height: 100px;
+    width: 230px;
+    z-index: 1;
+}
+
+#fn2{
+    position: absolute;
+    bottom: 830px;
+    height: 350px;
+    height: 150px;
+    z-index: 1;
+}
+
+#fn3{
+    position: absolute;
+    bottom: 700px;
+    height: 350px;
+    height: 150px;
+    z-index: 1;
+}

@@ -1,0 +1,94 @@
+/* Loader para niños */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Degradado cielo azul a blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    flex-direction: column;
+}
+
+/* Texto amigable con animación */
+#loader h1 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #ff9c7a;
+    animation: bounce 1.5s infinite; /* Animación de rebote */
+}
+
+/* Contenedor de bloques */
+#spinner {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre bloques */
+    position: relative; /* Para posicionar las imágenes fuera del contenedor */
+}
+
+/* Estilo general de los bloques */
+.block {
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.2; /* Inicialmente tenue */
+    transform: scale(1); /* Tamaño normal */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+}
+
+/* Bloques encendidos */
+.block.on {
+    opacity: 1; /* Brillante */
+    transform: scale(1.2); /* Ligeramente más grande */
+}
+
+/* Animación de rebote para el título */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Rebote hacia arriba */
+    }
+}
+
+/* Estilo para las imágenes fuera del contador (a la izquierda y derecha) */
+.image {
+    position: absolute; /* Posicionadas fuera del contenedor */
+    top: 50%;
+    transform: translateY(-50%);
+    animation: bounce 1.5s infinite; /* Animación de rebote */
+}
+
+/* Imagen izquierda */
+.image.left {
+    left: 50px; /* Coloca la imagen fuera del lado izquierdo */
+    z-index: 1; /* Asegura que la imagen quede por encima de otros elementos */
+    top: 200px;
+}
+
+/* Imagen derecha */
+.image.right {
+    right: 50px; /* Coloca la imagen fuera del lado derecho */
+    z-index: 1; /* Asegura que la imagen quede por encima de otros elementos */
+    top: 200px;
+}
+
+/* Ajuste de las imágenes */
+.image img {
+    width: 200px; /* Haciendo la imagen más grande */
+    height: auto;
+}

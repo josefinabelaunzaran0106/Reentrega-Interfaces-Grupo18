@@ -1,0 +1,96 @@
+#mira-el-video {
+    height: 1000px;
+    position: relative;
+    z-index: 0;
+    background-color: #EFB71E;
+    overflow: hidden;
+    clip-path: path("M-83 56.0049C135 -108.5 905.5 152.502 1346 56.0049V1444C776.18 1413.21 444.167 1363.12 -83 1444V56.0049Z");
+}
+
+#titulo-video {
+    width: 802px;
+    height: 171px;
+    left: 100px;
+    gap: 0px;
+    opacity: 1; /* Hacer el título visible */
+    padding-top: 100px;
+}
+
+#titulo-video h1 {
+    font-family: Lato;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 56.7px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: white;
+    padding-left: 20px;
+}
+
+
+/* Estilo del contenedor del video */
+.video-container {
+    position: relative;
+    width: 60%; /* Ocupa el 60% del ancho del contenedor */
+    padding-top: 35%; /* Relación de aspecto 16:9 */
+    margin-left: 100px;
+    z-index: 1;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Sin bordes */
+}
+
+/* Estilo de la imagen */
+#img-tres {
+    position: relative;
+    height: 100%; /* Asegura que ocupe toda la altura del contenedor */
+}
+
+#img-tres img {
+    width: 100%; /* Imagen ocupa el ancho completo del contenedor */
+    height: auto; /* Mantiene las proporciones */
+    object-fit: cover; /* Asegura que la imagen llene el contenedor sin distorsión */
+}
+
+#container {
+    display: flex; /* Alineación horizontal */
+    position: relative;
+    justify-content: space-between; /* Espaciado entre elementos */
+    align-items: center; /* Centra elementos verticalmente */
+    height: auto; /* Permite que el contenedor se ajuste al contenido */
+    overflow: visible; /* Asegura que no se corte la imagen */
+}
+
+
+
+/* Ocultar inicialmente */
+.hidden {
+    opacity: 0;
+    transform: translateX(0); /* Para aplicar movimiento */
+    transition: all 5s ease-out;
+}
+
+/* Video entra desde la derecha */
+.parallax-video {
+    transform: translateX(100%); /* Fuera de la pantalla por la derecha */
+    z-index: 2; /* Asegura que el video esté detrás de la imagen al inicio */
+}
+
+/* Imagen entra desde la izquierda */
+.parallax-img {
+    transform: translateX(-100%); /* Fuera de la pantalla por la izquierda */
+    z-index: 3; /* Asegura que la imagen esté encima del video */
+}
+
+/* Estado visible con superposición */
+.visible {
+    opacity: 1; /* Hacer visible */
+    transform: translateX(0); /* Colocar en su posición final */
+}

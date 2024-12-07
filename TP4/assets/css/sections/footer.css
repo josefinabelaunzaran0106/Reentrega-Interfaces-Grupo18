@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+#footer{
+    width: 1280px; /* Cambia este valor para aumentar el tamaño */
+    height: 900px; /* Mantén las proporciones originales */
+    background-color:#5E5E5D;;
+}
+#footer-img {
+    width: 100%; /* Asegura que el div ocupe el ancho completo de su contenedor */
+    overflow: hidden; /* Esto oculta cualquier parte de la imagen que se desborde */
+}
+#footer-img img {
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+}
+
+
+#descripcion-legal {
+    width: 60%; /* Ocupa el 70% del ancho del contenedor */
+    color: white; /* Texto blanco */
+    font-family: 'Lato', sans-serif;
+    margin: 20px 0; /* Espaciado superior e inferior */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+#link a {
+    width: 60%;
+    margin: 20px 0; /* Espaciado superior e inferior */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Cambia el color del texto a blanco */
+    font-family: 'Lato', sans-serif; /* Fuente opcional */
+    font-size: 16px; /* Tamaño de texto */
+}
+#redes {
+    width: 60%;
+    margin: 20px 0; /* Espaciado superior e inferior */
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+#textoSuscripcion p{
+    width: 578px;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    font-weight: 550;
+    font-style: SemiBold;
+    margin-left: 84px;
+}
+
+
