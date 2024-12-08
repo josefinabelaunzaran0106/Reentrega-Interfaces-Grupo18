@@ -268,7 +268,7 @@ header ul a {
     display: flex;
     width: 400%; /* Ajuste automático */
     height: 100%; /* Ocupa toda la altura del contenedor */
-    transition: transform 0.5s ease; /* Movimiento suave */
+    transition: transform 1s ease; /* Movimiento suave */
 }
 .slider-section {
     flex: 0 0 25%; /* Cada sección ocupa el 25% del ancho total (100% dividido entre 4) */
@@ -382,7 +382,7 @@ header ul a {
     height: 100%;
     max-width: 1200px; /* Limita el ancho máximo si es necesario */
     transform: translateX(0); /* Posición inicial */
-    transition: transform 0.5s ease-in-out; /* Transición suave */
+    transition: transform 1s ease-in-out; /* Transición suave */
     margin-right: 110px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -396,7 +396,7 @@ header ul a {
     opacity: 1;
     position: relative;
     width: auto;
-    transition: transform 0.5s ease; /*agrega una transicion suave*/
+    transition: transform 1s ease; /*agrega una transicion suave*/
     right: 30px;
 }
 .cincocards.hidden {
@@ -407,7 +407,7 @@ header ul a {
 .cincocards-ocultas {
     display: none;
     opacity: 0;
-    transition: transform 0.5s ease-in-out; /* Transición suave */
+    transition: transform 1s ease-in-out; /* Transición suave */
 }
 .cincocards-ocultas.mostrar {
     display: flex;
