@@ -348,59 +348,68 @@ function encontrarFiguraClickeada(x,y){
     }
 }
 
-// se activa cuando el usuario hace click en algun lugar del canvas
-function mousedown(e){
-    
-    mouseDown = true;
-    let figuraClickeada = encontrarFiguraClickeada(e.offsetX, e.offsetY);
+// Ajusta las coordenadas en base al tamaño del canvas y al zoom
+function ajustarCoordenadas(event) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
 
-    if (figuraClickeada != null){ 
-        lastClicked = figuraClickeada;
-    }
-    else { 
-        lastClicked = null;
-    }
-   
+    const x = (event.clientX - rect.left) * scaleX;
+    const y = (event.clientY - rect.top) * scaleY;
+
+    return { x, y };
 }
 
+// Se activa cuando el usuario hace clic en algún lugar del canvas
+function mousedown(e) {
+    mouseDown = true;
 
-// se activa cuando el usuario mueve una ficha
-function mouseMove(e){
-    if (mouseDown && lastClicked != null && lastClicked.getMovible()){
-        lastClicked.setPosition(e.offsetX, e.offsetY);   
+    // Obtener las coordenadas ajustadas
+    const { x, y } = ajustarCoordenadas(e);
+
+    // Buscar la ficha clickeada
+    let figuraClickeada = encontrarFiguraClickeada(x, y);
+
+    if (figuraClickeada != null) { 
+        lastClicked = figuraClickeada;
+    } else { 
+        lastClicked = null;
+    }
+}
+
+// Se activa cuando el usuario mueve una ficha
+function mouseMove(e) {
+    if (mouseDown && lastClicked != null && lastClicked.getMovible()) {
+        // Obtener las coordenadas ajustadas
+        const { x, y } = ajustarCoordenadas(e);
+
+        // Actualizar posición de la ficha
+        lastClicked.setPosition(x, y);
+
+        // Redibujar todas las fichas
         drawAllFichas();
     }
 }
 
-
-
-// se activa cuando el usuario suelta una ficha
-function mouseUp(){
+// Se activa cuando el usuario suelta una ficha
+function mouseUp() {
     mouseDown = false;
-    if (lastClicked != null){
+
+    if (lastClicked != null) {
         let col = findCol(lastClicked);
         let fila = encontrarFila(col);
-    if (fila != -1) {
-        tablero.casillero[col][fila]= lastClicked;
-        setearPosicion(lastClicked,col,fila);
-        lastClicked.setMovible(false);
-        verificarTurnos();
 
-        //cada vez que se tira una ficha, cuenta a su alrededor si hay 4, si no los hay, resetea el contador.
-        //al poner la ultima ficha la cuarta vez, deberia contar 4 a su alrededor y devolver ganador.
-        //si no los hay, no acierta ningun caso y va al default, donde se resetea el contador.
-       
-    
-        hizoXenLinea(col,fila)
-        
-    }   
-    else if (lastClicked.getMovible()){
-        console.log("hola");
+        if (fila != -1) {
+            tablero.casillero[col][fila] = lastClicked;
+            setearPosicion(lastClicked, col, fila);
+            lastClicked.setMovible(false);
+            verificarTurnos();
+
+            hizoXenLinea(col, fila);
+        } else if (lastClicked.getMovible()) {
             volverPosInicial(lastClicked);
         }
     }
-
-
 }
 
 //verifica cada vez que se tira una ficha si el usuario gano o no.
