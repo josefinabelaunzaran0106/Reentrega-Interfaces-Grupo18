@@ -373,6 +373,7 @@ header ul a {
     background-color: #261818;
     width: 100%;
     box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho */
+    perspective: 1200px; /* Añade profundidad a la rotación */ 
 }
 
 
