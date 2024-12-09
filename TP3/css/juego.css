@@ -8,12 +8,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;  
-}
-
 :root {
     /* seccion colores */
     --acento-luz: #E63946;
@@ -32,6 +26,17 @@ body {
     --especial: #34D919; 
     --acentonuevo: #6700dd;
     --error: #f50606;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Mantiene la dirección en columna */
+    justify-content: center; /* Centra el contenido verticalmente dentro del body */
+    align-items: center;    /* Centra horizontalmente todo el contenido */
+    width: 100%;            /* Asegura que ocupe todo el ancho disponible */
+    min-height: 100vh;      /* Asegura que ocupe toda la altura de la ventana */
+    margin: 0;              /* Elimina márgenes predeterminados */
+    background-color: var(--prim); /* Fondo opcional */
 }
 
 button {
