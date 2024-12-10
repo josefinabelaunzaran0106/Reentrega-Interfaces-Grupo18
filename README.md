@@ -23,3 +23,5 @@ Correcciones de Cristian:
   -La sección del video, el personaje y la caja de video se cruzan. Cambiar la animación para que esto no suceda
   -El form de suscribirse, que haga alguna animación cuando se clickea "Suscribirse"
   -Los sprite sheet del final son muy grandes. El personaje 3 se ve cortado
+
+Link GH-pages: https://josefinabelaunzaran0106.github.io/Reentrega-Interfaces-Grupo18/
