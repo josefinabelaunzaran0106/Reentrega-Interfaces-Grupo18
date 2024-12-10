@@ -1,5 +1,5 @@
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
@@ -266,7 +266,7 @@ header ul a {
 }
 /* Botones del Slider */
 .btn-left,
-.btn-right, .btn-left-cards, .btn-right-cards {
+.btn-right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -281,11 +281,11 @@ header ul a {
 }
 
 .btn-left:hover,
-.btn-right:hover, .btn-left-cards, .btn-right-cards {
+.btn-right:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.btn-left, .btn-left-cards {
+.btn-left {
     left: 0.3em;
 
 }
@@ -302,53 +302,15 @@ header ul a {
 }
 
 
-.btn-left img:hover, .btn-left-cards:hover {
+.btn-left img:hover {
     opacity: 70%;
 }
-.btn-right img:hover, .btn-right-cards:hover {
+.btn-right img:hover {
     opacity: 70%;
 }
-.btn-left-cards{
-    left: -2em; 
-}
-.btn-right-cards{
-    right: -8em;
-}
 
-
-
-/*CARRUSELES*/
 /* CARRUSELES */
-/* Título */
-.tituloCard1, .tituloCard2, .tituloCard3, .tituloCard4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding-top: 10px;
-    position: relative;
-    left: -37em; /* Mueve el título hacia la izquierda, ajusta el valor */
-}
-.tituloCard1 {
-    left: -33.5em; /* Mueve el título hacia la izquierda, ajusta el valor */
-}
-.tituloCard2 {
-    left: -34.9em; /* Mueve el título hacia la izquierda, ajusta el valor */
-}
-.tituloCard3 {
-    left: -32em; /* Mueve el título hacia la izquierda, ajusta el valor */
-}
-.tituloCard4 {
-    left: -35.7em; /* Mueve el título hacia la izquierda, ajusta el valor */
-}
-
-.tituloCard1 h2, .tituloCard2 h2, .tituloCard3 h2, .tituloCard4 h2 {
-    color: var(--blanco);
-    font-size: 1.3em;
-    text-align: left !important; 
-}
-
-/* Contenedor carruseles */
-.carruseles-home {
+.carruseles-home{
     display: flex;
     position: relative;
     overflow: hidden;
@@ -358,29 +320,32 @@ header ul a {
     background-color: #261818;
     width: 100%;
     box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho */
+    perspective: 1200px; /* Añade profundidad a la rotación */ 
 }
+
 
 /* Carrusel contenedor */
 .carruselprincipal {
     width: 100%;
     height: 100%;
-    max-width: 1200px; /* Limita el ancho máximo si es necesario */
     transform: translateX(0); /* Posición inicial */
     transition: transform 1s ease-in-out; /* Transición suave */
-    margin-right: 110px;
+    margin-right: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
+    position: relative;
 }
 
 /* Carrusel */
+
 .cincocards {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    transition: transform 0.5s ease;
+    opacity: 1;
+    position: relative;
+    width: auto;
+    transition: transform 1s ease; /*agrega una transicion suave*/
 }
-
 .cincocards.hidden {
     opacity: 0;
     display: none;
@@ -391,251 +356,140 @@ header ul a {
     opacity: 0;
     transition: transform 1s ease-in-out; /* Transición suave */
 }
-
 .cincocards-ocultas.mostrar {
     display: flex;
     opacity: 1;
 }
 
-/* Card individual */
-/* Efecto en la card al pasar el mouse */
-.card {
-    width: 15em;
-    height: 21em;
-    margin-left: 1.5em;
+
+.cincocards .card,
+.cincocards-ocultas .card {
+    flex: 0 0 calc(33.33% - 1em); /* Cada card ocupa un tercio del ancho */
+    max-width: calc(33.33% - 1em);
+    height: auto; /* Ajuste automático de altura */
+    display: flex;
+    flex-direction: column; /* Para garantizar que las imágenes y el texto queden ordenados */
+    align-items: center;
+    justify-content: space-between;
     background-color: #746464;
     box-shadow: 1px 0px 5px var(--prim-sombra3);
     border: 1px solid var(--negro);
-    z-index: 1;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
-}
+    margin-left: 30px;
 
-.card:hover {
-    transform: scale(1.05) translateY(-5px); /* Aumenta el tamaño y se desplaza hacia arriba */
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
 }
-
-.nombreCard {
-    margin-left: 0.50em;
-    height: auto;
-    font-size: 1em;
-    padding-left: 10px;
-    padding-bottom: 5px;
-}
-
-/* Imagen dentro de cada card */
-.card img {
-    margin: 1em; 
-    width: 13em;
-    height: 13em;
-}
-
-.jugargratis {
-    display: flex;
-    flex-direction: row; /* Cambiamos a "row" para que estén en la misma línea */
-    align-items: center; /* Alinea verticalmente los elementos */
-    justify-content: space-between; /* Separa los elementos hacia los extremos */
-    padding: 0 1em; /* Añade un pequeño espacio interno para que no toquen los bordes */
-}
-
-/* Botón "Gratis" */
-.gratis {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4em; /* Ajusta el ancho para mantener la consistencia */
-    height: 2em; /* Asegúrate de que el alto sea consistente */
-    color: var(--blanco);
-    background-color: #374957;
-    border-radius: 0.2em;
-}
-
-/* Botón "Jugar" */
-.jugar {
-    display: flex;
-    align-items: center; /* Asegura que el botón esté centrado verticalmente */
-}
-
-.jugar button {
-    width: auto; /* Ajusta automáticamente el ancho */
-    padding: 0.5em 1em; /* Tamaño del botón */
-    background-color: rgb(230, 57, 70); /* Color base */
-    border: 2px solid transparent; /* Borde inicial invisible */
-    color: var(--blanco); /* Texto blanco */
-    border-radius: 0.2em;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-    position: relative;
-}
-
-/* Hover con cambio de color y borde */
-.jugar button:hover {
-    background-color: #A12831; /* Cambia al nuevo tono */
-    border-color: #ff4c4c; /* Añade un borde rojo claro */
-    transform: translateY(-2px); /* Eleva ligeramente el botón */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra para el efecto de elevación */
-}
-
-/* Efecto de foco (opcional) */
-.jugar button:focus {
-    outline: none; /* Elimina el contorno por defecto */
-    box-shadow: 0 0 0 3px rgba(161, 40, 49, 0.5); /* Añade un contorno con el tono seleccionado */
-}
-
-.jugar button a {
-    text-decoration: none;
-    color: var(--blanco);
-}
-
-.sacardelcarro {
-    display: flex;
-    align-items: center; /* Asegura que el botón esté centrado verticalmente */
-    padding: 0 1em; /* Añade un pequeño espacio interno para que no toquen los bordes */
-}
-
-.sacardelcarro button {
-    width: auto;
-    padding: 0.5em 1em;
-    background-color: rgb(230, 57, 70); /* Color base */
-    border: none;
-    color: var(--blanco);
-    border-radius: 0.2em;
-    font-size: 1em;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden; /* Contiene el efecto dentro del botón */
-    z-index: 1;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza los cambios */
-}
-
-/* Hover con degradado animado */
-.sacardelcarro button:hover {
-    background: linear-gradient(135deg, #A12831, #e53935); /* Degradado dinámico */
-    color: white; /* Contraste para el texto */
-    transform: scale(1.05); /* Crece ligeramente */
-    box-shadow: 0 4px 10px rgba(161, 40, 49, 0.5); /* Agrega una sombra suave */
-}
-
-/* Animación interna */
-.sacardelcarro button::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 40%);
-    opacity: 0;
-    z-index: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: scale(0.8); /* Inicia más pequeño */
-}
-
-/* Activación del efecto al hover */
-.sacardelcarro button:hover::after {
-    opacity: 1; /* Hace visible el efecto radial */
-    transform: scale(1.5); /* Expande el efecto */
-}
-
-.añadiralcarro {
-    display: flex;
-    flex-direction: row; /* Cambiamos a "row" para que estén en la misma línea */
-    align-items: center; /* Alinea verticalmente los elementos */
-    justify-content: space-between; /* Separa los elementos hacia los extremos */
-    padding: 0 1em; /* Añade un pequeño espacio interno para que no toquen los bordes */
-}
-
-.precio { 
-    display: flex;
-    align-items: center;
-}
-
-.btn-aniadir { 
-    display: flex;
-    align-items: center;
-}
-
-/* Estilo base del botón */
-.btn-aniadir button {
-    padding: 0.5em 1em;
-    background-color: rgb(230, 57, 70); /* Color base */
-    border: 2px solid transparent; /* Borde inicial invisible */
-    color: var(--blanco); /* Texto blanco */
-    border-radius: 0.2em;
-    font-size: 1em;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden; /* Contiene efectos internos */
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1;
-}
-
-/* Hover: Fondo dinámico y animación */
-.btn-aniadir button:hover {
-    background: linear-gradient(45deg, #A12831, #e53935, #ff6f61);
-    background-size: 300%; /* Amplía el tamaño para hacer la animación más fluida */
-    animation: gradientMove 1s linear infinite; /* Movimiento del fondo */
-    color: white; /* Mantiene contraste en el texto */
-    transform: scale(1.1); /* Expande ligeramente el botón */
-    box-shadow: 0 8px 15px rgba(230, 57, 70, 0.5); /* Sombra suave */
-}
-
-/* Pulsación interna al hover */
-.btn-aniadir button::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background-color: rgba(255, 255, 255, 0.3); /* Color semitransparente */
-    border-radius: 50%; /* Forma circular */
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    transition: width 0.4s ease, height 0.4s ease;
-}
-
-.btn-aniadir button:hover::after {
-    width: 300%; /* Se expande para cubrir el botón */
-    height: 300%;
-}
-
-/* Animación de fondo en degradado */
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* botones posición */
-.primero {
-    top: 10.5em;
-}
-
-.segundo {
-    top: 11em;
-}
-
-.tercero {
-    top: 11.5em; /* 58.5em + 26em */
-}
-
-.cuarto {
-    top: 12em; /* 84.5em + 26em */
-}
-
 .hidden {
     display: none;
 }
+.btn-left-cards {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 20px; /* Ajusta la posición horizontal */
+    transform: translateY(-50%); /* Mantén el centrado vertical */
+    z-index: 100; /* Asegúrate de que esté por encima del contenido */
+}
 
+.btn-right-cards {
+    position: absolute;
+    top: 50%;
+    right: -30px; /* Ajusta la posición horizontal */
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+/* Ajustar las imágenes dentro de las tarjetas */
+.card img {
+    width: 100%; /* La imagen ocupa todo el ancho del card */
+    height: 150px; /* Altura fija para mantener la uniformidad */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    margin-bottom: 10px;
+}
+
+/* Ajustar los títulos */
+.tituloCard1, .tituloCard2, .tituloCard3, .tituloCard4 {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 1.2em;
+    color: var(--blanco);
+    text-align: center;
+}
+.btn-left-cards,
+.btn-right-cards {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    padding: 5px; /* Botones más pequeños */
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    width: 50px; /* Ajusta el ancho del botón */
+    height: 50px; /* Ajusta el alto del botón */
+    align-items: center;
+}
+
+
+    /* Imágenes dentro de los botones */
+    .btn-left-cards img,
+    .btn-right-cards img {
+        width: 50px; /* Tamaño reducido para flechas */
+        height: 50px;
+        opacity: 0.8;
+    }
+    .btn-left-cards,
+.btn-right-cards {
+    top: 40%; /* Cambia el punto de referencia */
+
+}
+
+    .btn-left-cards img:hover,
+    .btn-right-cards img:hover {
+        opacity: 1;
+    }
+    .btn-left-cards,
+.btn-right-cards {
+    z-index: 1000; /* Asegúrate de que estén por encima de otros elementos */
+}
+
+    /* Botones de acción (Jugar, Añadir, etc.) */
+    .jugar button,
+    .sacardelcarro button,
+    .btn-aniadir button {
+        padding: 0.4em 0.8em; /* Reduce el tamaño del botón */
+        font-size: 0.9em; /* Reduce el tamaño del texto */
+        border-radius: 0.2em;
+        background-color: rgb(230, 57, 70); /* Color base */
+        color: var(--blanco);
+        
+    }
+
+    .jugar button:hover,
+    .sacardelcarro button:hover,
+    .btn-aniadir button:hover {
+        background-color: #A12831; /* Cambia al nuevo tono */
+        transform: scale(1.05); /* Ligeramente menor escala al hover */
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+    }
+    .jugar button a {
+        text-decoration: none;
+        color: var(--blanco);
+    }
+
+    /* Posición de los botones de acción */
+    .añadiralcarro {
+        flex-direction: column; /* Cambia a disposición vertical si es necesario */
+        align-items: center; /* Centra los botones en dispositivos móviles */
+        padding: 0.5em 0; /* Reduce el espacio alrededor */
+    }
+
+    /* Ajustes de posición de los botones numerados */
+    .primero,
+    .segundo,
+    .tercero,
+    .cuarto {
+        top: 50%; 
+    }
 
 
 
