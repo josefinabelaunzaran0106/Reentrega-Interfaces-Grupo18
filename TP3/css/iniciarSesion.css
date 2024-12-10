@@ -37,6 +37,7 @@ body {
     display: flex;
     background-image: url(../asset/images/fondo.png);
     background-size:cover;
+    background-position: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -50,6 +51,7 @@ body {
     background-color:#261818;
     flex-direction: column;
     align-items:center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 .form-inicio{
     display: flex;
@@ -67,7 +69,6 @@ body {
 .form-inicio label{
     color:var(--blanco);
 }
-
 .emailInput{
     padding-bottom: 20px;
 }
@@ -79,7 +80,7 @@ body {
     padding-bottom: 30px;   
 }
 .inputForm {
-    margin-top: 0em;
+    margin-top: 1em;
     width: 370px;
     border-radius: 1em;
     background-color: white;
@@ -90,6 +91,13 @@ body {
     margin-bottom: 1em;
     padding: 0.7em;
     margin-bottom: 0.8em;
+}
+.inputForm:focus, .btn-inises-container button:focus {
+    outline: 2px solid #E63946;
+    outline-offset: 4px;
+}
+.form-inicio label {
+    margin-bottom: 0.5em;
 }
 .btn-inises-container button {
     width: 370px;
@@ -105,6 +113,7 @@ body {
     font-size: 15px;
     margin-bottom: 1.5em;
     color: var(--blanco);
+    transition: all 0.3s ease-in-out;
 }
 .btn-inises-container button:hover {
     background-color: #A12831;
@@ -129,6 +138,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.olvidasteContraseña:hover {
+    color: var(--acento-luz);
 }
 /*footer*/
 .footerhome{
