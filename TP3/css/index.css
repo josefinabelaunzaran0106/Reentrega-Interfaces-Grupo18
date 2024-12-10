@@ -34,6 +34,7 @@ body {
 .register{
     background-image: url(../asset/images/fondo.png);
     background-size:cover;
+    background-position: center;
     width: auto;
     height: 832px;
     display: flex;
@@ -246,6 +247,7 @@ button {
     height: 30px;
     width: 40px;
 }
+/*FOOTER*/
 .footerhome{
     display: flex;
     flex-direction: column;
