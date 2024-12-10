@@ -1,2 +1,1684 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    /* seccion colores */
+    --acento-luz: #E63946;
+    --acento: #A12831;
+    --acento-oscuro: #271010;
+    --prim: #271010;
+    --prim-luz1: #261818;
+    --prim-luz2: #393131;
+    --prim-luz3: #0D85F5;
+    --prim-sombra1: #FEF9F9;
+    --prim-sombra2:  #374957;
+    --prim-sombra3: #746464;
+    --blanco: #FEF9F9;
+    --blanco-oscuro: #E5F4FF;
+    --negro: #23282B;
+    --especial: #34D919; 
+    --acentonuevo: #6700dd;
+    --error: #f50606;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Mantiene la dirección en columna */
+    justify-content: center; /* Centra el contenido verticalmente dentro del body */
+    align-items: center;    /* Centra horizontalmente todo el contenido */
+    width: 100%;            /* Asegura que ocupe todo el ancho disponible */
+    min-height: 100vh;      /* Asegura que ocupe toda la altura de la ventana */
+    margin: 0;              /* Elimina márgenes predeterminados */
+    background-color: var(--prim); /* Fondo opcional */
+}
+
+button {
+    background-color: #E63946;
+    display: flex;
+    width: 345px;
+    height: 54px;
+    align-items: center;
+    justify-items: center;
+}
+
+.primariosombra2{
+    background-color: rgba(57, 49, 49, 1);
+}
+
+.navhome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3.5em;
+}
+
+.logoplaneta {
+    width: 80%;
+    height: 50%;
+}
+
+.hamburguer-menu{
+    width: 15%;
+}
+
+.hamburguer-menu button{
+    margin-left: 1em;
+    margin-right: 1em;
+    border: 0;
+}
+
+#imgburguer {
+    width: 1rem;
+    height: 1rem;
+}
+
+.logoretrogemas{
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.imglogoretrogemas{
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+}
+
+.titulo h1{
+    margin-left: 0.25em;
+    font-size: medium;
+}
+
+.iconosnav{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    padding-right: 1em;
+    padding-left: 0.5em;
+}
+
+.buscarnav{
+    width: 0%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.img-buscar {
+    width: 100%;
+    display: flex;
+    width: 75%;
+}
+
+.carritoDesplegado{
+    padding: 0.1em;
+    width: auto;
+    height: auto;
+    background-color: var(--prim-sombra3);
+    position: absolute;
+    
+    top: 7.5%;
+    display: flex;
+    z-index: 3;
+    color: var(--negro);
+
+}   
+
+.carritoDesplegado{
+    display: none;
+}
+
+.carrito button {
+
+    width: 1em;
+    height: 1em;
+    border: 0;
+    justify-content: right;
+}
+
+.carrito button img {
+    width: 100%;
+    
+}
+
+.perfil, .carrito{
+    width: auto;
+    height: 50%;
+    text-align: right;
+    margin-right: 10px;
+    padding-left: 5px;
+}
+
+.perfil button{
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 9em;
+    margin-right: 0.8em;
+    border: 0;
+}
+
+.perfil button img {
+    width: 100%;
+    border-radius: 50%;
+    object-fit:cover;
+    display: flex;
+    margin-right: 1em;
+}
+
+.footerhome{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: rgba(57, 49, 49, 1);;
+    width: auto;
+}
+
+.footerhome button {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: auto;
+    background-color: rgba(57, 49, 49, 1);;
+    color: var(--blanco);
+    cursor: pointer;
+}
+
+/* desplegables footer */
+.btnfooter button li{
+    font-size: 8px;
+    color: var(--blanco);
+}
+
+.btnfooter{
+    font-size: 8px;
+    color: var(--blanco);
+}
+
+.footerulhidden {
+    display: none;
+}
+
+.footerulhidden li a{
+    font-size: 8px;
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.footerhome div ul {
+    display: none;
+}
+
+.footerhome{
+    padding-left: 5%;
+}
+
+.footerhome div ul.show {
+    display: block;
+    color: var(--blanco);
+    font-size: 8px;
+    margin-left: 1.5em;
+    list-style: none;
+}
+
+.footerhome div ul li:hover {
+    color: var(--prim);
+}
+
+.footerhome div ul li {
+    margin-bottom: 0.5em;
+    color: var(--blanco);
+}
+
+.btn {
+    border-radius: 0.2em;
+    justify-content: center;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    background-color: #271010;
+    background-size: cover;
+    overflow: hidden;    
+}
+
+.h2 {
+    width: auto;
+    font-size: 12px;
+    margin-left: 1.50em;
+    margin-top: 0.50em;
+    margin-bottom: 0.50em;
+}
+
+.h2 h2 {
+    font-size:10px;
+}
+
+.h3 {
+    font-size: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Seccion Juego */
+
+.main-game-container {
+    max-width: 1340px;
+    width: 100%;
+    height: auto;
+    background-color: #271010;  /* Variable: acento v3*/
+    background-size: cover;
+    display: flex;
+    justify-content:center;
+}
+
+.sub-container {
+    width: 90%;
+    height: auto;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    background-color: #271010;  /* Variable: acento v3*/
+}
+
+.sub-sub-container {
+    width: 90%;
+}
+
+.broadcrum {
+    display: flex;
+    margin-bottom: 0.5em;
+    align-items: left;
+    flex-direction: column;
+}
+
+.broadLink {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.broadLink:hover {
+    color: var(--prim-luz2);
+    cursor: pointer;
+
+}
+
+.TextosBroadcrum {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.logoH1 {
+    display: flex;
+    align-items: center;
+}
+
+.TextosBroadcrum h1 {
+    font-family: Roboto;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 0.25em;
+}
+
+.TextosBroadcrum h3 {
+    font-family: Roboto;
+    font-size: 0.9rem;
+    font-style: bold;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.TextosBroadcrum p {
+    font-family: Roboto;
+    font-size: 0.9rem;
+    font-style: bold;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.LogoBroadcrum img {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid white;
+}
+
+.linegameone {
+    height: 0.04em;
+    background-color: var(--blanco);
+}
+
+.game-container {
+    margin-top: 0.7em;
+    height: 26em;
+    position: relative;
+}
+
+li:hover {
+    color: var(--prim);
+}
+
+.cerrarSesion {
+    color: var(--prim);
+}
+
+.publicidad{
+    width: 30%;
+    height: 350px;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.publicidad-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.game-container img {
+    width: 50%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.info-game {
+    margin-top: 2em;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    width: 100%;
+    background-color: #271010;
+}
+
+.info-game-Instrucciones{
+    margin-top: 4em;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(2, 9, 16);
+    padding-bottom:30px;
+   
+}
+
+.deQueTrata {
+    text-align: center;
+    padding-top: 2em;
+    width: 92%;
+}
+
+.descripcion {
+    padding-top: 2em;
+}
+
+.descripcion p {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.125em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: var(--blanco);
+}
+.descripcionJuego {
+    display: inline-block;
+    width: 100%;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: var(--blanco);
+}
+.descripcionJuego :hover {
+    color: var(--blanco);
+}
+
+.deQueTrata h1 {
+    font-family: Poppins;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+}
+
+.deQueTrata .imgsGame {
+    display: flex;
+    margin-top: 2.5em;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.imgsGameJuego {
+    margin-top: 10px;
+    width: 60em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imgsGameJuego img {
+    width: 23.5%;
+    height: 10em;
+}
+.videosJuego {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.videosJuego video {
+    width: 45%;
+    height: 19.79169em;
+}
+
+.MomentosIncreiblesJuego {
+    margin-top: 5em;
+    height: auto;
+    margin-bottom: 2em;
+}
+
+.MomentosIncreiblesJuego h1 {
+    font-family: Roboto;
+    font-size: 1.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+}
+
+.MomentosIncreibles {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.videos {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.videos video {
+    width: 45%;
+    height: 10em;
+    object-fit:cover;
+}
+
+.imgsGame {
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgsGame img {
+    width: 45%;
+    height: 10em;
+    object-fit: fill;
+}
+
+.imgsRedes {
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+}
+
+.imgsRedes img {
+    width: 30%;
+    height: 3em;   
+}
+
+.links {
+    font-size: 1.6em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+    list-style: none;
+    text-align: left;
+   
+}
+
+.listaLinks {
+    width: 100%;
+}
+.listaLinks li a {
+    font-size: 12px;
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.lineacomentarios {
+    width: 100%;
+    height: 0.2em;
+    background-color: var(--blanco);
+}
+
+.ult-coment-titulo {
+    width: 100%;
+    display: flex;
+    justify-content:left;
+}
+
+.ult-coment-titulo h2 {
+    font-size: 1.6em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+    
+}
+
+.tituloComentarios {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5%;
+    font-size: 14px;
+}
+
+.dejaTuComentario {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 2.5em;
+    width: 100%;
+}
+
+.tituloLogoInput {
+    display: flex;
+    flex-direction: column;
+    color: var(--blanco);
+
+}
+
+.ponerReseña {
+    
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 2em;
+}
+
+.inputReseña {
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputReseña input {
+    width: 100%;
+    height: 13.5em;
+    background-color: var(--prim-sombra3);
+    border-radius: 0.3125rem;
+    border: var(--blanco) solid 0.075em;
+}
+
+.calificarJuego {
+    display: flex;
+    margin-top: 0.5em;
+    justify-content: left;
+    align-items: center;
+}
+
+.calificarJuego p {
+    font-size: 1.625em;
+    margin-right: 0.5em;
+}
+
+.estrellas {
+    width: 9.70063rem;
+    height: 1.48313rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.estrellas img {
+    width: 1.48288rem;
+    height: 1.5rem;
+    margin-right: 0.4em;
+}
+
+.btn-comment {
+    display: flex;
+    justify-content:right;
+    margin-top: 0.5em;
+    margin-bottom: 2.1em;
+    padding-right: 2%;
+}
+
+.btn-comment button {
+    width: 7.33481rem;
+    height: 2.8125rem;
+    border-radius: 0.375em;
+    background-color: rgba(116, 100, 100, 1);
+    color: var(--blanco, #F5FBFF);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.03rem;
+    border: 0;
+}
+
+.reseñas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.reseña {
+    width: 100%;
+    height: 8.89863rem;
+    background-color: rgba(116, 100, 100, 1);
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    color: var(--blanco);
+    border: var(--blanco) solid 0.2em;
+}
+
+.inputReseña {
+    width: 100%;
+    height: 12rem;
+    background-color: rgba(57, 49, 49, 1);
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    color: var(--blanco);
+    border: var(--blanco) solid 0.2em;
+}
+
+.reseñaInterna {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgUser {
+    width: 20%;
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-right: 2%;
+    display: flex;
+}
+
+.textoReseña {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2%;
+
+}
+
+.imgUser img {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    object-fit:cover;
+    border: var(--blanco) solid 0.2em;
+}
+
+.cj1Reseña {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+    padding-left: 2%;
+}
+
+.cj1Reseña img {
+    width: 2.93394em;
+    height: 2.5em;
+} 
+
+.username {
+    font-family: Roboto;
+    font-size: 1.625em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: white;
+}
+
+.fecha {
+     font-family: Roboto;
+    font-size: 1.42106rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.04263rem;
+}
+
+.estrReseña {
+    width: 9.70063em;
+    height: 1.5em;
+}
+
+.estrReseña img {
+    width: 9.70063rem;
+    height: 1.5rem;
+}
+
+.cj2Reseña {
+    margin-top: 1em;
+    width: 100%;
+    height: 3.52238rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+}
+
+.cj2Reseña p {
+    width: 38em;
+}
+
+.inputReseña .cj2Reseña p {
+    background-color: rgba(116, 100, 100, 1);
+    border-radius: 0.5em;
+    padding: 2%;
+}
+
+
+/* PERFIL */
+
+.perfilDesplegado, .carritoDesplegado, .hamburguer-menu-desplegado {
+    display: none;
+}
+
+.perfilDesplegado.show, .carritoDesplegado.show, .hamburguer-menu-desplegado.show {
+    padding: 0.1em;
+    width: 8.5rem;
+    height: 7rem;
+    left: 66rem;
+    background-color: rgba(57, 49, 49, 1);
+    position: absolute;
+    top: 3.5rem;
+    display: flex;
+    z-index: 3;
+    color: var(--blanco);
+}
+
+.perfilDesplegado.show {
+    right: 0;
+} 
+
+
+.carritoDesplegado.show {
+
+    /* left: 15.8em; */
+    right: 8%;
+} 
+
+
+.hamburguer-menu-desplegado.show {
+    left: 0;
+}
+
+
+
+.perfilDesplegado.show ul, .carritoDesplegado.show ul, .hamburguer-menu-desplegado.show ul {
+    font-size: 8px;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    padding-left: 0.5em;
+    list-style: none;
+}
+
+.perfilDesplegado.show li, .carritoDesplegado.show li , .hamburguer-menu-desplegado.show li {
+    text-decoration: none;
+    color: var(--blanco);
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+}
+.perfilDesplegado.show li a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+
+.perfilDesplegado.show ul a:hover, .carritoDesplegado.show ul a:hover, .hamburguer-menu-desplegado.show ul a:hover {
+    text-decoration: none;
+    color: var(--prim);
+}
+
+
+/* Hovers botones*/
+
+/* primer-hover-boton */
+.primer-hover-boton {
+    /* color de fuente */
+   border-radius: 3px; /* redondear bordes */
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .primer-hover-boton:hover {
+   color: #fff;/* color de fuente hover */
+ }
+ .primer-hover-boton::after {
+   content: "";
+   background: rgba(161, 40, 49, 1); /* color de fondo hover */
+   position: absolute;
+   z-index: -1;
+   padding: 16px 20px;
+   display: block;
+   left: -20%;
+   right: -20%;
+   top: 0;
+   bottom: 0;
+   transform: skewX(45deg) scale(0, 1);
+   transition: all 0.3s ease;
+ }
+ .primer-hover-boton:hover::after {
+   transition: all 0.3s ease-out;
+   transform: skewX(45deg) scale(1, 1);
+ }
+
+/* segundo hover boton*/
+
+.segundo-hover-boton {
+/* color de fondo */
+   padding: 16px 20px;
+   border-radius: 3px; /* redondear bordes */
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.segundo-hover-boton:hover {
+   color: #fff; /* color de fuente hover */
+}
+
+.segundo-hover-boton::after {
+   content: "";
+   background: rgba(161, 40, 49, 1); /* color de fondo hover */
+   position: absolute;
+   z-index: -1;
+   padding: 16px 20px;
+   display: block;
+   top: 0;
+   bottom: 0;
+   left: -100%;
+   right: 100%;
+   transition: all 0.35s;
+}
+
+.segundo-hover-boton:hover::after {
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   transition: all 0.35s;
+}
+
+
+/* tercer hover boton */
+
+.tercer-hover-boton {
+     /* color de fondo */
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.tercer-hover-boton::before, .tercer-hover-boton::after  {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: -50%;
+    background: var(--acento-luz); /* color de fondo hover */
+    transition: all 0.3s ease-in-out;
+}
+
+.tercer-hover-boton::after {
+    left: 100%;
+}
+
+.tercer-hover-boton:hover {
+    color: #fff; /* color de fuente hover */
+}
+
+.tercer-hover-boton:hover::before {
+    left: 0;
+}
+
+.tercer-hover-boton:hover::after {
+    left: 50%;
+}
+
+/* cuarto hover boton */
+
+.cuarto-hover-boton {
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8px;
+}
+
+.cuarto-hover-boton:hover {
+    color: #fff;/* color de fuente hover */
+}
+.cuarto-hover-boton::after {
+    content: "";
+    background: var(--acento-luz); /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0) rotate(-180deg);
+    transition: all 0.3s ease;
+}
+.cuarto-hover-boton:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1) rotate(0deg);
+}
+
+/* menus desplegados desktop */
+.perfilDesplegado.show {
+    width: 10em;
+    height: 16em;
+    position: absolute;
+    top:  4.8125rem;
+    left: 69.85em;
+    display: flex;
+    padding: 0.5em 0.5em 2.5em 1.5em;
+    text-align: left;
+    align-items: center;
+    opacity: 0.9;
+    justify-content: center;
+    z-index: 3;
+} 
+
+.perfilDesplegado.show ul li {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    text-align: left;
+    
+}
+
+.perfilDesplegado.show ul li:first-child {
+    margin-top: 20%;
+    
+}
+
+.perfilDesplegado.show {
+    width: 10em;
+    height: 16em;
+    position: absolute;
+    top:  4.8125rem;
+    left: 69.5rem;
+    display: flex;
+    padding: 0.5em 0.5em 2.5em 1.5em;
+    background-color: rgba(57, 49, 49, 1);
+    text-align: left;
+    align-items: center;
+    opacity: 0.9;
+    justify-content: center;
+    z-index: 3;
+} 
+
+.carritoDesplegado.show ul li {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    text-align: left;
+}
+
+.hamburguer-menu-desplegado.show {
+
+    width: 7em;
+    height: 15em;
+    background-color: rgba(57, 49, 49, 1);
+    position: absolute;
+    top:  4.8125rem;
+    left: 0;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    z-index: 3;
+}
+
+.hamburguer-menu-desplegado.show ul li {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    text-align: left;
+}
+
+header ul {
+    list-style: none;
+    color: var(--blanco);
+}
+
+header ul a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+button {
+    cursor: pointer;
+}
+
+/* nav responsive */
+
+.navheader{
+    max-width: 1340px;  
+}
+
+.primariosombra2{
+    background-color: rgba(57, 49, 49, 1);
+}
+
+.navhome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.8125rem;
+
+}
+.logoplaneta {
+    width: 18em;
+    height: 2em;
+}
+
+
+.hamburguer-menu button{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1.5em;
+    border: 0;
+}
+.logoretrogemas{
+    width: 40%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.buscarnav{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.img-buscar {
+    width: 100%;
+    display: flex;
+    width: 75%;
+      
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    height: 4.6em;
+}
+
+.titulo h1 {
+   font-size: 2em;
+}
+
+
+
+.iconosnav{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.carrito {
+    width: auto;
+}
+
+.carrito button {
+   width: 1.96938rem;
+    height: 1.875rem;
+    border: 0;
+}
+.carrito button img {
+    width: 100%;
+}
+
+#imgburguer {
+    width: 3em;
+    height: 3em;
+}
+
+.perfil button{
+    width: 4rem;
+    height: 3.6875rem;
+    border-radius: 9em;
+    margin-left: 3.5em; /* mover carrito */
+    margin-right: 0.5em;
+    border: 0;
+}
+.perfil button img {
+    width: 70%;
+}
+/*footer */
+
+.footerhome{
+    max-width: 1340px;
+    display: flex;
+    flex-direction: row;
+    height: 12em;
+}
+
+.footerhome button {
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: 7em;
+    margin-left: 0;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: default;
+    margin-bottom: 0.5em;
+}
+
+.footerhome button img {
+    display: none;
+}
+
+.footerhome .footerulhidden {
+    display: flex;
+}
+
+.footerhome {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.footerulhidden {
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+}
+
+.footerhome div {
+    text-align: left;
+    margin-top: 1em;
+}
+
+
+.footerhome ul li {
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5em;
+}
+.footerhome ul {
+    margin-right: 1em;
+}
+.diverror {
+    background-color: red;
+}
+.footerhome div ul.show {
+   margin: 0;
+}
+
+
+
+
+
+
+
+.juegoColocado {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+}
+
+
+.imgfondo {
+    width: 100%;
+    height: 100%;   
+}
+.h1 {
+    margin-top: 1em;
+    text-align: center;
+}
+
+#game-container-fix{
+    padding-top: 4em;
+    background-color: rgb(2, 9, 16);
+}
+
+.timer {
+    margin-top: 7em;
+    height: 2.40em;
+    background-color: var(--acento);
+    width: 24em;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    border-radius: 6px;
+    position: absolute;
+    top: -10.5em;
+    right: 21em;
+    box-shadow: 1px 0px 5px var(--acento-luz);
+}
+.timer p {
+    font-size: 28px;
+    color: var(--blanco);
+    display: inline-block; /*se ajusta al contenido del parrafo*/
+    width: 4em;
+    height: 2.30rem;
+    background-color: var(--acento-luz);
+    border-radius: 6px;
+}
+
+.resetButton {
+    display: flex;
+    align-items: center;
+    width: 9em;
+    height: 2.30rem;
+    background-color: var(--acento-luz);
+    color: var(--blanco);
+    border-radius: 8px;
+}
+
+.resetButton img {
+    width: 2em;
+    height: 2em;
+    margin-right: 0.25em;
+}
+.mensaje {
+    margin-top: 10em;
+    background-color: var(--acento-luz);
+    width: 25em;
+    height: 20em;
+    border-radius: 8px;
+    position:absolute;
+    top:-2.7em;
+    right: 20em;
+    box-shadow: 1px 0px 5px var(--prim-sombra3);
+}
+.mensaje p {
+    text-align: center;
+    font-size: 24px;
+}
+.mensaje div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4em;
+}
+.mensajediv {
+    padding-top: 2em;
+}
+.btn-danger {
+    display: flex;
+    width: 9em;
+    height: 2.30rem;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px var(--error);
+    border-radius: 6px;
+    color: var(--error);
+    background-color: var(--prim-sombra3);
+}
+
+.btn-sucess {
+    display: flex;
+    width: 9em;
+    height: 2.30rem;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+    color: var(--blanco);
+    background-color: var(--acento-luz);
+}
+
+.menusjuego {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+
+.elegirpersonajes{
+    background-color: rgb(2, 9, 16);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 32em;
+    margin-top:200px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.seleccionado {
+    border: 5px solid var(--acento-luz);
+    box-shadow: 0 0 10px white;
+}
+
+.tablerojuego{
+    background-color: rgb(2, 9, 16);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 30em;
+    margin-top:100px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    
+}
+
+.modosJuego {
+    bottom: -7em;
+    height: 528px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.column{
+    display: flex;
+    flex-direction: row;
+}
+.hiddendos {
+    display: none;
+    position: absolute;
+}
+.elegirpersonajes div {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 1em; 
+}
+
+.elegirpersonajes img {
+    width: 5em;
+}
+
+.elegirJugador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.elegirJugadordiv{
+    display: flex;
+    flex-direction: row;
+}
+
+.fichasElegir {
+    position: absolute;
+    bottom: -6.85em;
+    height: 528px;
+}
+
+.margendiv{
+    margin:0;
+} 
+
+.imgfichas {
+    margin: 0 2em; /* Añade espacio entre las imágenes */
+}
+.imgfichas img {
+    border-radius: 50%;
+    
+}
+.img4enlinea{
+ display: flex;
+ justify-content: space-between;
+ padding-left: 15px;
+ padding-right: 15px;
+ flex-direction: column;
+ padding-top: 10px;
+    
+}
+.img4enlinea img{
+display: flex;
+ width: 150px;   
+ height: 150px;
+ justify-content: space-between;
+    
+}
+
+.elegirtableros {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elegirtableros div {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    align-items:center ;
+}
+
+.tituloh2 {
+    font-size: larger;
+    text-align: center;
+}
+.tituloh1 {
+    font-size: 28px;
+    margin-top: 3.2em;
+}
+.contenedortitulo{
+    width: 100%;
+}
+.divflex {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 2em;
+}
+
+.divbackground {
+    display: flex;
+    flex-direction: column; 
+    height: 40em;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+
+.divcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6em; 
+    height: 350px;
+
+}
+.divFormMinutos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+.divFormMinutos form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.inputMinutos{
+    margin-top: 0.25em;
+    height: 2.5em;
+    margin-bottom: 0.25em;
+    color: #000;
+}
+.btnabsoluto {
+    width: 5em; 
+    height: 1.8em;
+    
+}
+
+
+.resaltado{
+    color: white;
+}
+.btnpausar{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 8px;
+    width: 9em;
+    background-color: var(--acento-luz);
+    height: 2.8em;
+}
+
+.btnpausar img {
+    width: auto;
+    height: auto;
+}
+
+.turno {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top : -2.6em;
+    right: 0;
+    width: 16em;
+    height: 2.8em;
+    text-align: center;
+    justify-content: center;
+}
+
+.turno span {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.divGanador {
+    top:13.3em;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: absolute;
+    height: 8em;
+    left: 21.5em;
+    width: 26em;
+    text-align: center;
+    background-color: var(--prim-sombra2);
+    border-radius: 8px;
+    border: 0.2em solid var(--blanco);
+    box-shadow: 1px 0px 15px var(--acento-luz);
+
+}
+
+.textoGanador {
+
+    color: white;
+    font-size: 30px;
+    text-shadow: 0px 0px 9px var(--acento-luz);
+}
+.opacidad {
+    top: -20em;
+    position: relative;
+    height: 8em;
+    width: auto;
+    background-color: rgba(0, 13, 26, 0.1);   
+}
+
+.lineablanca {
+    background-color: var(--acento-luz);
+    height: 0.15em;
+    width: 100%;
+    opacity: 0.7;
+    /* text-shadow: 1px 1px 2px var(--acento-luz), 0 0 1em var(--acento), 0 0 0.2em var(--prim-luz2); */
+    box-shadow: 0px 0px 2px 1px var(--);
+}
+
 
   

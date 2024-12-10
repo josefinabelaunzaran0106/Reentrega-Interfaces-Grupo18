@@ -79,7 +79,7 @@
                 <div id="game-container-fix">
                     <section class="game-container">
                         <div class="juegoColocado">
-                            <canvas width="1090" height="525" id="canvas"></canvas>
+                            <canvas width="1090" height="555" id="canvas"></canvas>
                             <div class="hidden" id="opacidad"></div>
                             <div class="hidden" id="divGanador">
                                 <h1 id="mensajeGanador" class="textoGanador"></h1>
@@ -164,28 +164,33 @@
                                             <h1 class="titulojugador jugador resaltado">Jugador 1</h1>
                                             <div>
                                                 <div class="imgfichas"><img src="imgs/fichas/pacman1.png" id="imgFicha"
-                                                        data-player="1" alt="Hombre de negro"></div>
+                                                        data-player="1" data-group="buenos" alt="pacman"></div>
                                                 <div class="imgfichas"><img src="imgs/fichas/pacman2.png" id="imgFicha"
-                                                        data-player="1" alt="Hombre de negro"></div>
+                                                        data-player="1" data-group="buenos" alt="pacman"></div>
                                                 <div class="imgfichas"><img src="imgs/fichas/pacman3.png" id="imgFicha"
-                                                        data-player="1" alt="Hombre de negro"></div>
+                                                        data-player="1" data-group="buenos" alt="pacman"></div>
                                                 <div class="imgfichas"><img src="imgs/fichas/pacman4.png" id="imgFicha"
-                                                        data-player="1" alt="Hombre de negro"></div>
+                                                        data-player="1" data-group="buenos" alt="pacman"></div>
                                             </div>
                                         </div>
 
                                         <div class="lineablanca"></div>
+
                                         <div class="elegirJugador">
                                             <h1 class="titulojugador jugador resaltado">Jugador 2</h1>
                                             <div class="margendiv">
                                                 <div class="imgfichas"><img src="imgs/fichas/fantasmita1.png"
-                                                        id="imgFicha" data-player="2" alt="Alien"></div>
+                                                        id="imgFicha" data-player="2" data-group="malos" alt="fantasma">
+                                                </div>
                                                 <div class="imgfichas"><img src="imgs/fichas/fantasmita2.png"
-                                                        id="imgFicha" data-player="2" alt="Alien"></div>
+                                                        id="imgFicha" data-player="2" data-group="malos" alt="fantasma">
+                                                </div>
                                                 <div class="imgfichas"><img src="imgs/fichas/fantasmita3.png"
-                                                        id="imgFicha" data-player="2" alt="Alien"></div>
+                                                        id="imgFicha" data-player="2" data-group="malos" alt="fantasma">
+                                                </div>
                                                 <div class="imgfichas"><img src="imgs/fichas/fantasmita4.png"
-                                                        id="imgFicha" data-player="2" alt="Alien"> </div>
+                                                        id="imgFicha" data-player="2" data-group="malos" alt="fantasma">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -498,6 +503,7 @@
     <script src="js/juego/Tablero.js"></script>
     <script src="js/juego/Juego.js"></script>
     <script src="js/otros.js"></script>
+    <script src="js/estrellas.js"></script>
 </body>
 
 </html>
