@@ -179,80 +179,46 @@ function seleccionarPersonajes() {
 
 
 //se encarga de crear cada tablero depende de cual elija el usuario
-function cargarJuego(){
-    
-    btn4enlinea.addEventListener('click', function (){
-        reset();
-        if(mensaje == " ") {
-            timer();
-        }
-        contadortimer.classList.remove("hidden");
-        contadortimer.classList.add("timer");
-        modoJuego.classList.remove("modosJuego");
-        modoJuego.classList.add("hiddendos");
-        crearXenLinea(7,6,4,28,70,110,
-            20,21,60);
-            clearCanvas();
-            drawTablero();
-            rellenarTablero();
-            crearPosicionesFicha();
-            crearTodasFichas();
-    } );
-    
-    btn5enlinea.addEventListener('click', function(){
-        reset();
-        if(mensaje == " ") {
-            timer();
-        }
-        contadortimer.classList.remove("hidden");
-        contadortimer.classList.add("timer");
-        modoJuego.classList.remove("modosJuego");
-        modoJuego.classList.add("hiddendos");
-        crearXenLinea(8,7,5,28,62,100,15,28,60);
-        clearCanvas();
-        drawTablero();
-        rellenarTablero();
-        crearPosicionesFicha();
-        crearTodasFichas();
+function cargarJuego() {
+    function manejarSeleccion(tableroId, crearXenLineaArgs) {
+        // Obtener el botón correspondiente
+        const btn = document.getElementById(tableroId);
 
-    });
-    
-    btn6enlinea.addEventListener('click', function (){
-        reset();
-        if(mensaje == " ") {
-            timer();
-        }
-        contadortimer.classList.remove("hidden");
-        contadortimer.classList.add("timer");
-        modoJuego.classList.remove("modosJuego");
-        modoJuego.classList.add("hiddendos");
-        crearXenLinea(9,8,6,26,55,88,12,36,55);
-        clearCanvas();
-        drawTablero();
-        rellenarTablero();
-        crearPosicionesFicha();
-        crearTodasFichas();
+        btn.addEventListener('click', function () {
+            // Agregar clase para marcar el tablero seleccionado
+            btn.classList.add('seleccionado');
 
-    });
-    
-    btn7enlinea.addEventListener('click', function (){
-        reset();
-        if(mensaje == " ") {
-            timer();
-        }
-        contadortimer.classList.remove("hidden");
-        contadortimer.classList.add("timer");
-        modoJuego.classList.remove("modosJuego");
-        modoJuego.classList.add("hiddendos");
+            // Esperar 500ms antes de continuar
+            setTimeout(() => {
+                btn.classList.remove('seleccionado'); // Remover la clase después de medio segundo
 
-        crearXenLinea(10,9,7,20,49.5,80,9.5,45,42);
-        clearCanvas();
-        drawTablero();
-        rellenarTablero();
-        crearPosicionesFicha();
-        crearTodasFichas();
-    });
+                // Resto del flujo del juego
+                reset();
+                if (mensaje == " ") {
+                    timer();
+                }
+                contadortimer.classList.remove("hidden");
+                contadortimer.classList.add("timer");
+                modoJuego.classList.remove("modosJuego");
+                modoJuego.classList.add("hiddendos");
+                crearXenLinea(...crearXenLineaArgs);
+                clearCanvas();
+                drawTablero();
+                rellenarTablero();
+                crearPosicionesFicha();
+                crearTodasFichas();
+            }, 500);
+        });
+    }
+
+    // Asociar cada botón a su acción y parámetros
+    manejarSeleccion("4enlinea", [7, 6, 4, 28, 70, 110, 20, 21, 60]);
+    manejarSeleccion("5enlinea", [8, 7, 5, 28, 62, 100, 15, 28, 60]);
+    manejarSeleccion("6enlinea", [9, 8, 6, 26, 55, 88, 12, 36, 55]);
+    manejarSeleccion("7enlinea", [10, 9, 7, 20, 49.5, 80, 9.5, 45, 42]);
 }
+
+
 
 
 //crea el tablero con la cantidad de fichas  que se elijan y las fichas de arriba y de los jugadores
