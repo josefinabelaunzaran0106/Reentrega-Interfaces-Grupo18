@@ -903,10 +903,9 @@ function mostrarMensajeReset(){
     mensajeReinicio.classList.add("mensaje");
 }
 
-//resetea el juego poniendo las fichas en su pos original, resetea el tablero seteandolo en null, vuelve el juego al menu principal
 function reset() {
     envio = false;
-    //mostrar primero menu elegir modo de juego al reiniciar partida
+    // Mostrar primero el menú de elegir modo de juego al reiniciar partida
     timerDom.innerHTML = " ";
     elegirpersonajes.classList.add("elegirpersonajes");
     elegirpersonajes.classList.remove("hidden");
@@ -915,48 +914,55 @@ function reset() {
     modoJuego.classList.remove("elegirpersonajes");
     contadortimer.classList.remove("timer");
     contadortimer.classList.add("hidden");
-    btnElegirMinutos.classList.add("hidden"); //lo oculta al btn y luego lo muestra
+    btnElegirMinutos.classList.add("hidden"); // Lo oculta al btn y luego lo muestra
     turnos.innerHTML = " ";
     turnos.classList.remove("hidden");
     turnos.classList.add("resaltado");
     btnElegirMinutos.classList.remove('btn', 'colorblanco', 'btnañadiralcarro', 'h4', 'tercer-hover-boton', 'btnabsoluto');
 
     stop = false;
-    minutos = cantMinutosMaximo-1;
+    minutos = cantMinutosMaximo - 1;
     segundos = 59;
 
-
-    if(tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
-        for (let j= 0; j< tablero.getColumnas(); j++){
+    // Limpiar el tablero
+    if (tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
+        for (let j = 0; j < tablero.getColumnas(); j++) {
             for (let i = 0; i < tablero.getFilas(); i++) {
-                if (tablero.casillero[j][i] != null){
-                    tablero.casillero[j][i] = null; //seteamos null para que el tablero se vuelva vacio.
+                if (tablero.casillero[j][i] != null) {
+                    tablero.casillero[j][i] = null; // Seteamos null para que el tablero se vuelva vacío.
                 }
             }
         }
     }
-    
-    if(fichas.length > 0) {
-        for (let i= 0; i< fichas.length; i++){
+
+    // Restablecer posición de las fichas
+    if (fichas.length > 0) {
+        for (let i = 0; i < fichas.length; i++) {
             fichas[i].setMovible(true);
             let posinix = fichas[i].getPosIniX();
             let posiniy = fichas[i].getPosIniY();
-            fichas[i].setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
+            fichas[i].setPosition(posinix, posiniy); // Vuelve bruscamente de momento a la posición original
             fichas[i].draw();
         }
     }
 
-    if(fichas.length > 0) {
+    if (fichas.length > 0) {
         clearCanvas();
         drawTablero();
         drawAllFichas();
     }
 
+    // Restablecer las selecciones de los personajes
     primerValor = null;
     segundoValor = null;
 
+    // Eliminar la clase 'seleccionado' de todas las imágenes de fichas
+    imagenesficha.forEach(img => img.classList.remove("seleccionado"));
 
+    // Volver a habilitar los eventos de clic para permitir nuevas selecciones
+    imagenesficha.forEach(img => img.addEventListener("click", seleccionarPersonajes));
 }
+
 
 let clickeo = false;
 let btnPausar = document.getElementById("btnpausar");
