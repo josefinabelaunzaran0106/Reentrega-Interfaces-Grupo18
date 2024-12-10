@@ -33,6 +33,7 @@ body {
 }
 .registro{
     background-image: url(../asset/images/fondo-registro.png);
+    background-position: center;
     background-size:cover;
     width: auto;
     height: 1161px;
@@ -51,6 +52,19 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.registro-container {
+    animation: fadeIn 0.8s ease-in-out;
 }
 .formularioRegistro{
     background-color:#3B3131;
@@ -91,6 +105,11 @@ label{
     margin-bottom: 1em;
     padding: 0.7em;
     margin-bottom: 0.8em;
+}
+.inputForm:hover, .inputForm:focus {
+    border-color: #E63946; /* Destaca el campo activo */
+    outline: none; /* Elimina el borde azul predeterminado */
+    box-shadow: 0 0 5px rgba(230, 57, 70, 0.8); /* Añade un efecto visual */
 }
 #fname {
     width: 175px;
@@ -164,6 +183,8 @@ label{
     align-items: center; /* Centra verticalmente */
     position: relative; /* Necesario para alinear elementos internos correctamente */
     overflow: hidden; /* Evita que el contenido salga del botón */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade profundidad */
+    border: 1px solid #ccc; /* Borde más claro */
 }
 .icoerrorhidden {
     display: none;
@@ -203,6 +224,9 @@ label{
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra visible */
     transform: scale(1.03); /* Agranda ligeramente el contenedor */
     color: var(--blanco);
+}
+.btn-registrarse-container:active {
+    transform: scale(0.97); /* Reduce el tamaño ligeramente */
 }
 .btn-registrarse-container button {
     width: 9.9375rem;
