@@ -870,6 +870,11 @@ function mostrarMensajeReset(){
 }
 
 function reset() {
+    // Reestablece el estado del juego si estaba pausado
+    juegoPausado = false;
+    stop = false; // Reanudar el timer
+    btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">Pausar';
+    tableroPausa.classList.remove('pausado'); // Quitar clase de pausa del tablero
     envio = false;
     // Mostrar primero el menú de elegir modo de juego al reiniciar partida
     timerDom.innerHTML = " ";
@@ -936,19 +941,27 @@ let btnPausar = document.getElementById("btnpausar");
 let imagenPausar = document.getElementById("imagenpausar");
 
 
-btnPausar.addEventListener('click',function (){
-    if (segundos > 0 && minutos >= 0 && !clickeo){
-    
-       stop = true; //frena el timer
-       clickeo = true //el user clickea el btn
-       btnPausar.innerHTML = '<img src="imgs/iconos/play.png" id="imagenpausar">Reanudar' //cambio el DOM
-    }
-    else if (clickeo){
-        stop = false;
-        clickeo = false; 
+let juegoPausado = false; // Estado inicial
+const tableroPausa = document.getElementById('canvas'); // Cambia 'id-del-tablero' al ID de tu tablero
+
+
+btnPausar.addEventListener('click', function () {
+    if (!juegoPausado) {
+        // Pausar el juego
+        juegoPausado = true;
+        stop = true; // Detener el timer
+        btnPausar.innerHTML = '<img src="imgs/iconos/play.png" id="imagenpausar">Reanudar';
+        tableroPausa.classList.add('pausado'); // Añadir clase de pausa al tablero
+    } else {
+        // Reanudar el juego
+        juegoPausado = false;
+        stop = false; // Reanudar el timer
         btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">Pausar';
+        tableroPausa.classList.remove('pausado'); // Quitar clase de pausa del tablero
     }
 });
+
+
 
 let stop = false; //sirve para frenar el timer cuando esta el mensaje de reinicio.
 let mensajestop;
