@@ -1436,6 +1436,11 @@ button {
     align-items: center; 
 }
 
+.seleccionado {
+    border: 5px solid var(--acento-luz);
+    box-shadow: 0 0 10px white;
+}
+
 .tablerojuego{
     background-color: rgb(2, 9, 16);
     background-size: cover;

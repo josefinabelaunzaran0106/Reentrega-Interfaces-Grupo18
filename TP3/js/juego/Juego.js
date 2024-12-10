@@ -121,44 +121,59 @@ function drawTablero(){
 
 
 //se encarga de traer la imagen  de la ficha del jugador 1 y jugador 2
-function seleccionarPersonajes(){
-   
+function seleccionarPersonajes() {
     imagenesficha.forEach(img => {
-        img.addEventListener("click", function() {
-            if (primerValor === null) {
+        img.addEventListener("click", function () {
+            const grupo = img.getAttribute("data-group"); // Obtener el grupo (buenos o malos)
+
+            // Lógica para el primer jugador
+            if (primerValor === null && grupo === "buenos") {
                 primerValor = img.getAttribute("alt");
-                rutajug1 = img.getAttribute("src");               
-            } 
-            else {
-                // esto es cuando elegis la segunda ficha y pasa al menu tablero
-                if (primerValor != null & segundoValor == null){
-                        segundoValor = img.getAttribute("alt");
-                        rutajug2 = img.getAttribute("src");
-                        // si se seleccionaron ambos,eliminamos los event listener
+                rutajug1 = img.getAttribute("src");
+                img.classList.add("seleccionado"); // Agregar borde al seleccionado
+                // Eliminar borde de otras imágenes
+                img.parentNode.querySelectorAll('img').forEach(sibling => {
+                    if (sibling !== img) sibling.classList.remove("seleccionado");
+                });
+            }
+            // Lógica para el segundo jugador
+            else if (primerValor !== null && segundoValor === null && grupo === "malos") {
+                segundoValor = img.getAttribute("alt");
+                rutajug2 = img.getAttribute("src");
+                img.classList.add("seleccionado"); // Agregar borde al seleccionado
+                // Eliminar borde de otras imágenes
+                img.parentNode.querySelectorAll('img').forEach(sibling => {
+                    if (sibling !== img) sibling.classList.remove("seleccionado");
+                });
+
+                // Pausa de 1 segundo antes de proceder
+                setTimeout(function () {
+                    // Ambos jugadores seleccionados, proceder
+                    if (primerValor && segundoValor) {
                         imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
                         elegirpersonajes.classList.remove("elegirpersonajes");
                         elegirpersonajes.classList.add("hidden");
                         modoJuego.classList.remove("hiddendos");
                         modoJuego.classList.add("tablerojuego");
                         modoJuego.classList.add("modosJuego");
-                        btnElegirMinutos.classList.remove("hidden"); //muestra el boton x primera vez
-                        btnElegirMinutos.classList.add('btn', 'colorblanco', 'btnañadiralcarro', 'h4', 'tercer-hover-boton', 'btnabsoluto');;
-                        minutos = cantMinutosMaximo-1;
+                        btnElegirMinutos.classList.remove("hidden"); // Muestra el botón
+                        btnElegirMinutos.classList.add('btn', 'colorblanco', 'btnañadiralcarro', 'h4', 'tercer-hover-boton', 'btnabsoluto');
+                        minutos = cantMinutosMaximo - 1;
                         segundos = 59;
                         turnos.classList.add("resaltado");
                         turnos.classList.remove("hidden");
-                       
 
-                        if(!envio) {
-                            cantMinutosMaximo = 2; // si no hizo click a enviar le setea x default 2 minutos
+                        if (!envio) {
+                            cantMinutosMaximo = 2; // Si no hizo clic en enviar, setea 2 minutos por defecto
                         }
-
-                }   
-                }
+                    }
+                }, 500); // 500 milisegundos = 1 segundo de pausa
             }
-        );
+        });
     });
-    }
+}
+
+
 
 
 
