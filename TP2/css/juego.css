@@ -26,6 +26,7 @@
     --especial: #34D919; 
     --acentonuevo: #6700dd;
     --error: #f50606;
+
 }
 /*GENERAL*/
 body {
@@ -238,6 +239,7 @@ header ul a {
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 .publi-coca{
     width: 100%;
@@ -253,12 +255,10 @@ header ul a {
     object-fit: fill;
     border-radius: 0.2em;
 }
-
 .juegoColocado img, .publicidad img {
     border-radius: 10px; /* También puedes aumentar el radio aquí si quieres más redondeo */
     border: 3px solid white; /* Borde blanco de un tamaño adecuado */
 }
-
 .game-container img {
     width: 100%;
     height: 100%;
@@ -268,14 +268,10 @@ header ul a {
     border-radius: 0.2em;
     justify-content: center;
 }
-
 .h1 {
     margin-top: 1em;
     text-align: center;
 }
-
-
-
 .main-game-container {
     width: 100%;
     height: auto;
@@ -368,7 +364,6 @@ li:hover {
     color: var(--prim);
 }
 .info-game {
-    margin-top: 2em;
     height: auto;
     display: flex;
     justify-content: center;
@@ -377,7 +372,7 @@ li:hover {
     background-color: #271010;
 }
 .info-game-Instrucciones{
-    margin-top: 4em;
+    margin-top: 2em;
     height: auto;
     display: flex;
     justify-content: center;
@@ -403,7 +398,8 @@ li:hover {
     color: var(--blanco);
 }
 .descripcion ol :hover {
-    color: var(--acento);
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff
 }
 .deQueTrata h1 {
     font-family: Poppins;
@@ -493,6 +489,9 @@ li:hover {
     text-decoration: none;
     color: var(--blanco);
 }
+.listaLinks li a:hover{
+    font-size: 14px;
+}
 .lineacomentarios {
     width: 100%;
     height: 0.2em;
@@ -517,6 +516,13 @@ li:hover {
     align-items: center;
     font-size: 14px;
 }
+.tituloComentarios h2 {
+    font-size: 1.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
+    margin-top: 20px;
+}
+
 .dejaTuComentario {
     display: flex;
     justify-content:space-between;
@@ -568,6 +574,14 @@ li:hover {
     height: 1.5rem;
     margin-right: 0.4em;
 }
+.community-section {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 2rem;
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    height: auto;
+    margin-bottom: 100px;
+}
 .btn-comment {
     display: flex;
     justify-content:right;
@@ -595,17 +609,22 @@ li:hover {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    gap: 1.5rem;
 }
 .reseña {
     width: 100%;
     height: 8.89863rem;
-    background-color: rgba(116, 100, 100, 1);
+    border-radius: 8px;
+    padding: 1rem;
     margin-top: 1em;
     display: flex;
     flex-direction: column;
     border-radius: 0.5em;
-    color: var(--blanco);
-    border: var(--blanco) solid 0.2em;
+    display: flex;
+    background: linear-gradient(to bottom, rgba(116, 100, 100, 1) 40%, rgba(90, 70, 70, 1) 70%, rgba(116, 100, 100, 1));
+    padding: 1rem;
+    box-shadow: var(--gris-retro) 0px 0px 10px, var(--secundario) 0px 0px 15px;
+    border: 2px solid var(--acento-luz);
 }
 .inputReseña {
     width: 100%;
@@ -640,6 +659,7 @@ li:hover {
     height: 6em;
     border-radius: 50%;
     object-fit:cover;
+    width: 80px;
     border: var(--blanco) solid 0.2em;
 }
 .cj1Reseña {
@@ -665,10 +685,15 @@ li:hover {
 .estrReseña {
     width: 9.70063em;
     height: 1.5em;
+    background-color: transparent; /* Asegura que el fondo sea transparente */
+    border: none; /* Si hay bordes que causen problemas, elimínalos */
+    box-shadow: none; /* Evita sombras que simulen un fondo */
+
 }
 .estrReseña img {
     width: 9.70063rem;
     height: 1.5rem;
+    
 }
 .cj2Reseña {
     margin-top: 1em;
@@ -686,12 +711,14 @@ li:hover {
 }
 .cj2Reseña p {
     width: 38em;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px #00ffff;
+    padding-bottom: 2px;
 }
-.inputReseña .cj2Reseña p {
-    background-color: rgba(116, 100, 100, 1);
-    border-radius: 0.5em;
-    padding: 2%;
-}
+
 /* PERFIL */
 .perfilDesplegado, .carritoDesplegado, .hamburguer-menu-desplegado {
     display: none;
