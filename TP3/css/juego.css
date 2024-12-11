@@ -1456,7 +1456,7 @@ button {
 
 .modosJuego {
     bottom: -8.5em;
-    height: 528px;
+    height: 548px;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -1496,7 +1496,7 @@ button {
 .fichasElegir {
     position: absolute;
     bottom: -8.85em;
-    height: 528px;
+    height: 548px;
     padding-bottom: 50px;
     
 }
