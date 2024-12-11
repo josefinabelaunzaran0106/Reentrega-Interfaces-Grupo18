@@ -1372,15 +1372,18 @@ button {
 }
 .mensaje {
     margin-top: 10em;
-    background-color: var(--acento-luz);
+    background-color: var(--prim-sombra2);
     width: 25em;
-    height: 20em;
+    height: 18em;
     border-radius: 8px;
     position:absolute;
     top:-2.7em;
     right: 20em;
-    box-shadow: 1px 0px 5px var(--prim-sombra3);
+    border: 0.2em solid var(--blanco);
+    box-shadow: 1px 0px 15px var(--acento-luz);
 }
+
+
 .mensaje p {
     text-align: center;
     font-size: 24px;
@@ -1399,10 +1402,10 @@ button {
     height: 2.30rem;
     justify-content: center;
     align-items: center;
-    border: solid 3px var(--error);
+
     border-radius: 6px;
-    color: var(--error);
-    background-color: var(--prim-sombra3);
+    color: var(--blanco);
+    background-color: var(--acento-luz);
 }
 
 .btn-sucess {
