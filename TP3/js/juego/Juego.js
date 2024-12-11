@@ -168,6 +168,13 @@ function drawTablero() {
 
 //se encarga de traer la imagen  de la ficha del jugador 1 y jugador 2
 function seleccionarPersonajes() {
+    // Activar hover solo para el grupo inicial (buenos)
+    imagenesficha.forEach(img => {
+        if (img.getAttribute("data-group") === "buenos") {
+            img.classList.add("activo-hover");
+        }
+    });
+
     imagenesficha.forEach(img => {
         img.addEventListener("click", function () {
             const grupo = img.getAttribute("data-group"); // Obtener el grupo (buenos o malos)
@@ -177,9 +184,13 @@ function seleccionarPersonajes() {
                 primerValor = img.getAttribute("alt");
                 rutajug1 = img.getAttribute("src");
                 img.classList.add("seleccionado"); // Agregar borde al seleccionado
-                // Eliminar borde de otras imágenes
-                img.parentNode.querySelectorAll('img').forEach(sibling => {
-                    if (sibling !== img) sibling.classList.remove("seleccionado");
+                // Eliminar efecto hover para los buenos y habilitarlo para los malos
+                imagenesficha.forEach(img => {
+                    if (img.getAttribute("data-group") === "buenos") {
+                        img.classList.remove("activo-hover");
+                    } else if (img.getAttribute("data-group") === "malos") {
+                        img.classList.add("activo-hover");
+                    }
                 });
             }
             // Lógica para el segundo jugador
@@ -187,9 +198,11 @@ function seleccionarPersonajes() {
                 segundoValor = img.getAttribute("alt");
                 rutajug2 = img.getAttribute("src");
                 img.classList.add("seleccionado"); // Agregar borde al seleccionado
-                // Eliminar borde de otras imágenes
-                img.parentNode.querySelectorAll('img').forEach(sibling => {
-                    if (sibling !== img) sibling.classList.remove("seleccionado");
+                // Desactivar efecto hover en los malos
+                imagenesficha.forEach(img => {
+                    if (img.getAttribute("data-group") === "malos") {
+                        img.classList.remove("activo-hover");
+                    }
                 });
 
                 // Pausa de 1 segundo antes de proceder
@@ -218,6 +231,7 @@ function seleccionarPersonajes() {
         });
     });
 }
+
 
 
 
@@ -922,6 +936,7 @@ function reset() {
     btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">';
     tableroPausa.classList.remove('pausado'); // Quitar clase de pausa del tablero
     envio = false;
+
     // Mostrar primero el menú de elegir modo de juego al reiniciar partida
     timerDom.innerHTML = " ";
     elegirpersonajes.classList.add("elegirpersonajes");
@@ -976,9 +991,19 @@ function reset() {
     // Eliminar la clase 'seleccionado' de todas las imágenes de fichas
     imagenesficha.forEach(img => img.classList.remove("seleccionado"));
 
+    // Restablecer las clases de hover: activar solo para los "buenos"
+    imagenesficha.forEach(img => {
+        if (img.getAttribute("data-group") === "buenos") {
+            img.classList.add("activo-hover"); // Aplicar hover inicial
+        } else {
+            img.classList.remove("activo-hover"); // Quitar hover de los malos
+        }
+    });
+
     // Volver a habilitar los eventos de clic para permitir nuevas selecciones
     imagenesficha.forEach(img => img.addEventListener("click", seleccionarPersonajes));
 }
+
 
 
 let clickeo = false;
