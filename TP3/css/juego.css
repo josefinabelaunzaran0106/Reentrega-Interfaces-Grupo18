@@ -1639,6 +1639,7 @@ display: flex;
 
 .resaltado{
     color: white;
+    padding-bottom: 3px;
 }
 .btnpausar{
     display: flex;
