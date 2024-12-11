@@ -1510,12 +1510,9 @@ button {
 .imgfichas {
     margin: 0 2em; /* Añade espacio entre las imágenes */
 }
-.imgfichas img {
-    border-radius: 50%;
-    
-}
 
 .imgfichas img {
+    border-radius: 50%;
     cursor: default; /* Desactiva el puntero por defecto */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación suave */
 }
@@ -1551,6 +1548,17 @@ display: flex;
  justify-content: space-between;
     
 }
+
+.img4enlinea img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.img4enlinea img:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 8px 6px rgba(255, 255, 255, 0.7);
+}
+
 
 .elegirtableros {
     width: 90%;
