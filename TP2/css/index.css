@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  
+}
+:root {
+    /* seccion colores */
+    --acento-luz: #E63946;
+    --acento: #A12831;
+    --acento-oscuro: #271010;
+    --prim: #271010;
+    --prim-luz1: #261818;
+    --prim-luz2: #393131;
+    --prim-luz3: #0D85F5;
+    --prim-sombra1: #FEF9F9;
+    --prim-sombra2:  #374957;
+    --prim-sombra3: #746464;
+    --blanco: #FEF9F9;
+    --blanco-oscuro: #E5F4FF;
+    --negro: #23282B;
+    --especial: #34D919; 
+    --acentonuevo: #6700dd;
+    --error: #f50606;
+}
+.register{
+    background-image: url(../asset/images/fondo.png);
+    background-size:cover;
+    background-position: center;
+    width: auto;
+    height: 832px;
+    display: flex;
+    padding-top: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border: 2px;
+}
+.register-container{
+    width: 500px;
+    height: 600px; 
+    display: flex;
+    background-color:#261818;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: center;
+    align-items: center;
+}
+.retrogema-logo{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    justify-content:center;
+    padding-left:32px;
+    padding-bottom: 30px;   
+}
+.button-register-container {
+    display: flex;
+    flex-direction: column;
+}
+.tituloRegister {
+    width: 299px;
+    height: 24px;
+    display: flex;
+    font-family: Roboto;
+    align-items: center;
+    margin-bottom: 0em;
+    padding-bottom: 2px;
+}
+.login{
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    font-family: Roboto;
+    padding-bottom: 0.4em;
+    align-items: center;
+    text-justify: center;
+    padding-bottom: 5%;
+}
+.textoblanco{
+    color: white;
+    padding-bottom: 2%;
+}
+.btn-google-face, .btn-registrate-inisesion {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.btn-google-container button a{
+    color: black;
+}
+.btn-google-container button {
+    width: 345px;
+    height: 54px;
+    background-color: var(--blanco);
+    border-radius: 1em;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1.5em;
+    font-size: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-google-container button:hover {
+    background-color: #e0e0e0; /* Gris más intenso para destacar el hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más grande y definida */
+    transform: scale(1.02); /* Un ligero aumento de tamaño */
+    cursor: pointer;
+}
+.btn-google-container img {
+    margin-right: 0.5em;
+}
+.btn-registrate-container button {
+    width: 345px;
+    height: 54px;
+    background-color:#E63946;
+    border-radius: 1em;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-style: normal;
+    line-height: normal;
+    margin-bottom: 1.5em;
+    color: #000;
+}
+.btn-google-container button {
+    width: 345px;
+    height: 54px;
+    background-color: var(--blanco);
+    border-radius: 1em;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: 2 rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1.5em;
+    font-size: 20px;
+}
+.btn-google-container button a{
+    color: black;
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}
+.btn-facebook-container img {
+    margin-right: 0.5em;
+}
+.facebook{
+    size: 20px;
+}
+.btn-facebook-container button {
+    background-color: #0D85F5;
+    border: 0;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    padding-top: 2%;
+    width: 345px;
+    height: 54px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-facebook-container button:hover {
+    background-color: #005BBB; /* Cambia a un azul más oscuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más grande */
+    transform: scale(1.02); /* Agranda ligeramente el botón */
+    cursor: pointer;
+}
+.btn-facebook-container button a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 20px;
+}
+.lineaBtnGoogleFace {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0;
+    margin-top: 1.5em;
+}
+.lineaBtnGoogleFace p{
+    display: inline;
+    color: var(--blanco);
+    font-size: 0.75em;
+    margin: 0 1em;
+}
+.linea2 {
+    width: 155px;
+    height: 1.94px;
+    background-color: var(--blanco);     
+}
+.btn-registrate-container button, .btn-inisesion-container button {
+    width: 345px;
+    height: 54px;
+    background-color: #E63946;
+    border-radius: 1em;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    color: var(--blanco);
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave por defecto */
+    cursor: pointer;
+}
+.btn-inisesion-container button:hover, .btn-registrate-container button:hover {
+    background-color: #D62839; /* Cambia a un rojo un poco más oscuro */
+    color: #FFFBEA; /* Cambia el color del texto ligeramente */
+    transform: scale(1.05); /* Aumenta el tamaño ligeramente al hacer hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+.btn-inisesion-container a, .btn-registrate-container button a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+.imgIconos {
+    padding-right: 10px;
+    height: 30px;
+    width: 40px;
+}
+/*FOOTER*/
+.footerhome{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: rgba(57, 49, 49, 1);
+    width: auto;
+}
+.footerhome button {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: auto;
+    background-color: rgba(57, 49, 49, 1);;
+    color: var(--blanco);
+    cursor: pointer;
+}
+.footerhome{
+    padding-left: 5%;
+}
+.footerhome div ul.show {
+    display: block;
+    color: var(--blanco);
+    font-size: 8px;
+    margin-left: 1.5em;
+    list-style: none;
+}
+.footerhome div ul li:hover {
+    color: var(--prim);
+}
+.footerhome div ul li {
+    margin-bottom: 0.5em;
+    color: var(--blanco);
+}
+.footerhome{   
+    display: flex;
+    flex-direction: row;
+    height: 12em;
+}
+.footerhome button {
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: 7em;
+    margin-left: 0;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: default;
+    margin-bottom: 0.5em;
+}
+.footerhome button img {
+    display: none;
+}
+.footerhome .footerulhidden {
+    display: flex;
+}
+.footerhome {
+    width: 100%;
+    justify-content: space-evenly;
+}
+.footerulhidden {
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+}
+.footerhome div {
+    text-align: left;
+    margin-top: 1em;
+}
+.footerhome ul li {
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5em;
+}
+.footerhome ul {
+    margin-right: 1em;
+}
+.footerhome div ul.show {
+   margin: 0;
+}
+
+

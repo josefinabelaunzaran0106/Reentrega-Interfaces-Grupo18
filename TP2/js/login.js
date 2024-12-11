@@ -10,6 +10,13 @@ let formLogin = document.querySelector('#formlogin');
 console.log(formLogin);
 formLogin.addEventListener("submit", verificarLogin);
 
+function mostrarPopupExito() {
+    const popupSuccess = document.getElementById("popup-success");
+    popupSuccess.classList.remove("hidden");
+    setTimeout(() => {
+        popupSuccess.classList.add("hidden");
+    }, 3000); // Oculta el popup después de 3 segundos
+}
 function verificarLogin(e) {
     e.preventDefault();
 
@@ -25,23 +32,23 @@ function verificarLogin(e) {
 
     if (nombreLogin == userLogin.name && contraLogin == userLogin.password) {
         console.log("logueado correctamente");
-        mostrarPopup("Logueado correctamente");
+        mostrarPopupElement('<span class="check-icon">✔️</span> Logueado con éxito');
         setTimeout("redireccionar()", 3000);
     }
 
     else if (nombreLogin != userLogin.name && contraLogin == userLogin.password) {
         console.log("nombre incorrecto");
-        mostrarPopup("nombre incorrecto");
+        mostrarPopupElement('<span class="error-icon">❌</span> Nombre de usuario incorrecto');
 
     }
     else if (nombreLogin == userLogin.name && contraLogin != userLogin.password) {
         console.log("nombre incorrecto");
-        mostrarPopup("contraseña incorrecta");
+        mostrarPopupElement('<span class="error-icon">❌</span> Contraseña incorrecta');
 
     }
     else {
         console.log("incorrecto");
-        mostrarPopup("nombre y contraseña incorrecta");
+        mostrarPopupElement('<span class="error-icon">❌</span> Nombre de usuario y contraseña incorrecta');
     }
 }
 function mostrarPopup(mensaje) {
@@ -59,4 +66,12 @@ document.getElementById("close-btn").addEventListener("click", function () {
 
 function redireccionar() {
     window.location = "home.html";
+}
+function mostrarPopupElement(contenido) {
+    document.getElementById("popup-message").innerHTML = contenido;
+    document.getElementById("popup-error").classList.remove("hidden");
+}
+function togglePasswordVisibility(id) {
+    const passwordField = document.getElementById(id);
+    passwordField.type = passwordField.type === "password" ? "text" : "password";
 }

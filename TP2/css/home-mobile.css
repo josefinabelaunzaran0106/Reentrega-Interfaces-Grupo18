@@ -1,0 +1,527 @@
+@media only screen and (max-width: 1024px) {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  
+}
+:root {
+    /* seccion colores */
+    --acento-luz: #E63946;
+    --acento: #A12831;
+    --acento-oscuro: #271010;
+    --prim: #271010;
+    --prim-luz1: #261818;
+    --prim-luz2: #393131;
+    --prim-luz3: #0D85F5;
+    --prim-sombra1: #FEF9F9;
+    --prim-sombra2:  #374957;
+    --prim-sombra3: #746464;
+    --blanco: #FEF9F9;
+    --blanco-oscuro: #E5F4FF;
+    --negro: #23282B;
+    --especial: #34D919; 
+    --acentonuevo: #6700dd;
+    --error: #f50606;
+}
+/* Loader */
+.all {
+    visibility: hidden;
+}
+.all.show {
+    visibility: visible;
+}
+#percentage {
+    display: flex;
+    color: white;
+    font-size: 24px;
+    margin-top: 10px;
+    justify-content: center;
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #271010;
+    transition: visibility 5s;
+    z-index: 1000;
+}
+.loader-hidden {
+    visibility: hidden;
+}
+.progress-bar-container {
+    position: relative;
+    width: 500px;
+    height: 40px;
+    background-color: var(--acento);
+    overflow: hidden;
+    margin-top: 1em;
+}
+.progress-bar {
+    width: 0; 
+    height: 100%;
+    background-color: var(--acento-luz); 
+    transition: width 0.1s ease;
+    transform-origin: left;
+}
+/*NAV-HOME*/
+.navhome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.8125rem;
+    background-color: rgba(57, 49, 49, 1);
+    padding: 0 1em;
+    z-index: 1000;
+}
+/* Logo */
+.logoretrogemas {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+.titulo {
+    display: flex;
+    align-items: center;
+    height: 5.6em;
+}
+#imgburguer {
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+    margin-right: 1em;
+}
+.imglogoretrogemas {
+    width: 100%;
+    height: auto;  
+    display: block;
+    object-fit: contain; 
+}
+/* Barra de Búsqueda */
+.buscarnav {
+    display: none;
+}
+/* Iconos de Navegación (Perfil y Carrito) */
+.iconosnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+    gap: 1.5em; 
+}
+.perfil button,
+.carrito button {
+    width: 1rem;
+    height:1rem;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    margin-left: 1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Imagen del Perfil */
+.perfil button img {
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+/* Imagen del Carrito */
+.carrito button img {
+    width: 1.8rem;  
+    height: 1.8rem;
+    object-fit: cover; 
+    display: block;
+}
+/* Menús Desplegables */
+.perfilDesplegado,
+.carritoDesplegado,
+.hamburguer-menu-desplegado {
+    display: none; /* Ocultos por defecto */
+    position: absolute;
+    background-color: rgba(57, 49, 49, 1);
+    color: var(--blanco);
+    padding: 1em;
+    z-index: 100;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+.perfilDesplegado ul,
+.carritoDesplegado ul,
+.hamburguer-menu-desplegado ul {
+    list-style: none;
+}
+.perfilDesplegado ul li,
+.carritoDesplegado ul li,
+.hamburguer-menu-desplegado ul li {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0.8em 0;
+    cursor: pointer;
+}
+header ul a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+/* Mostrar Menús Desplegables */
+.perfilDesplegado.show {
+    display: block;
+    top: 4.8125rem;
+    right: 0;
+    width: 8.1rem;
+}
+.carritoDesplegado.show {
+    display: block;
+    top: 4.8125rem;
+    right: 4em; 
+    width: 7.7rem; 
+    height: auto;
+}
+.hamburguer-menu-desplegado.show {
+    display: block;
+    top: 4.8125rem;
+    left: 0;
+    width: 8rem;
+}
+/* Hover Effects */
+.navhome button:hover img,
+.perfil button:hover img,
+.carrito button:hover img {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+.perfilDesplegado ul li:hover,
+.carritoDesplegado ul li:hover,
+.hamburguer-menu-desplegado ul li:hover {
+    color: var(--acento-luz);
+    transition: color 0.2s ease-in-out;
+}
+.perfilDesplegado ul li:hover a {
+    color: var(--acento-luz);
+    transition: color 0.2s ease-in-out;
+}
+/* Menu Hamburguesa */
+.hamburguer-menu button {
+    background: none; /* Sin fondo */
+    border: none; /* Elimina el borde */
+    outline: none; /* Elimina cualquier contorno */
+    padding: 0; /* Elimina el padding extra */
+    cursor: pointer;
+}
+.hamburguer-menu img {
+    width: 3em;
+    height: 3em;
+    object-fit: contain; /* Asegura que la imagen no se distorsione */
+}
+.hamburguer-menu img,
+.hamburguer-menu button {
+    border: 0; /* Sin borde */
+    outline: none; /* Sin contorno */
+}
+/* SLIDER */
+.container-carousel {
+    position: relative;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 30vh; /* Altura fija para el slider */
+    background-color: #261818;
+    overflow: hidden;
+}
+.carruseles {
+    display: flex;
+    width: 400%; /* Ajuste automático */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    transition: transform 1s ease; /* Movimiento suave */
+}
+.slider-section {
+    flex: 0 0 25%; /* Cada sección ocupa el 25% del ancho total (100% dividido entre 4) */
+    height: 100%;
+}
+.slider-section img {
+    width: 100%; /* La imagen ocupa todo el ancho de la sección */
+    height: 100%; /* La imagen ocupa toda la altura de la sección */
+    object-fit:fill; /* Ajusta la imagen para cubrir el área sin deformarse */
+}
+/* Botones del Slider */
+.btn-left,
+.btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease; /* Cambio de color suave */
+    user-select: none;
+}
+.btn-left:hover,
+.btn-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.btn-left {
+    left: 0.3em;
+}
+.btn-right {
+    right: 0.3em;
+}
+.btn-left img, .btn-left-cards img, .btn-right img, .btn-right-cards img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    opacity: 30%;
+    opacity: 70%;
+}
+.btn-left img:hover {
+    opacity: 70%;
+}
+.btn-right img:hover {
+    opacity: 70%;
+}
+/* CARRUSELES */
+.carruseles-home{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #261818;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho */
+    perspective: 1200px; /* Añade profundidad a la rotación */ 
+}
+/* Carrusel contenedor */
+.carruselprincipal {
+    width: 100%;
+    height: 100%;
+    transform: translateX(0); /* Posición inicial */
+    transition: transform 1s ease-in-out; /* Transición suave */
+    margin-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+/* Carrusel */
+.cincocards {
+    display: flex;
+    opacity: 1;
+    position: relative;
+    width: auto;
+    transition: transform 1s ease; /*agrega una transicion suave*/
+}
+.cincocards.hidden {
+    opacity: 0;
+    display: none;
+}
+.cincocards-ocultas {
+    display: none;
+    opacity: 0;
+    transition: transform 1s ease-in-out; /* Transición suave */
+}
+.cincocards-ocultas.mostrar {
+    display: flex;
+    opacity: 1;
+}
+.cincocards .card,
+.cincocards-ocultas .card {
+    flex: 0 0 calc(33.33% - 1em); /* Cada card ocupa un tercio del ancho */
+    max-width: calc(33.33% - 1em);
+    height: auto; /* Ajuste automático de altura */
+    display: flex;
+    flex-direction: column; /* Para garantizar que las imágenes y el texto queden ordenados */
+    align-items: center;
+    justify-content: space-between;
+    background-color: #746464;
+    box-shadow: 1px 0px 5px var(--prim-sombra3);
+    border: 1px solid var(--negro);
+    margin-left: 30px;
+}
+.nombreCard{
+    margin-left: 0.10em;
+    height: auto;
+    font-size: 0.9em;
+    padding-bottom: 5px;
+}
+.precio{ 
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+.hidden {
+    display: none;
+}
+.btn-left-cards {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 20px; /* Ajusta la posición horizontal */
+    transform: translateY(-50%); /* Mantén el centrado vertical */
+    z-index: 100; /* Asegura de que esté por encima del contenido */
+}
+.btn-right-cards {
+    position: absolute;
+    top: 50%;
+    right: -30px; /* Ajusta la posición horizontal */
+    transform: translateY(-50%);
+    z-index: 100;
+}
+/* Ajustar las imágenes dentro de las tarjetas */
+.card img {
+    width: 100%; /* La imagen ocupa todo el ancho del card */
+    height: 150px; /* Altura fija para mantener la uniformidad */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    margin-bottom: 10px;
+}
+/* Ajustar los títulos */
+.tituloCard1, .tituloCard2, .tituloCard3, .tituloCard4 {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 0.8em;
+    color: var(--blanco);
+    text-align: center;
+}
+.btn-left-cards,
+.btn-right-cards {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    padding: 5px; /* Botones más pequeños */
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    width: 50px; /* Ajusta el ancho del botón */
+    height: 50px; /* Ajusta el alto del botón */
+    align-items: center;
+}
+/* Imágenes dentro de los botones */
+.btn-left-cards img,
+.btn-right-cards img {
+    width: 50px; /* Tamaño reducido para flechas */
+    height: 50px;
+    opacity: 0.8;
+}
+.btn-left-cards,
+.btn-right-cards {
+    top: 40%; /* Cambia el punto de referencia */
+}
+
+.btn-left-cards img:hover,
+.btn-right-cards img:hover {
+    opacity: 1;
+}
+.btn-left-cards,
+.btn-right-cards {
+    z-index: 1000; /* Asegúrate de que estén por encima de otros elementos */
+}
+/* Botones de acción (Jugar, Añadir, etc.) */
+.jugar button,
+.sacardelcarro button,
+.btn-aniadir button {
+    padding: 0.4em 0.8em; 
+    font-size: 0.7em;
+    border-radius: 0.2em;
+    background-color: var(--acento-luz);
+    color: var(--blanco);    
+}
+.jugar button:hover,
+.sacardelcarro button:hover,
+.btn-aniadir button:hover {
+    background-color: var(--acento);
+    transform: scale(1.05); 
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+.jugar button a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+.añadiralcarro {
+    flex-direction: column; 
+    align-items: center; 
+    padding: 0.5em 0; 
+}
+.gratis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3em; 
+    height: 1.5em; 
+    color: var(--blanco);
+    background-color: #374957;
+    border-radius: 0.2em;
+}
+/* Ajustes de posición de los botones numerados */
+.primero,
+.segundo,
+.tercero,
+.cuarto {
+    top: 50%; 
+}
+/*FOOTER RESPONSIVE*/
+.footerhome{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: rgba(57, 49, 49, 1);;
+    width: auto;
+}
+.footerhome button {
+    text-align: left;
+    margin: 1em 0 1.5em 1.2em;
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: auto;
+    background-color: rgba(57, 49, 49, 1);;
+    color: var(--blanco);
+    cursor: pointer;
+}
+/* desplegables footer */
+.footerulhidden {
+    display: none;
+}
+
+.footerhome div ul {
+    display: none;
+}
+.footerhome div ul.show {
+    display: block;
+    font-size: 0.7em;
+    margin-left: 1.5em;
+    margin-bottom: 2em;
+    list-style: none;
+    color: var(--blanco);
+}
+.footerhome div ul li:hover {
+    color: var(--prim);
+}
+.footerhome div ul li {
+    margin-bottom: 0.5em;
+}
+}
+
+
+

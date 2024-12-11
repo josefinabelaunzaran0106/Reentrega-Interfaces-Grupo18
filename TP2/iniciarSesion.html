@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresá</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iniciarSesion.css">
 </head>
 
 <body>
@@ -15,11 +15,19 @@
                 <img src="./asset/images/tituloRetrogemas.png" alt="">
             </div>
             <form class="form-inicio" id="formlogin">
-                <label> Email*</label>
-                <input class="inputForm" type="text" placeholder="usuario" name="name" required>
-    
-                <label>Password*</label>
-                <input class="inputForm" placeholder="1234" type="text" name="password"required>
+                <div class="emailInput">
+                    <label>Email*</label>
+                    <input class="inputForm" type="text" placeholder="usuario" name="name" required>
+                </div>
+                
+                <div class="passwordInput">
+                    <label>Password*</label>
+                    <input class="inputForm" id="password" placeholder="1234" type="password" name="password" required>
+                    <label class="show-password-label">
+                        <input type="checkbox" onclick="togglePasswordVisibility('password')"> Mostrar contraseña
+                    </label>
+                </div>
+                
                 <a class="olvidasteContraseña" href="index.html">Olvidaste tu contraseña?</a>
                 <div class="btn-inises-container h4">
                     <button type="submit" class="btn-inisesion-container">Iniciar Sesión</button>

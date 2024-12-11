@@ -111,6 +111,7 @@ label{
     outline: none; /* Elimina el borde azul predeterminado */
     box-shadow: 0 0 5px rgba(230, 57, 70, 0.8); /* Añade un efecto visual */
 }
+
 #fname {
     width: 175px;
     height: 40px;
