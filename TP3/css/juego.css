@@ -1455,7 +1455,7 @@ button {
 }
 
 .modosJuego {
-    bottom: -7em;
+    bottom: -8.5em;
     height: 528px;
     position: absolute;
     display: flex;
@@ -1495,8 +1495,10 @@ button {
 
 .fichasElegir {
     position: absolute;
-    bottom: -6.85em;
+    bottom: -8.85em;
     height: 528px;
+    padding-bottom: 50px;
+    
 }
 
 .margendiv{
@@ -1521,7 +1523,7 @@ button {
 }
 .img4enlinea img{
 display: flex;
- width: 150px;   
+ width: 170px;   
  height: 150px;
  justify-content: space-between;
     
@@ -1575,7 +1577,7 @@ display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 6em; 
+     
     height: 350px;
 
 }

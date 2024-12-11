@@ -89,9 +89,7 @@ let rutajug1 = "imgs/fichas/pacman1.png";  //imagenes por defecto
 let rutajug2= "imgs/fichas/fantasmita1.png";  //imagenes por defecto
 //imagen de tablero
 
-let rutaTablero = "imgs/fondo/fondo.jpg";
-
-// let colorCanvas = "#805130";
+let rutaTablero = "imgs/fondo/fondo3.jpg";
 let colorCanvas = "#261818";
 let imagenTablero = new Image();
 imagenTablero.src = rutaTablero;
@@ -100,24 +98,72 @@ imagenTablero.onload = () => {
     drawTablero();
 }
 
-//dibuja el rectangulo del tablero incluyendo la imagen
-function drawTablero(){
+// Dibuja el rectángulo del tablero con esquinas redondeadas, sombra y la imagen
+function drawTablero() {
+    // Coordenadas y dimensiones
+    let x = 150, y = 90;
+    let width = widthTablero, height = heightTablero;
+    let radius = 30;
 
+    // Guarda el estado inicial del contexto
+    context.save();
+
+    // Configuración de la sombra
+    context.shadowColor = "rgba(255, 255, 255, 0.5)"; // Sombra blanca semitransparente
+    context.shadowBlur = 15; // Difuminado de la sombra
+    context.shadowOffsetX = 0; // Sin desplazamiento horizontal
+    context.shadowOffsetY = 0; // Sin desplazamiento vertical
+
+    // Dibuja un rectángulo con esquinas redondeadas y sombra
     context.beginPath();
-    context.rect(150, 90, widthTablero, heightTablero);   
-    // ancho y alto de la imagen
+    context.moveTo(x + radius, y);
+    context.lineTo(x + width - radius, y);
+    context.quadraticCurveTo(x + width, y, x + width, y + radius);
+    context.lineTo(x + width, y + height - radius);
+    context.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    context.lineTo(x + radius, y + height);
+    context.quadraticCurveTo(x, y + height, x, y + height - radius);
+    context.lineTo(x, y + radius);
+    context.quadraticCurveTo(x, y, x + radius, y);
+    context.closePath();
+    context.fillStyle = "#000"; // Relleno negro (no se verá debido a la sombra)
+    context.fill();
+
+    // Restaura el estado del contexto (elimina la sombra para la imagen)
+    context.restore();
+
+    // Crea un recorte para la imagen
+    context.save();
+    context.beginPath();
+    context.moveTo(x + radius, y);
+    context.lineTo(x + width - radius, y);
+    context.quadraticCurveTo(x + width, y, x + width, y + radius);
+    context.lineTo(x + width, y + height - radius);
+    context.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    context.lineTo(x + radius, y + height);
+    context.quadraticCurveTo(x, y + height, x, y + height - radius);
+    context.lineTo(x, y + radius);
+    context.quadraticCurveTo(x, y, x + radius, y);
+    context.closePath();
+    context.clip();
+
+    // Dibuja la imagen dentro del área recortada
     let anchoimagen = imagenTablero.width;
     let altoimagen = imagenTablero.height;
-
-    //para que no se rompa la imagen
     let aspecto = anchoimagen / altoimagen;
-
-    let ancho = widthTablero; // Cambia el ancho según tus necesidades
+    let ancho = widthTablero;
     let altura = heightTablero;
-
-    //dibuja
     context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2 + 25, ancho, altura);
+
+    // Aplica una capa de atenuación semitransparente
+    context.fillStyle = "rgba(0, 0, 0, 0.4)"; // Negro con 40% de opacidad
+    context.fillRect(x, y, width, height);
+
+    // Restaura el estado final del contexto
+    context.restore();
 }
+
+
 
 
 //se encarga de traer la imagen  de la ficha del jugador 1 y jugador 2
@@ -256,7 +302,7 @@ function rellenarTablero(){
         fichastablero[j] = [];
         for (let i = 0; i < tablero.getFilas(); i++){
             decrementacion = decrementacion - decrementacionYFichaTab;
-            crearFichaTab(110,30,radioFicha,"imgs/fichas/fichablanca.png",(decrementacion-30), aumentox,j,i,false,anchoFicha);  
+            crearFichaTab(110,30,radioFicha,"imgs/fichas/fichablanca.png",(decrementacion-35), aumentox,j,i,false,anchoFicha);  
         }
     }
     
