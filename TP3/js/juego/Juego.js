@@ -919,7 +919,7 @@ function reset() {
     // Reestablece el estado del juego si estaba pausado
     juegoPausado = false;
     stop = false; // Reanudar el timer
-    btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">Pausar';
+    btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">';
     tableroPausa.classList.remove('pausado'); // Quitar clase de pausa del tablero
     envio = false;
     // Mostrar primero el menú de elegir modo de juego al reiniciar partida
@@ -996,13 +996,13 @@ btnPausar.addEventListener('click', function () {
         // Pausar el juego
         juegoPausado = true;
         stop = true; // Detener el timer
-        btnPausar.innerHTML = '<img src="imgs/iconos/play.png" id="imagenpausar">Reanudar';
+        btnPausar.innerHTML = '<img src="imgs/iconos/play.png" id="imagenpausar">';
         tableroPausa.classList.add('pausado'); // Añadir clase de pausa al tablero
     } else {
         // Reanudar el juego
         juegoPausado = false;
         stop = false; // Reanudar el timer
-        btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">Pausar';
+        btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">';
         tableroPausa.classList.remove('pausado'); // Quitar clase de pausa del tablero
     }
 });
