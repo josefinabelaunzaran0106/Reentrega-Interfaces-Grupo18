@@ -153,7 +153,7 @@ function drawTablero() {
     let aspecto = anchoimagen / altoimagen;
     let ancho = widthTablero;
     let altura = heightTablero;
-    context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2 + 25, ancho, altura);
+    context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2 + 35, ancho, altura);
 
     // Aplica una capa de atenuación semitransparente
     context.fillStyle = "rgba(0, 0, 0, 0.4)"; // Negro con 40% de opacidad
