@@ -1376,7 +1376,7 @@ button {
     height: 18em;
     border-radius: 8px;
     position:absolute;
-    top:-2.7em;
+    top:0em;
     right: 20em;
     border: 0.2em solid var(--blanco);
     box-shadow: 1px 0px 15px var(--acento-luz);
@@ -1514,6 +1514,18 @@ button {
     border-radius: 50%;
     
 }
+
+.imgfichas img {
+    cursor: pointer; /* Cambia el cursor a pointer */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación suave */
+}
+
+.imgfichas img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 0.6); /* Sombra más pequeña y uniforme */
+}
+
+
 .img4enlinea{
  display: flex;
  justify-content: space-between;
