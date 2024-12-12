@@ -46,7 +46,9 @@ body {
 .all {
     visibility: hidden;
 }
-
+.all.show {
+    visibility: visible;
+}
 #percentage {
     display: flex;
     color: white;
