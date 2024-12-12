@@ -111,6 +111,17 @@
 #menu-abierto a {
   text-decoration: none; /* Quita el subrayado de los enlaces */
   color: inherit; /* Mantiene el color del texto sin alterar */
+  transition: all 0.3s ease;
+}
+
+#menu-abierto a:hover {
+  color: #ff4500; /* Cambia el color del texto */
+  text-decoration: underline; /* Agrega subrayado */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+#menu-abierto a:hover::after {
+  width: 100%;
 }
 
 #menu-cerrado.active + #menu-abierto {
