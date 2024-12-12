@@ -263,29 +263,28 @@ label{
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra el popup */
-    width: 35vw; /* Tamaño más pequeño */
-    height: 10vh;
-    background-color: var(--prim); /* Color de fondo */
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    max-width: 400px;
+    background: linear-gradient(135deg, #000, #444);
+    border: 4px solid var(--acento-luz); /* Borde estilo retro */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* se asegura de que esté encima de otros elementos */
-    padding: 0; /* Sin padding adicional */
-    border-radius: 20px; /* Redondea bordes del popup */
+    z-index: 9999;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--acento-luz);
+    animation: pop-in 0.5s ease-out; /* Animación de entrada */
 }
 /* Estilos del contenido del popup */
 .popup-content {
-    background-color: var(--acentonuevo);
-    opacity: 0.8;
-    color: var(--blanco);
-    font-size: 18px;
-    padding: 15px;
-    border-radius: 5px;
-    width: 100%; /* Ocupa todo el ancho del popup */
-    height: 100%; /* Ocupa todo el alto del popup */
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    color:var(--blanco);
+    font-size: 14px;
     text-align: center;
-    box-sizing: border-box; /* Incluye padding dentro de width y height */
+    line-height: 1.5;
+    letter-spacing: 1px;
 }
 #popup-success {
     background-color: #e0f7e0;
@@ -312,12 +311,17 @@ label{
 .close-btn {
     position: absolute;
     top: 10px;
-    right: 15px;
-    font-size: 16px;
-    width: 40px;
-    height: 20px;
+    right: 10px;
+    color: var(--acento);
+    font-size: 18px;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
+.close-btn:hover {
+    transform: scale(1.2);
+    color: var(--acento-luz);
+}
+
 .popup-message{
     position: absolute;
     top: 10px;
@@ -334,6 +338,18 @@ label{
 .diverror{
     width: 500px;
     height: 100px;
+}
+@keyframes pop-in {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+        box-shadow: 0 0 0 var(--acento-luz);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        box-shadow: 0 0 30px var(--acento-luz);
+    }
 }
 /*footer*/
 .footerhome{
