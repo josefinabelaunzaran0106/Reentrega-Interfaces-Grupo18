@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jugar</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/juego.css">
 </head>
 
 <body>
@@ -91,7 +92,14 @@
                         <img class="btn" src="./imgs/juego en ejecucion.png">
                     </div>
                     <div class="publicidad">
-                        <img class="publicidad-img" src="./imgs/imagecoca.png" alt="">
+                        <div class=publi-coca>
+                            <img class="publicidad-img" src="./imgs/imagecoca.png" alt="">
+                        </div>
+                        <div class="publi-juego">
+                            <img class="publicidad-img" src="./imgs/img-publi-juego.png" alt="">
+
+                        </div>
+                        
                     </div>
 
                 </section>
@@ -154,11 +162,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                           
-
-                            
-                            
                             <div class="reseñas">
                                 <div class="ult-coment-titulo">
                                     <div class="tituloComentarios">
@@ -183,8 +186,19 @@
                                                     <img src="./imgs/iconos/estrellaVacia.png">
                                                 </div>
                                             </div>
+                                            <p class="fechaReseña">Hace 2 meses</p>
                                             <div class="cj2Reseña">
                                                 <p>Buen juego</p>
+                                            </div>
+                                            <div class="acciones d-flex align-items-center gap-3">
+                                                <button type="button" class="btn btn-outline-success d-flex align-items-center">
+                                                    <i class="bi bi-hand-thumbs-up-fill me-2"></i>
+                                                    <span>12</span>
+                                                </button>
+                                                <button type="button" class="btn btn-outline-danger d-flex align-items-center">
+                                                    <i class="bi bi-hand-thumbs-down-fill me-2"></i>
+                                                    <span>3</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -207,8 +221,19 @@
                                                     <img src="./imgs/iconos/estrellaVacia.png">
                                                 </div>
                                             </div>
+                                            <p class="fechaReseña">Hace 1 semana</p>
                                             <div class="cj2Reseña">
                                                 <p>Recomendable</p>
+                                            </div>
+                                            <div class="acciones d-flex align-items-center gap-3">
+                                                <button type="button" class="btn btn-outline-success d-flex align-items-center">
+                                                    <i class="bi bi-hand-thumbs-up-fill me-2"></i>
+                                                    <span>18</span>
+                                                </button>
+                                                <button type="button" class="btn btn-outline-danger d-flex align-items-center">
+                                                    <i class="bi bi-hand-thumbs-down-fill me-2"></i>
+                                                    <span>4</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -231,8 +256,19 @@
                                                     <img src="./imgs/iconos/estrellaVacia.png">
                                                 </div>
                                             </div>
+                                            <p class="fechaReseña">Hace 3 meses</p>
                                             <div class="cj2Reseña">
                                                 <p>Muy buen juego, me encantó</p>
+                                            </div>
+                                            <div class="acciones d-flex align-items-center gap-3">
+                                                <button type="button" class="btn btn-outline-success d-flex align-items-center">
+                                                    <i class="bi bi-hand-thumbs-up-fill me-2"></i>
+                                                    <span>1</span>
+                                                </button>
+                                                <button type="button" class="btn btn-outline-danger d-flex align-items-center">
+                                                    <i class="bi bi-hand-thumbs-down-fill me-2"></i>
+                                                    <span>1</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -256,8 +292,19 @@
                                                     <img src="./imgs/iconos/estrellaVacia.png">
                                                 </div>
                                             </div>
-                                            <div class="cj2Reseña">
-                                                <p>Excelente juego, me pareció muy divertido jugar con la temática del pacman en el cuatro en línea!!</p>
+                                            <p class="fechaReseña">Hace 1 semana</p>
+                                            <div class="cj3Reseña">
+                                                <p>Excelente juego, me pareció muy divertido, le agregaria mas personjes!!</p>
+                                            </div>
+                                            <div class="acciones d-flex align-items-center gap-3">
+                                                <button type="button" class="btn btn-outline-success d-flex align-items-center">
+                                                    <i class="bi bi-hand-thumbs-up-fill me-2"></i>
+                                                    <span>3</span>
+                                                </button>
+                                                <button type="button" class="btn btn-outline-danger d-flex align-items-center">
+                                                    <i class="bi bi-hand-thumbs-down-fill me-2"></i>
+                                                    <span>2</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -314,7 +361,11 @@
         </div>
     </main>
     <footer class="footerhome">
-        <div>
+        <div class="footer-logo">
+            <h1 class="logo-retrogemas">Retrogemas</h1>
+            <p class="footer-copyright">&copy; 2024 Retrogemas. Todos los derechos reservados.</p>
+        </div>
+      
             <div class="btnfooter">
                 <button type="button">Categorias<img src="imgs/iconos/desplegablehaciaabajo.png"
                         id="footer-btn"></button>
@@ -326,7 +377,6 @@
                 </ul>
             </div>
 
-        </div>
 
         <div>
             <button type="button">Redes Sociales <img src="imgs/iconos/desplegablehaciaabajo.png"
@@ -362,6 +412,7 @@
     </section>
 
     <script src="js/nav-loader.js"></script>
+    <script src="js/estrellas.js"></script>
 </body>
 
 </html>

@@ -52,16 +52,24 @@ function verificarLogin(e) {
     }
 }
 function mostrarPopup(mensaje) {
-    // Busca el elemento donde irá el mensaje y actualiza su contenido
-    document.getElementById("popup-message").textContent = mensaje;
+    const popup = document.getElementById("popup-error");
+    const message = document.getElementById("popup-message");
 
-    // Muestra el pop-up quitando la clase "hidden"
-    document.getElementById("popup-error").classList.remove("hidden");
+    message.innerHTML = mensaje;
+    popup.classList.remove("hidden");
+
+    // Animación de entrada
+    popup.style.animation = "pop-in 0.5s ease-out";
 }
 
-// Ocultar el pop-up cuando se hace clic en el botón de cerrar
 document.getElementById("close-btn").addEventListener("click", function () {
-    document.getElementById("popup-error").classList.add("hidden");
+    const popup = document.getElementById("popup-error");
+
+    // Animación de salida antes de ocultar
+    popup.style.animation = "fade-out 0.5s ease-in";
+    setTimeout(() => {
+        popup.classList.add("hidden");
+    }, 500);
 });
 
 function redireccionar() {

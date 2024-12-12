@@ -89,9 +89,7 @@ let rutajug1 = "imgs/fichas/pacman1.png";  //imagenes por defecto
 let rutajug2= "imgs/fichas/fantasmita1.png";  //imagenes por defecto
 //imagen de tablero
 
-let rutaTablero = "imgs/fondo/fondo.jpg";
-
-// let colorCanvas = "#805130";
+let rutaTablero = "imgs/fondo/fondo3.jpg";
 let colorCanvas = "#261818";
 let imagenTablero = new Image();
 imagenTablero.src = rutaTablero;
@@ -100,28 +98,83 @@ imagenTablero.onload = () => {
     drawTablero();
 }
 
-//dibuja el rectangulo del tablero incluyendo la imagen
-function drawTablero(){
+// Dibuja el rectángulo del tablero con esquinas redondeadas, sombra y la imagen
+function drawTablero() {
+    // Coordenadas y dimensiones
+    let x = 150, y = 90;
+    let width = widthTablero, height = heightTablero;
+    let radius = 30;
 
+    // Guarda el estado inicial del contexto
+    context.save();
+
+    // Configuración de la sombra
+    context.shadowColor = "rgba(255, 255, 255, 0.5)"; // Sombra blanca semitransparente
+    context.shadowBlur = 15; // Difuminado de la sombra
+    context.shadowOffsetX = 0; // Sin desplazamiento horizontal
+    context.shadowOffsetY = 0; // Sin desplazamiento vertical
+
+    // Dibuja un rectángulo con esquinas redondeadas y sombra
     context.beginPath();
-    context.rect(150, 90, widthTablero, heightTablero);   
-    // ancho y alto de la imagen
+    context.moveTo(x + radius, y);
+    context.lineTo(x + width - radius, y);
+    context.quadraticCurveTo(x + width, y, x + width, y + radius);
+    context.lineTo(x + width, y + height - radius);
+    context.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    context.lineTo(x + radius, y + height);
+    context.quadraticCurveTo(x, y + height, x, y + height - radius);
+    context.lineTo(x, y + radius);
+    context.quadraticCurveTo(x, y, x + radius, y);
+    context.closePath();
+    context.fillStyle = "#000"; // Relleno negro (no se verá debido a la sombra)
+    context.fill();
+
+    // Restaura el estado del contexto (elimina la sombra para la imagen)
+    context.restore();
+
+    // Crea un recorte para la imagen
+    context.save();
+    context.beginPath();
+    context.moveTo(x + radius, y);
+    context.lineTo(x + width - radius, y);
+    context.quadraticCurveTo(x + width, y, x + width, y + radius);
+    context.lineTo(x + width, y + height - radius);
+    context.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    context.lineTo(x + radius, y + height);
+    context.quadraticCurveTo(x, y + height, x, y + height - radius);
+    context.lineTo(x, y + radius);
+    context.quadraticCurveTo(x, y, x + radius, y);
+    context.closePath();
+    context.clip();
+
+    // Dibuja la imagen dentro del área recortada
     let anchoimagen = imagenTablero.width;
     let altoimagen = imagenTablero.height;
-
-    //para que no se rompa la imagen
     let aspecto = anchoimagen / altoimagen;
-
-    let ancho = widthTablero; // Cambia el ancho según tus necesidades
+    let ancho = widthTablero;
     let altura = heightTablero;
+    context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2 + 35, ancho, altura);
 
-    //dibuja
-    context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2 + 25, ancho, altura);
+    // Aplica una capa de atenuación semitransparente
+    context.fillStyle = "rgba(0, 0, 0, 0.4)"; // Negro con 40% de opacidad
+    context.fillRect(x, y, width, height);
+
+    // Restaura el estado final del contexto
+    context.restore();
 }
+
+
 
 
 //se encarga de traer la imagen  de la ficha del jugador 1 y jugador 2
 function seleccionarPersonajes() {
+    // Activar hover solo para el grupo inicial (buenos)
+    imagenesficha.forEach(img => {
+        if (img.getAttribute("data-group") === "buenos") {
+            img.classList.add("activo-hover");
+        }
+    });
+
     imagenesficha.forEach(img => {
         img.addEventListener("click", function () {
             const grupo = img.getAttribute("data-group"); // Obtener el grupo (buenos o malos)
@@ -131,9 +184,13 @@ function seleccionarPersonajes() {
                 primerValor = img.getAttribute("alt");
                 rutajug1 = img.getAttribute("src");
                 img.classList.add("seleccionado"); // Agregar borde al seleccionado
-                // Eliminar borde de otras imágenes
-                img.parentNode.querySelectorAll('img').forEach(sibling => {
-                    if (sibling !== img) sibling.classList.remove("seleccionado");
+                // Eliminar efecto hover para los buenos y habilitarlo para los malos
+                imagenesficha.forEach(img => {
+                    if (img.getAttribute("data-group") === "buenos") {
+                        img.classList.remove("activo-hover");
+                    } else if (img.getAttribute("data-group") === "malos") {
+                        img.classList.add("activo-hover");
+                    }
                 });
             }
             // Lógica para el segundo jugador
@@ -141,9 +198,11 @@ function seleccionarPersonajes() {
                 segundoValor = img.getAttribute("alt");
                 rutajug2 = img.getAttribute("src");
                 img.classList.add("seleccionado"); // Agregar borde al seleccionado
-                // Eliminar borde de otras imágenes
-                img.parentNode.querySelectorAll('img').forEach(sibling => {
-                    if (sibling !== img) sibling.classList.remove("seleccionado");
+                // Desactivar efecto hover en los malos
+                imagenesficha.forEach(img => {
+                    if (img.getAttribute("data-group") === "malos") {
+                        img.classList.remove("activo-hover");
+                    }
                 });
 
                 // Pausa de 1 segundo antes de proceder
@@ -172,6 +231,7 @@ function seleccionarPersonajes() {
         });
     });
 }
+
 
 
 
@@ -256,7 +316,7 @@ function rellenarTablero(){
         fichastablero[j] = [];
         for (let i = 0; i < tablero.getFilas(); i++){
             decrementacion = decrementacion - decrementacionYFichaTab;
-            crearFichaTab(110,30,radioFicha,"imgs/fichas/fichablanca.png",(decrementacion-30), aumentox,j,i,false,anchoFicha);  
+            crearFichaTab(110,30,radioFicha,"imgs/fichas/fichablanca.png",(decrementacion-35), aumentox,j,i,false,anchoFicha);  
         }
     }
     
@@ -870,7 +930,13 @@ function mostrarMensajeReset(){
 }
 
 function reset() {
+    // Reestablece el estado del juego si estaba pausado
+    juegoPausado = false;
+    stop = false; // Reanudar el timer
+    btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">';
+    tableroPausa.classList.remove('pausado'); // Quitar clase de pausa del tablero
     envio = false;
+
     // Mostrar primero el menú de elegir modo de juego al reiniciar partida
     timerDom.innerHTML = " ";
     elegirpersonajes.classList.add("elegirpersonajes");
@@ -925,9 +991,19 @@ function reset() {
     // Eliminar la clase 'seleccionado' de todas las imágenes de fichas
     imagenesficha.forEach(img => img.classList.remove("seleccionado"));
 
+    // Restablecer las clases de hover: activar solo para los "buenos"
+    imagenesficha.forEach(img => {
+        if (img.getAttribute("data-group") === "buenos") {
+            img.classList.add("activo-hover"); // Aplicar hover inicial
+        } else {
+            img.classList.remove("activo-hover"); // Quitar hover de los malos
+        }
+    });
+
     // Volver a habilitar los eventos de clic para permitir nuevas selecciones
     imagenesficha.forEach(img => img.addEventListener("click", seleccionarPersonajes));
 }
+
 
 
 let clickeo = false;
@@ -936,19 +1012,27 @@ let btnPausar = document.getElementById("btnpausar");
 let imagenPausar = document.getElementById("imagenpausar");
 
 
-btnPausar.addEventListener('click',function (){
-    if (segundos > 0 && minutos >= 0 && !clickeo){
-    
-       stop = true; //frena el timer
-       clickeo = true //el user clickea el btn
-       btnPausar.innerHTML = '<img src="imgs/iconos/play.png" id="imagenpausar">Reanudar' //cambio el DOM
-    }
-    else if (clickeo){
-        stop = false;
-        clickeo = false; 
-        btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">Pausar';
+let juegoPausado = false; // Estado inicial
+const tableroPausa = document.getElementById('canvas'); // Cambia 'id-del-tablero' al ID de tu tablero
+
+
+btnPausar.addEventListener('click', function () {
+    if (!juegoPausado) {
+        // Pausar el juego
+        juegoPausado = true;
+        stop = true; // Detener el timer
+        btnPausar.innerHTML = '<img src="imgs/iconos/play.png" id="imagenpausar">';
+        tableroPausa.classList.add('pausado'); // Añadir clase de pausa al tablero
+    } else {
+        // Reanudar el juego
+        juegoPausado = false;
+        stop = false; // Reanudar el timer
+        btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">';
+        tableroPausa.classList.remove('pausado'); // Quitar clase de pausa del tablero
     }
 });
+
+
 
 let stop = false; //sirve para frenar el timer cuando esta el mensaje de reinicio.
 let mensajestop;
