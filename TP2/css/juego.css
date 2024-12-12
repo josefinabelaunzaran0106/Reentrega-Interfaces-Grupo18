@@ -227,6 +227,51 @@ header ul a {
 }
 
 /* SECCIÓN JUEGO*/
+.main-game-container {
+    width: 100%;
+    height: auto;
+    background-color: #271010;  /* Variable: acento v3*/
+    background-size: cover;
+    display: flex;
+    justify-content:space-between;
+}
+
+.sub-container {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    background-color: #271010;  /* Variable: acento v3*/
+}
+.sub-sub-container {
+    width: 90%;
+}
+.broadcrum {
+    display: flex;
+    margin-bottom: 0.5em;
+    align-items: left;
+    flex-direction: column;
+}
+.broadLink {
+    color: var(--blanco);
+    text-decoration: none;
+}
+.broadLink:hover {
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
+    cursor: pointer;
+}
+.TextosBroadcrum {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.TextosBroadcrum p, h3 {
+    color: var(--blanco);
+}
 .juegoColocado {
     width: 60%;
     height: 350px;
@@ -259,6 +304,12 @@ header ul a {
     border-radius: 10px; /* También puedes aumentar el radio aquí si quieres más redondeo */
     border: 3px solid white; /* Borde blanco de un tamaño adecuado */
 }
+.game-container {
+    margin-top: 0.7em;
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+}
 .game-container img {
     width: 100%;
     height: 100%;
@@ -272,50 +323,6 @@ header ul a {
     margin-top: 1em;
     text-align: center;
 }
-.main-game-container {
-    width: 100%;
-    height: auto;
-    background-color: #271010;  /* Variable: acento v3*/
-    background-size: cover;
-    display: flex;
-    justify-content:space-between;
-}
-.sub-container {
-    width: 90%;
-    height: auto;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    background-color: #271010;  /* Variable: acento v3*/
-}
-.sub-sub-container {
-    width: 90%;
-}
-.broadcrum {
-    display: flex;
-    margin-bottom: 0.5em;
-    align-items: left;
-    flex-direction: column;
-}
-.broadLink {
-    color: var(--blanco);
-    text-decoration: none;
-}
-.broadLink:hover {
-    color: var(--prim-luz2);
-    cursor: pointer;
-}
-.TextosBroadcrum {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.TextosBroadcrum p, h3 {
-    color: var(--blanco);
-}
-
 .logoH1 {
     display: flex;
     align-items: center;
@@ -354,12 +361,7 @@ header ul a {
     height: 0.04em;
     background-color: var(--blanco);
 }
-.game-container {
-    margin-top: 0.7em;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-}
+
 li:hover {
     color: var(--prim);
 }
@@ -399,7 +401,7 @@ li:hover {
 }
 .descripcion ol :hover {
     color: #00ffff;
-    text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
 }
 .deQueTrata h1 {
     font-family: Poppins;
@@ -657,7 +659,7 @@ li:hover {
 }
 .imgUser img {
     width: 6em;
-    height: 6em;
+    height: 4.5em;
     border-radius: 50%;
     object-fit:cover;
     width: 80px;
