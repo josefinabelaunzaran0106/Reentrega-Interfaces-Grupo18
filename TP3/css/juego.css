@@ -399,9 +399,13 @@ main {
 }
 
 .broadLink:hover {
-    color: var(--prim-luz2);
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
     cursor: pointer;
-
+}
+.descripcionJuego ol :hover {
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
 }
 
 .TextosBroadcrum {
@@ -659,7 +663,9 @@ li:hover {
     text-decoration: none;
     color: var(--blanco);
 }
-
+.listaLinks li a:hover{
+    font-size: 14px;
+}
 .lineacomentarios {
     width: 100%;
     height: 0.2em;
@@ -711,12 +717,6 @@ li:hover {
     flex-direction: column;
     height: auto;
     margin-bottom: 2em;
-}
-
-.inputReseña {
-    margin-top: 0.5em;
-    display: flex;
-    flex-direction: column;
 }
 
 .inputReseña input {
@@ -776,49 +776,6 @@ li:hover {
     border: 0;
 }
 
-.reseñas {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-}
-
-.reseña {
-    width: 100%;
-    height: 8.89863rem;
-    background-color: rgba(116, 100, 100, 1);
-    margin-top: 1em;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.5em;
-    color: var(--blanco);
-    border: var(--blanco) solid 0.2em;
-}
-
-.inputReseña {
-    width: 100%;
-    height: 12rem;
-    background-color: rgba(57, 49, 49, 1);
-    margin-top: 1em;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.5em;
-    color: var(--blanco);
-    border: var(--blanco) solid 0.2em;
-}
-
-.reseñaInterna {
-    display: flex;
-    justify-content: space-between;
-}
-
-.imgUser {
-    width: 20%;
-    padding-left: 2%;
-    padding-top: 2%;
-    padding-right: 2%;
-    display: flex;
-}
 
 .textoReseña {
     width: 80%;
@@ -828,13 +785,6 @@ li:hover {
 
 }
 
-.imgUser img {
-    width: 6em;
-    height: 6em;
-    border-radius: 50%;
-    object-fit:cover;
-    border: var(--blanco) solid 0.2em;
-}
 
 .cj1Reseña {
     width: 100%;
@@ -1487,6 +1437,241 @@ display: flex;
     transition: opacity 0.3s ease; /* Suaviza el cambio de opacidad */
 }
 
+/*COMUNITY-SECTION*/
+.community-section {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 2rem;
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    height: auto;
+    margin-bottom: 100px;
+}
+.btn-comment {
+    display: flex;
+    justify-content:right;
+    margin-top: 0.5em;
+    margin-bottom: 2.1em;
+    padding-right: 2%;
+}
+.btn-comment button {
+    width: 7.33481rem;
+    height: 2.8125rem;
+    border-radius: 0.375em;
+    background-color: rgba(116, 100, 100, 1);
+    color: var(--blanco, #F5FBFF);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.03rem;
+    border: 0;
+}
+.reseñas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1.5rem;
+}
+.reseña {
+    width: 100%;
+    height: 12.5rem;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    display: flex;
+    background: linear-gradient(to bottom, rgba(116, 100, 100, 1) 40%, rgba(90, 70, 70, 1) 70%, rgba(116, 100, 100, 1));
+    padding: 1rem;
+    box-shadow: var(--gris-retro) 0px 0px 10px, var(--secundario) 0px 0px 15px;
+    border: 2px solid var(--acento-luz);
+}
+.inputReseña {
+    width: 100%;
+    height: 12rem;
+    background-color: rgba(57, 49, 49, 1);
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    color: var(--blanco);
+    border: var(--blanco) solid 0.2em;
+}
+.reseñaInterna {
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+}
+.imgUser {
+    width: 20%;
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-right: 2%;
+    display: flex;
+}
+.textoReseña {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2%;
+}
+.fechaReseña{
+    margin-left: 2%;
+}
+/* Fecha de la reseña */
+.fechaReseña {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+/* Ajustes para los botones */
+.acciones button {
+    background-color:  rgba(116, 100, 100, 1);
+    color: var(--blanco);
+    font-size: 0.8rem;  /* Reducir tamaño del texto dentro del botón */
+    width: 34px;
+    height: 30px;
+    align-items: center;
+    box-shadow: none;  /* Eliminar sombra alrededor del botón */
+    border: none; /* Eliminar cualquier borde que pueda estar causando la sombra */
+}
+
+/* Ajustes para el texto y espaciado dentro del botón */
+.acciones button span {
+    margin-left: 0.3rem;  /* Espaciado entre el ícono y el texto */
+}
+
+/* Ajustes para los íconos dentro del botón */
+.acciones i {
+    font-size: 0.8rem; /* Ajusta el tamaño del ícono */
+}
+
+/* Efecto hover en el botón */
+.acciones button:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+    box-shadow: none; /* Asegurarse de que no haya sombra al hacer hover */
+}
+
+/* Asegurarse de que las imágenes dentro del botón no tengan sombra */
+.acciones button img {
+    box-shadow: none; /* Eliminar sombra en las imágenes */
+}
+
+/* Ajustes para la disposición de los botones */
+.acciones {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: end;
+    margin: 2px;
+}
+
+/* Efecto hover en las imágenes dentro del botón */
+.acciones button:hover img {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+.tituloComentarios h2 {
+    font-size: 1.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
+    margin-top: 20px;
+}
+.imgUser img {
+    width: 6em;
+    height: 4.5em;
+    border-radius: 50%;
+    object-fit:cover;
+    width: 80px;
+    border: var(--blanco) solid 0.2em;
+}
+.cj1Reseña {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+    padding-left: 2%;
+}
+.cj1Reseña img {
+    width: 2.93394em;
+    height: 2.5em;
+} 
+.username {
+    font-family: Roboto;
+    font-size: 1.625em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: white;
+}
+.estrReseña {
+    width: 9.70063em;
+    height: 1.5em;
+    background-color: transparent; /* Asegura que el fondo sea transparente */
+    border: none; /* Si hay bordes que causen problemas, elimínalos */
+    box-shadow: none; /* Evita sombras que simulen un fondo */
+
+}
+.estrReseña img {
+    width: 9.70063rem;
+    height: 1.5rem;
+    
+}
+.cj2Reseña {
+    margin-top: 1em;
+    width: 100%;
+    height: 3.52238rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+}
+.cj2Reseña p {
+    width: 38em;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px #00ffff;
+    padding-bottom: 2px;
+}
+.cj3Reseña {
+    margin-top: 1em;
+    width: 100%;
+    height: 3.8rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+}
+.cj3Reseña p {
+    width: 38em;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px #00ffff;
+    padding-bottom: 2px;
+}
 
 
 
