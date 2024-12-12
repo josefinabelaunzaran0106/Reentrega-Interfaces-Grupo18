@@ -1,6 +1,6 @@
 @media only screen and (min-width: 1024px) {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
 * {
     box-sizing: border-box;
@@ -51,7 +51,7 @@ body {
 }
 #percentage {
     display: flex;
-    color: white; /* Asegúrate de que los números sean blancos */
+    color: white;
     font-size: 24px;
     margin-top: 10px;
     justify-content: center;
@@ -77,20 +77,18 @@ body {
     position: relative;
     width: 500px;
     height: 40px;
-    background-color: var(--acento); /* Color de fondo para la barra */
+    background-color: var(--acento);
     overflow: hidden;
     margin-top: 1em;
 }
 .progress-bar {
-    width: 0; /* Comienza desde 0% */
+    width: 0; 
     height: 100%;
-    background-color: var(--acento-luz); /* Cambia a rosa */
+    background-color: var(--acento-luz);
     transition: width 0.1s ease;
     transform-origin: left;
 }
-
 /*NAV-HOME*/
-/* Nav Header */
 .navhome {
     display: flex;
     justify-content: space-between;
@@ -100,6 +98,9 @@ body {
     background-color: rgba(57, 49, 49, 1);
     padding: 0 1em;
     z-index: 1000;
+}
+.navhome button:hover img {
+    transform: scale(1.1);
 }
 /* Logo */
 .logoretrogemas {
@@ -255,7 +256,6 @@ header ul a {
     border: 0; /* Sin borde */
     outline: none; /* Sin contorno */
 }
-
 /* SLIDER */
 .container-carousel {
     position: relative;
@@ -269,6 +269,7 @@ header ul a {
     width: 400%; /* Ajuste automático */
     height: 100%; /* Ocupa toda la altura del contenedor */
     transition: transform 1s ease; /* Movimiento suave */
+    transform-origin: center center;
 }
 .slider-section {
     flex: 0 0 25%; /* Cada sección ocupa el 25% del ancho total (100% dividido entre 4) */
@@ -294,7 +295,6 @@ header ul a {
     transition: background-color 0.3s ease; /* Cambio de color suave */
     user-select: none;
 }
-
 .btn-left:hover,
 .btn-right:hover, .btn-left-cards, .btn-right-cards {
     background-color: rgba(0, 0, 0, 0.8);
@@ -302,11 +302,9 @@ header ul a {
 
 .btn-left, .btn-left-cards {
     left: 0.3em;
-
 }
 .btn-right {
     right: 0.3em;
-  
 }
 .btn-left img, .btn-left-cards img, .btn-right img, .btn-right-cards img {
     width: 3em;
@@ -315,8 +313,6 @@ header ul a {
     opacity: 30%;
     opacity: 70%;
 }
-
-
 .btn-left img:hover, .btn-left-cards:hover {
     opacity: 70%;
 }
@@ -329,9 +325,6 @@ header ul a {
 .btn-right-cards{
     right: -8em;
 }
-
-
-
 /*CARRUSELES*/
 /*titulo*/
 .tituloCard1, .tituloCard2, .tituloCard3, .tituloCard4 {
@@ -340,28 +333,25 @@ header ul a {
     justify-content: left;
     padding-top: 10px;
     position: relative;
-    left: -37em; /* Mueve el título hacia la izquierda, ajusta el valor */
+    left: -37em; /* Mueve el título hacia la izquierda */
 }
 .tituloCard1 {
-    left: -33.5em; /* Mueve el título hacia la izquierda, ajusta el valor */
+    left: -33.5em; /* Mueve el título hacia la izquierda */
 }
 .tituloCard2{
-    left: -34.9em; /* Mueve el título hacia la izquierda, ajusta el valor */
+    left: -34.9em; /* Mueve el título hacia la izquierda*/
 }
 .tituloCard3 {
-    left: -32em; /* Mueve el título hacia la izquierda, ajusta el valor */
+    left: -32em; /* Mueve el título hacia la izquierda */
 }
 .tituloCard4 {
-    left: -35.7em; /* Mueve el título hacia la izquierda, ajusta el valor */
+    left: -35.7em; /* Mueve el título hacia la izquierda */
 }
-
 .tituloCard1 h2, .tituloCard2 h2, .tituloCard3 h2, .tituloCard4 h2 {
     color: var(--blanco);
     font-size: 1.3em;
     text-align: left !important; 
 }
-
-
 /*Contenedor carruseles*/
 .carruseles-home{
     display: flex;
@@ -375,13 +365,11 @@ header ul a {
     box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho */
     perspective: 1200px; /* Añade profundidad a la rotación */ 
 }
-
-
 /* Carrusel contenedor */
 .carruselprincipal {
     width: 100%;
     height: 100%;
-    max-width: 1200px; /* Limita el ancho máximo si es necesario */
+    max-width: 1200px;
     transform: translateX(0); /* Posición inicial */
     transition: transform 1s ease-in-out; /* Transición suave */
     margin-right: 110px;
@@ -389,9 +377,7 @@ header ul a {
     padding-bottom: 20px;
     box-sizing: border-box;
 }
-
 /* Carrusel */
-
 .cincocards {
     display: flex;
     opacity: 1;
@@ -404,7 +390,6 @@ header ul a {
     opacity: 0;
     display: none;
 }
-
 .cincocards-ocultas {
     display: none;
     opacity: 0;
@@ -414,8 +399,6 @@ header ul a {
     display: flex;
     opacity: 1;
 }
-
-
 /* Card individual */
 /* Efecto en la card al pasar el mouse */
 .card {
@@ -429,20 +412,20 @@ header ul a {
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
-
 .card:hover {
     transform: scale(1.05) translateY(-5px); /* Aumenta el tamaño y se desplaza hacia arriba */
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
 }
-
 .nombreCard{
     margin-left: 0.50em;
     height: auto;
     font-size: 1em;
     padding-left: 10px;
     padding-bottom: 5px;
+    color: #fff;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Mejora la legibilidad */
 }
-
 /* Imagen dentro de cada card */
 .card img {
     margin: 1em; 
@@ -451,30 +434,27 @@ header ul a {
 }
 .jugargratis {
     display: flex;
-    flex-direction: row; /* Cambiamos a "row" para que estén en la misma línea */
+    flex-direction: row;
     align-items: center; /* Alinea verticalmente los elementos */
     justify-content: space-between; /* Separa los elementos hacia los extremos */
     padding: 0 1em; /* Añade un pequeño espacio interno para que no toquen los bordes */
 }
-
 /* Botón "Gratis" */
 .gratis {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4em; /* Ajusta el ancho para mantener la consistencia */
-    height: 2em; /* Asegúrate de que el alto sea consistente */
+    width: 4em; 
+    height: 2em; 
     color: var(--blanco);
     background-color: #374957;
     border-radius: 0.2em;
 }
-
 /* Botón "Jugar" */
 .jugar {
     display: flex;
     align-items: center; /* Asegura que el botón esté centrado verticalmente */
 }
-
 .jugar button {
     width: auto; /* Ajusta automáticamente el ancho */
     padding: 0.5em 1em; /* Tamaño del botón */
@@ -487,7 +467,6 @@ header ul a {
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
     position: relative;
 }
-
 /* Hover con cambio de color y borde */
 .jugar button:hover {
     background-color: #A12831; /* Cambia al nuevo tono */
@@ -495,13 +474,11 @@ header ul a {
     transform: translateY(-2px); /* Eleva ligeramente el botón */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra para el efecto de elevación */
 }
-
-/* Efecto de foco (opcional) */
+/* Efecto de foco */
 .jugar button:focus {
     outline: none; /* Elimina el contorno por defecto */
     box-shadow: 0 0 0 3px rgba(161, 40, 49, 0.5); /* Añade un contorno con el tono seleccionado */
 }
-
 .jugar button a {
     text-decoration: none;
     color: var(--blanco);
@@ -509,12 +486,13 @@ header ul a {
 .sacardelcarro{
     display: flex;
     align-items: center; /* Asegura que el botón esté centrado verticalmente */
+    justify-content: right;
     padding: 0 1em; /* Añade un pequeño espacio interno para que no toquen los bordes */
 }
 .sacardelcarro button {
     width: auto;
     padding: 0.5em 1em;
-    background-color: rgb(230, 57, 70); /* Color base */
+    background-color: var(--acento-luz); /* Color base */
     border: none;
     color: var(--blanco);
     border-radius: 0.2em;
@@ -528,7 +506,7 @@ header ul a {
 
 /* Hover con degradado animado */
 .sacardelcarro button:hover {
-    background: linear-gradient(135deg, #A12831, #e53935); /* Degradado dinámico */
+    background: linear-gradient(135deg, var(--acento), var(--acento-luz)); /* Degradado dinámico */
     color: white; /* Contraste para el texto */
     transform: scale(1.05); /* Crece ligeramente */
     box-shadow: 0 4px 10px rgba(161, 40, 49, 0.5); /* Agrega una sombra suave */
@@ -564,7 +542,6 @@ header ul a {
     display: flex;
     align-items: center;
 }
-
 .btn-aniadir{ 
     display: flex;
     align-items: center;
@@ -575,6 +552,7 @@ header ul a {
     background-color: rgb(230, 57, 70); /* Color base */
     border: 2px solid transparent; /* Borde inicial invisible */
     color: var(--blanco); /* Texto blanco */
+    height: auto;
     border-radius: 0.2em;
     font-size: 1em;
     cursor: pointer;
@@ -583,17 +561,15 @@ header ul a {
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
 }
-
 /* Hover: Fondo dinámico y animación */
 .btn-aniadir button:hover {
     background: linear-gradient(45deg, #A12831, #e53935, #ff6f61);
-    background-size: 300%; /* Amplía el tamaño para hacer la animación más fluida */
+    background-size: 300%; 
     animation: gradientMove 1s linear infinite; /* Movimiento del fondo */
     color: white; /* Mantiene contraste en el texto */
     transform: scale(1.1); /* Expande ligeramente el botón */
     box-shadow: 0 8px 15px rgba(230, 57, 70, 0.5); /* Sombra suave */
 }
-
 /* Pulsación interna al hover */
 .btn-aniadir button::after {
     content: '';
@@ -608,12 +584,10 @@ header ul a {
     z-index: -1;
     transition: width 0.4s ease, height 0.4s ease;
 }
-
 .btn-aniadir button:hover::after {
     width: 300%; /* Se expande para cubrir el botón */
     height: 300%;
 }
-
 /* Animación de fondo en degradado */
 @keyframes gradientMove {
     0% {
@@ -626,39 +600,32 @@ header ul a {
         background-position: 0% 50%;
     }
 }
-
-
 /* botones posicion */
-
-
 .primero {
     top: 10.5em;
 }
-
 .segundo {
     top: 11em;
 }
-
 .tercero {
     top: 11.5em; /* 58.5em + 26em */
 }
-
 .cuarto {
     top: 12em; /* 84.5em + 26em */
 }
 .hidden {
     display: none;
 }
-
-
-/*FOOTER*/
+/*footer*/
 .footerhome{
     display: flex;
-    flex-direction: column;
-    height: auto;
+    flex-direction: row;
+    height: 12em;
     background-color: rgba(57, 49, 49, 1);
     width: auto;
+    justify-content: space-evenly;
 }
+
 .footerhome button {
     text-align: left;
     display: flex;
@@ -669,9 +636,7 @@ header ul a {
     color: var(--blanco);
     cursor: pointer;
 }
-.footerhome{
-    padding-left: 5%;
-}
+
 .footerhome div ul.show {
     display: block;
     color: var(--blanco);
@@ -686,11 +651,7 @@ header ul a {
     margin-bottom: 0.5em;
     color: var(--blanco);
 }
-.footerhome{   
-    display: flex;
-    flex-direction: row;
-    height: 12em;
-}
+
 .footerhome button {
     display: flex;
     align-items: center;
@@ -712,10 +673,7 @@ header ul a {
 .footerhome .footerulhidden {
     display: flex;
 }
-.footerhome {
-    width: 100%;
-    justify-content: space-evenly;
-}
+
 .footerulhidden {
     flex-direction: column;
     list-style: none;
@@ -739,4 +697,31 @@ header ul a {
 .footerhome div ul.show {
    margin: 0;
 }
+.footer-logo {
+    display: flex; /* Permite el uso de flexbox */
+    flex-direction: column; /* Coloca los elementos (logo y copyright) en columna */
+    width: 14%;
+    padding-top: 30px;
+}
+
+.logo-retrogemas {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem; /* Tamaño más pequeño del logo */
+    color: var(--acento-luz);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000;
+    letter-spacing: 2px;
+    margin-bottom: 0.5em; /* Espacio entre el logo y el texto de copyright */
+}
+
+.footer-copyright {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 8px;
+    font-size: 0.5rem; /* Tamaño más pequeño para el texto de copyright */
+    color: #aaa;
+    text-shadow: 1px 1px 2px #000;
+    letter-spacing: 2px; /* Ajusta la separación entre las letras */
+    line-height: 1.5;    
+}
+
 }

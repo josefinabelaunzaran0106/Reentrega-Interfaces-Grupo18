@@ -19,6 +19,55 @@ const personajenaranja = document.getElementById("img-personajenaranja");
 const personajeamarillo = document.getElementById("img-personajeamarillo");
 
 // Entrada en pantalla de los elementos
+window.addEventListener("load", () => {
+  // Escondidos a la izquierda
+  arbol1.style.transform = `translateX(${-375}px)`;
+  nube1.style.transform = `translateX(${-380}px)`;
+  nubegris2.style.transform = `translateX(${-380}px)`;
+  nube2.style.transform = `translateX(${-380}px)`;
+  personajerojo.style.transform = `translateX(${-600}px)`;
+
+  // Escondidos a la derecha
+  personajenaranja.style.transform = `translateX(600px)`;
+  personajeamarillo.style.transform = `translateX(500px)`;
+  arbol2.style.transform = `translateX(400px)`;
+  arbol3.style.transform = `translateX(200px)`;
+  nube4.style.transform = `translateX(600px)`;
+  nube3.style.transform = `translateX(600px)`;
+  nubegris4.style.transform = `translateX(400px)`;
+  nubegris3.style.transform = `translateX(300px)`;
+  nubegris5.style.transform = `translateX(600px)`;
+
+  // Aparición de elementos
+  setTimeout(() => {
+    const elementos = [
+      arbol1,
+      nube1,
+      nubegris2,
+      nube2,
+      personajerojo,
+      personajenaranja,
+      personajeamarillo,
+      arbol2,
+      arbol3,
+      nube4,
+      nube3,
+      nubegris4,
+      nubegris3,
+      nubegris5,
+    ];
+
+    elementos.forEach((elemento, index) => {
+      elemento.style.transition = "transform 0.8s ease-in-out, opacity 1s";
+      elemento.style.opacity = "0"; // Inicialmente invisible
+
+      setTimeout(() => {
+        elemento.style.transform = "translateX(0)";
+        elemento.style.opacity = "1"; // Hacer visible
+      }, index * 5); // Retraso escalonado de 200ms por elemento
+    });
+  }, 0); // Retraso inicial antes de que comience la animación
+});
 
 // Parallax
 window.addEventListener("scroll", () => {

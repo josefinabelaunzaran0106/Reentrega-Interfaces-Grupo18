@@ -1,5 +1,4 @@
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
@@ -42,7 +41,7 @@ body {
 }
 #percentage {
     display: flex;
-    color: white; /* Asegúrate de que los números sean blancos */
+    color: white;
     font-size: 24px;
     margin-top: 10px;
     justify-content: center;
@@ -68,19 +67,18 @@ body {
     position: relative;
     width: 500px;
     height: 40px;
-    background-color: var(--acento); /* Color de fondo para la barra */
+    background-color: var(--acento);
     overflow: hidden;
     margin-top: 1em;
 }
 .progress-bar {
-    width: 0; /* Comienza desde 0% */
+    width: 0; 
     height: 100%;
-    background-color: var(--acento-luz); /* Cambia a rosa */
+    background-color: var(--acento-luz); 
     transition: width 0.1s ease;
     transform-origin: left;
 }
 /*NAV-HOME*/
-/* Nav Header */
 .navhome {
     display: flex;
     justify-content: space-between;
@@ -110,22 +108,21 @@ body {
 }
 .imglogoretrogemas {
     width: 100%;
-    height: auto;  /* Mantener la proporción de la imagen */
+    height: auto;  
     display: block;
-    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+    object-fit: contain; 
 }
 /* Barra de Búsqueda */
 .buscarnav {
     display: none;
 }
-
 /* Iconos de Navegación (Perfil y Carrito) */
 .iconosnav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 30%;
-    gap: 1.5em; /* Añade espacio entre los íconos */
+    gap: 1.5em; 
 }
 .perfil button,
 .carrito button {
@@ -150,9 +147,9 @@ body {
 }
 /* Imagen del Carrito */
 .carrito button img {
-    width: 1.8rem;  /* Ajusta la imagen del carrito */
+    width: 1.8rem;  
     height: 1.8rem;
-    object-fit: cover; /* Asegura que la imagen no se deforme */
+    object-fit: cover; 
     display: block;
 }
 /* Menús Desplegables */
@@ -240,7 +237,6 @@ header ul a {
     border: 0; /* Sin borde */
     outline: none; /* Sin contorno */
 }
-/*SLIDER*/
 /* SLIDER */
 .container-carousel {
     position: relative;
@@ -279,19 +275,15 @@ header ul a {
     transition: background-color 0.3s ease; /* Cambio de color suave */
     user-select: none;
 }
-
 .btn-left:hover,
 .btn-right:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 .btn-left {
     left: 0.3em;
-
 }
 .btn-right {
     right: 0.3em;
-  
 }
 .btn-left img, .btn-left-cards img, .btn-right img, .btn-right-cards img {
     width: 3em;
@@ -300,15 +292,12 @@ header ul a {
     opacity: 30%;
     opacity: 70%;
 }
-
-
 .btn-left img:hover {
     opacity: 70%;
 }
 .btn-right img:hover {
     opacity: 70%;
 }
-
 /* CARRUSELES */
 .carruseles-home{
     display: flex;
@@ -322,8 +311,6 @@ header ul a {
     box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho */
     perspective: 1200px; /* Añade profundidad a la rotación */ 
 }
-
-
 /* Carrusel contenedor */
 .carruselprincipal {
     width: 100%;
@@ -336,9 +323,7 @@ header ul a {
     box-sizing: border-box;
     position: relative;
 }
-
 /* Carrusel */
-
 .cincocards {
     display: flex;
     opacity: 1;
@@ -350,7 +335,6 @@ header ul a {
     opacity: 0;
     display: none;
 }
-
 .cincocards-ocultas {
     display: none;
     opacity: 0;
@@ -360,8 +344,6 @@ header ul a {
     display: flex;
     opacity: 1;
 }
-
-
 .cincocards .card,
 .cincocards-ocultas .card {
     flex: 0 0 calc(33.33% - 1em); /* Cada card ocupa un tercio del ancho */
@@ -375,7 +357,17 @@ header ul a {
     box-shadow: 1px 0px 5px var(--prim-sombra3);
     border: 1px solid var(--negro);
     margin-left: 30px;
-
+}
+.nombreCard{
+    margin-left: 0.10em;
+    height: auto;
+    font-size: 0.9em;
+    padding-bottom: 5px;
+}
+.precio{ 
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
 }
 .hidden {
     display: none;
@@ -385,9 +377,8 @@ header ul a {
     top: 50%; /* Centra verticalmente */
     left: 20px; /* Ajusta la posición horizontal */
     transform: translateY(-50%); /* Mantén el centrado vertical */
-    z-index: 100; /* Asegúrate de que esté por encima del contenido */
+    z-index: 100; /* Asegura de que esté por encima del contenido */
 }
-
 .btn-right-cards {
     position: absolute;
     top: 50%;
@@ -395,7 +386,6 @@ header ul a {
     transform: translateY(-50%);
     z-index: 100;
 }
-
 /* Ajustar las imágenes dentro de las tarjetas */
 .card img {
     width: 100%; /* La imagen ocupa todo el ancho del card */
@@ -403,13 +393,12 @@ header ul a {
     object-fit: cover; /* Asegura que la imagen no se deforme */
     margin-bottom: 10px;
 }
-
 /* Ajustar los títulos */
 .tituloCard1, .tituloCard2, .tituloCard3, .tituloCard4 {
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    font-size: 1.2em;
+    font-size: 0.8em;
     color: var(--blanco);
     text-align: center;
 }
@@ -428,71 +417,69 @@ header ul a {
     height: 50px; /* Ajusta el alto del botón */
     align-items: center;
 }
-
-
-    /* Imágenes dentro de los botones */
-    .btn-left-cards img,
-    .btn-right-cards img {
-        width: 50px; /* Tamaño reducido para flechas */
-        height: 50px;
-        opacity: 0.8;
-    }
-    .btn-left-cards,
+/* Imágenes dentro de los botones */
+.btn-left-cards img,
+.btn-right-cards img {
+    width: 50px; /* Tamaño reducido para flechas */
+    height: 50px;
+    opacity: 0.8;
+}
+.btn-left-cards,
 .btn-right-cards {
     top: 40%; /* Cambia el punto de referencia */
-
 }
 
-    .btn-left-cards img:hover,
-    .btn-right-cards img:hover {
-        opacity: 1;
-    }
-    .btn-left-cards,
+.btn-left-cards img:hover,
+.btn-right-cards img:hover {
+    opacity: 1;
+}
+.btn-left-cards,
 .btn-right-cards {
     z-index: 1000; /* Asegúrate de que estén por encima de otros elementos */
 }
-
-    /* Botones de acción (Jugar, Añadir, etc.) */
-    .jugar button,
-    .sacardelcarro button,
-    .btn-aniadir button {
-        padding: 0.4em 0.8em; /* Reduce el tamaño del botón */
-        font-size: 0.9em; /* Reduce el tamaño del texto */
-        border-radius: 0.2em;
-        background-color: rgb(230, 57, 70); /* Color base */
-        color: var(--blanco);
-        
-    }
-
-    .jugar button:hover,
-    .sacardelcarro button:hover,
-    .btn-aniadir button:hover {
-        background-color: #A12831; /* Cambia al nuevo tono */
-        transform: scale(1.05); /* Ligeramente menor escala al hover */
-        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); /* Sombra más suave */
-    }
-    .jugar button a {
-        text-decoration: none;
-        color: var(--blanco);
-    }
-
-    /* Posición de los botones de acción */
-    .añadiralcarro {
-        flex-direction: column; /* Cambia a disposición vertical si es necesario */
-        align-items: center; /* Centra los botones en dispositivos móviles */
-        padding: 0.5em 0; /* Reduce el espacio alrededor */
-    }
-
-    /* Ajustes de posición de los botones numerados */
-    .primero,
-    .segundo,
-    .tercero,
-    .cuarto {
-        top: 50%; 
-    }
-
-
-
+/* Botones de acción (Jugar, Añadir, etc.) */
+.jugar button,
+.sacardelcarro button,
+.btn-aniadir button {
+    padding: 0.4em 0.8em; 
+    font-size: 0.7em;
+    border-radius: 0.2em;
+    background-color: var(--acento-luz);
+    color: var(--blanco);    
+}
+.jugar button:hover,
+.sacardelcarro button:hover,
+.btn-aniadir button:hover {
+    background-color: var(--acento);
+    transform: scale(1.05); 
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+.jugar button a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+.añadiralcarro {
+    flex-direction: column; 
+    align-items: center; 
+    padding: 0.5em 0; 
+}
+.gratis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3em; 
+    height: 1.5em; 
+    color: var(--blanco);
+    background-color: #374957;
+    border-radius: 0.2em;
+}
+/* Ajustes de posición de los botones numerados */
+.primero,
+.segundo,
+.tercero,
+.cuarto {
+    top: 50%; 
+}
 /*FOOTER RESPONSIVE*/
 .footerhome{
     display: flex;
@@ -501,7 +488,6 @@ header ul a {
     background-color: rgba(57, 49, 49, 1);;
     width: auto;
 }
-
 .footerhome button {
     text-align: left;
     margin: 1em 0 1.5em 1.2em;
@@ -513,7 +499,6 @@ header ul a {
     color: var(--blanco);
     cursor: pointer;
 }
-
 /* desplegables footer */
 .footerulhidden {
     display: none;
@@ -522,19 +507,17 @@ header ul a {
 .footerhome div ul {
     display: none;
 }
-
 .footerhome div ul.show {
     display: block;
     font-size: 0.7em;
     margin-left: 1.5em;
     margin-bottom: 2em;
     list-style: none;
+    color: var(--blanco);
 }
-
 .footerhome div ul li:hover {
     color: var(--prim);
 }
-
 .footerhome div ul li {
     margin-bottom: 0.5em;
 }

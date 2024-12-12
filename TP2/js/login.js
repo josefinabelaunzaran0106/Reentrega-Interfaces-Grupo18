@@ -10,6 +10,13 @@ let formLogin = document.querySelector('#formlogin');
 console.log(formLogin);
 formLogin.addEventListener("submit", verificarLogin);
 
+function mostrarPopupExito() {
+    const popupSuccess = document.getElementById("popup-success");
+    popupSuccess.classList.remove("hidden");
+    setTimeout(() => {
+        popupSuccess.classList.add("hidden");
+    }, 3000); // Oculta el popup después de 3 segundos
+}
 function verificarLogin(e) {
     e.preventDefault();
 
@@ -25,38 +32,54 @@ function verificarLogin(e) {
 
     if (nombreLogin == userLogin.name && contraLogin == userLogin.password) {
         console.log("logueado correctamente");
-        mostrarPopup("Logueado correctamente");
+        mostrarPopupElement('<span class="check-icon">✔️</span> Logueado con éxito');
         setTimeout("redireccionar()", 3000);
     }
 
     else if (nombreLogin != userLogin.name && contraLogin == userLogin.password) {
         console.log("nombre incorrecto");
-        mostrarPopup("nombre incorrecto");
+        mostrarPopupElement('<span class="error-icon">❌</span> Nombre de usuario incorrecto');
 
     }
     else if (nombreLogin == userLogin.name && contraLogin != userLogin.password) {
         console.log("nombre incorrecto");
-        mostrarPopup("contraseña incorrecta");
+        mostrarPopupElement('<span class="error-icon">❌</span> Contraseña incorrecta');
 
     }
     else {
         console.log("incorrecto");
-        mostrarPopup("nombre y contraseña incorrecta");
+        mostrarPopupElement('<span class="error-icon">❌</span> Nombre de usuario y contraseña incorrecta');
     }
 }
 function mostrarPopup(mensaje) {
-    // Busca el elemento donde irá el mensaje y actualiza su contenido
-    document.getElementById("popup-message").textContent = mensaje;
+    const popup = document.getElementById("popup-error");
+    const message = document.getElementById("popup-message");
 
-    // Muestra el pop-up quitando la clase "hidden"
-    document.getElementById("popup-error").classList.remove("hidden");
+    message.innerHTML = mensaje;
+    popup.classList.remove("hidden");
+
+    // Animación de entrada
+    popup.style.animation = "pop-in 0.5s ease-out";
 }
 
-// Ocultar el pop-up cuando se hace clic en el botón de cerrar
 document.getElementById("close-btn").addEventListener("click", function () {
-    document.getElementById("popup-error").classList.add("hidden");
+    const popup = document.getElementById("popup-error");
+
+    // Animación de salida antes de ocultar
+    popup.style.animation = "fade-out 0.5s ease-in";
+    setTimeout(() => {
+        popup.classList.add("hidden");
+    }, 500);
 });
 
 function redireccionar() {
     window.location = "home.html";
+}
+function mostrarPopupElement(contenido) {
+    document.getElementById("popup-message").innerHTML = contenido;
+    document.getElementById("popup-error").classList.remove("hidden");
+}
+function togglePasswordVisibility(id) {
+    const passwordField = document.getElementById(id);
+    passwordField.type = passwordField.type === "password" ? "text" : "password";
 }

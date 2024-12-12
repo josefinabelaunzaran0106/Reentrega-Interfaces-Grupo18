@@ -7,7 +7,7 @@ window.addEventListener("load", function() {
     const content = document.querySelector(".all");
 
     // Inicializa el porcentaje en 0%
-    let percentage = 100;
+    let percentage = 0;
 
     // Función para actualizar el porcentaje en el DOM
     function updatePercentage() {
