@@ -616,7 +616,7 @@ li:hover {
 }
 .reseña {
     width: 100%;
-    height: 8.89863rem;
+    height: 12.5rem;
     border-radius: 8px;
     padding: 1rem;
     margin-top: 1em;
@@ -643,6 +643,7 @@ li:hover {
 .reseñaInterna {
     display: flex;
     justify-content: space-between;
+    height: 500px;
 }
 .imgUser {
     width: 20%;
@@ -657,6 +658,67 @@ li:hover {
     flex-direction: column;
     padding-right: 2%;
 }
+.fechaReseña{
+    margin-left: 2%;
+}
+/* Fecha de la reseña */
+.fechaReseña {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+/* Ajustes para los botones */
+.acciones button {
+    background-color:  rgba(116, 100, 100, 1);
+    color: var(--blanco);
+    font-size: 0.8rem;  /* Reducir tamaño del texto dentro del botón */
+    width: 34px;
+    height: 30px;
+    align-items: center;
+    box-shadow: none;  /* Eliminar sombra alrededor del botón */
+    border: none; /* Eliminar cualquier borde que pueda estar causando la sombra */
+}
+
+/* Ajustes para el texto y espaciado dentro del botón */
+.acciones button span {
+    margin-left: 0.3rem;  /* Espaciado entre el ícono y el texto */
+}
+
+/* Ajustes para los íconos dentro del botón */
+.acciones i {
+    font-size: 0.8rem; /* Ajusta el tamaño del ícono */
+}
+
+/* Efecto hover en el botón */
+.acciones button:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+    box-shadow: none; /* Asegurarse de que no haya sombra al hacer hover */
+}
+
+/* Asegurarse de que las imágenes dentro del botón no tengan sombra */
+.acciones button img {
+    box-shadow: none; /* Eliminar sombra en las imágenes */
+}
+
+/* Ajustes para la disposición de los botones */
+.acciones {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: end;
+    margin: 2px;
+}
+
+/* Efecto hover en las imágenes dentro del botón */
+.acciones button:hover img {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
 .imgUser img {
     width: 6em;
     height: 4.5em;
@@ -713,6 +775,29 @@ li:hover {
     padding-left: 2%;
 }
 .cj2Reseña p {
+    width: 38em;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px #00ffff;
+    padding-bottom: 2px;
+}
+.cj3Reseña {
+    margin-top: 1em;
+    width: 100%;
+    height: 3.8rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+}
+.cj3Reseña p {
     width: 38em;
     background-color: #000;
     color: #fff;
