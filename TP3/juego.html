@@ -5,452 +5,470 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jugar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/juego.css">
 </head>
 
 <body>
-
-    <header class="navheader">
-        <nav class="navhome primariosombra2">
-            <div class="logoretrogemas">
-                <div class="hamburguer-menu">
-                    <button class="primariosombra2" type="button" id="menu-burguer">
-                        <img src="imgs/iconos/hamburguesa.png" id="imgburguer">
-                    </button>
-                </div>
-                <div class="hamburguer-menu-desplegado btn" id="menuH">
-                    <ul>
-                        <li>Mi perfil</li>
-                        <li>Favoritos</li>
-                        <li>Mis Logros</li>
-                        <li>Mis amigos</li>
-                        <li>Mensajes</li>
-                    </ul>
-                </div>
-                <div class="titulo">
-
-                    <a href="home.html"><img src="imgs/iconos/retrogemas.png" class="imglogoretrogemas"></a>
-                </div>
-            </div>
-            <div class="buscarnav">
-                <img class="img-buscar" src="imgs/iconos/buscar.png" alt="">
-            </div>
-            <div class="iconosnav">
-                <div class="carrito">
-                    <button type="button" class="primariosombra2" id="menu-nav">
-                        <img src="imgs\iconos\carrito.png"></button>
-                </div>
-                <div class="carritoDesplegado btn">
-                    <ul>
-                        <li>Mi carrito</li>
-                        <li>Mis compras</li>
-                    </ul>
-                </div>
-                <div class="perfil">
-                    <button type="button" class="primariosombra2" id="menu-nav">
-                        <img src="imgs/iconos/user.png"></button>
-                </div>
-                <div class="perfilDesplegado btn">
-                    <ul>
-                        <li>Mi cuenta</li>
-                        <li>Mi carrito</li>
-                        <li>Mis favoritos</li>
-                        <li>Mis logros</li>
-                        <li><a class="cerrarSesion" href="index.html">Cerrar sesion</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </nav>
-    </header>
-
-
-    <!--seccion juego-->
-    <main class="main-game-container">
-        <div class="sub-container btn">
-            <div class="sub-sub-container">
-                <section class="broadcrum">
-                    <div class="TextosBroadcrum">
-                        <h3 class="colorblanco"><a href="home.html" class="broadLink">RetroGemas</a> -> <a
-                                class="broadLink">Estrategia</a> -> <a class="broadLink">4 en Linea Pacman</a></h3>
+    <main class="all">
+        <header class="navheader">
+            <nav class="navhome primariosombra2">
+                <div class="logoretrogemas">
+                    <div class="hamburguer-menu">
+                        <button class="primariosombra2" type="button" id="menu-burguer">
+                            <img src="imgs/iconos/hamburguesa.png" id="imgburguer">
+                        </button>
                     </div>
-                </section>
-                <!--    <div class="linegameone"></div>-->
-                <div id="game-container-fix">
-                    <section class="game-container">
-                        <div class="juegoColocado">
-                            <canvas width="1090" height="555" id="canvas"></canvas>
-                            <div class="hidden" id="opacidad"></div>
-                            <div class="hidden" id="divGanador">
-                                <h1 id="mensajeGanador" class="textoGanador"></h1>
-                                <button id="botonReset" class="btn-sucess">Volver a empezar?</button>
-                            </div>
-                            <div class="menusjuego">
-                                <div class="hidden" id="contadortimer">
-                                    <p id="timer">00:00</p>
-                                    <button class="resetButton cuarto-hover-boton" id="reset"><img
-                                            src="imgs/iconos/reset.png"></button>
-                                    <button class="btnpausar colorblanco" id="btnpausar"><img
-                                            src="imgs/iconos/pausa.png" id="imagenpausar"></button>
+                    <div class="hamburguer-menu-desplegado btn" id="menuH">
+                        <ul>
+                            <li>Mi perfil</li>
+                            <li>Favoritos</li>
+                            <li>Mis Logros</li>
+                            <li>Mis amigos</li>
+                            <li>Mensajes</li>
+                        </ul>
+                    </div>
+                    <div class="titulo">
+
+                        <a href="home.html"><img src="imgs/iconos/retrogemas.png" class="imglogoretrogemas"></a>
+                    </div>
+                </div>
+                <div class="buscarnav">
+                    <img class="img-buscar" src="imgs/iconos/buscar.png" alt="">
+                </div>
+                <div class="iconosnav">
+                    <div class="carrito">
+                        <button type="button" class="primariosombra2" id="menu-nav">
+                            <img src="imgs\iconos\carrito.png"></button>
+                    </div>
+                    <div class="carritoDesplegado btn">
+                        <ul>
+                            <li>Mi carrito</li>
+                            <li>Mis compras</li>
+                        </ul>
+                    </div>
+                    <div class="perfil">
+                        <button type="button" class="primariosombra2" id="menu-nav">
+                            <img src="imgs/iconos/user.png"></button>
+                    </div>
+                    <div class="perfilDesplegado btn">
+                        <ul>
+                            <li>Mi cuenta</li>
+                            <li>Mi carrito</li>
+                            <li>Mis favoritos</li>
+                            <li>Mis logros</li>
+                            <li><a class="cerrarSesion" href="index.html">Cerrar sesion</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+
+        <!--seccion juego-->
+        <main class="main-game-container">
+            <div class="sub-container btn">
+                <div class="sub-sub-container">
+                    <section class="broadcrum">
+                        <div class="TextosBroadcrum">
+                            <h3 class="colorblanco"><a href="home.html" class="broadLink">RetroGemas</a> -> <a
+                                    class="broadLink">Estrategia</a> -> <a class="broadLink">4 en Linea Pacman</a></h3>
+                        </div>
+                    </section>
+                    <!--    <div class="linegameone"></div>-->
+                    <div id="game-container-fix">
+                        <section class="game-container">
+                            <div class="juegoColocado">
+                                <canvas width="1090" height="555" id="canvas"></canvas>
+                                <div class="hidden" id="opacidad"></div>
+                                <div class="hidden" id="divGanador">
+                                    <h1 id="mensajeGanador" class="textoGanador"></h1>
+                                    <button id="botonReset" class="btn-sucess">Volver a empezar?</button>
                                 </div>
-                                <div class="turno colorblanco"><span id="turno" class="hidden"></span></div>
-
-                                <div class="hidden" id="mensajeReinicio">
-                                    <div class="mensajediv">
-                                        <p class="colorblanco">¿Desea reiniciar el juego?</p>
+                                <div class="menusjuego">
+                                    <div class="hidden" id="contadortimer">
+                                        <p id="timer">00:00</p>
+                                        <button class="resetButton cuarto-hover-boton" id="reset"><img
+                                                src="imgs/iconos/reset.png"></button>
+                                        <button class="btnpausar colorblanco" id="btnpausar"><img
+                                                src="imgs/iconos/pausa.png" id="imagenpausar"></button>
                                     </div>
-                                    <div>
-                                        <button class="btn-danger" id="reiniciar">Reiniciar el juego</button>
-                                        <button class="btn-sucess" id="continuar">No, seguir jugando</button>
-                                    </div>
-                                </div>
+                                    <div class="turno colorblanco"><span id="turno" class="hidden"></span></div>
 
-
-                                <div class="colorblanco modosJuego" id="modoJuegoElegir">
-                                    <div class="divbackground">
-                                        <h1 class="tituloh1 resaltado">Selecciona el tablero que deseas utilizar</h1>
-                                        <div class="divFormMinutos">
-                                            <form>
-                                                <label class="resaltado">Puede elegir la duracion en minutos de la
-                                                    partida
-                                                    (Opcional)</label>
-                                                <input type="number" class="inputForm inputMinutos" name="minutos"
-                                                    max="10" id="minutos" required>
-
-                                            </form>
-                                            <button type="button" class="hidden" id="btnElegirMinutos">Elegir</button>
+                                    <div class="hidden" id="mensajeReinicio">
+                                        <div class="mensajediv">
+                                            <p class="colorblanco">¿Desea reiniciar el juego?</p>
                                         </div>
-
-                                        <div class="divcenter">
-                                            <div class="divflex">
-                                                <div class="img4enlinea">
-                                                    <div class="contenedortitulo">
-                                                        <h2 class="tituloh2 resaltado">4 en linea</h2>
-                                                    </div>
-                                                    <img src="imgs/tab/4enlinea.png" id="4enlinea"></img>
-                                                </div>
-                                                <div class="img4enlinea">
-                                                    <div class="contenedortitulo">
-                                                        <h2 class="tituloh2 resaltado">5 en linea</h2>
-                                                    </div>
-                                                    <img src="imgs/tab/5enlinea.png" id="5enlinea"></img>
-                                                </div>
-
-                                                <div class="img4enlinea">
-                                                    <div class="contenedortitulo">
-                                                        <h2 class="tituloh2 resaltado">6 en linea</h2>
-                                                    </div>
-                                                    <img src="imgs/tab/6enlinea.png" id="6enlinea"></img>
-                                                </div>
-                                                <div class="img4enlinea">
-                                                    <div class="contenedortitulo">
-                                                        <h2 class="tituloh2 resaltado">7 en linea</h2>
-                                                    </div>
-                                                    <img src="imgs/tab/7enlinea.png" id="7enlinea"></img>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="elegirpersonajes colorblanco fichasElegir" id="elegirpersonajes">
-
-                                    <div class="divbackground resaltadoblur">
-                                        <h1 class="h1 resaltado">4 en linea Pacman</h1>
                                         <div>
-                                            <h1 class="h1 resaltado">Cada jugador elige su personaje</h1>
+                                            <button class="btn-danger" id="reiniciar">Reiniciar el juego</button>
+                                            <button class="btn-sucess" id="continuar">No, seguir jugando</button>
                                         </div>
+                                    </div>
 
-                                        <div class="elegirJugador">
-                                            <h1 class="titulojugador jugador resaltado">Jugador 1</h1>
+
+                                    <div class="colorblanco modosJuego" id="modoJuegoElegir">
+                                        <div class="divbackground">
+                                            <h1 class="tituloh1 resaltado">Selecciona el tablero que deseas utilizar
+                                            </h1>
+                                            <div class="divFormMinutos">
+                                                <form>
+                                                    <label class="resaltado">Puede elegir la duracion en minutos de la
+                                                        partida
+                                                        (Opcional)</label>
+                                                    <input type="number" class="inputForm inputMinutos" name="minutos"
+                                                        max="10" id="minutos" required>
+
+                                                </form>
+                                                <button type="button" class="hidden"
+                                                    id="btnElegirMinutos">Elegir</button>
+                                            </div>
+
+                                            <div class="divcenter">
+                                                <div class="divflex">
+                                                    <div class="img4enlinea">
+                                                        <div class="contenedortitulo">
+                                                            <h2 class="tituloh2 resaltado">4 en linea</h2>
+                                                        </div>
+                                                        <img src="imgs/tab/4enlinea.png" id="4enlinea"></img>
+                                                    </div>
+                                                    <div class="img4enlinea">
+                                                        <div class="contenedortitulo">
+                                                            <h2 class="tituloh2 resaltado">5 en linea</h2>
+                                                        </div>
+                                                        <img src="imgs/tab/5enlinea.png" id="5enlinea"></img>
+                                                    </div>
+
+                                                    <div class="img4enlinea">
+                                                        <div class="contenedortitulo">
+                                                            <h2 class="tituloh2 resaltado">6 en linea</h2>
+                                                        </div>
+                                                        <img src="imgs/tab/6enlinea.png" id="6enlinea"></img>
+                                                    </div>
+                                                    <div class="img4enlinea">
+                                                        <div class="contenedortitulo">
+                                                            <h2 class="tituloh2 resaltado">7 en linea</h2>
+                                                        </div>
+                                                        <img src="imgs/tab/7enlinea.png" id="7enlinea"></img>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elegirpersonajes colorblanco fichasElegir" id="elegirpersonajes">
+
+                                        <div class="divbackground resaltadoblur">
+                                            <h1 class="h1 resaltado">4 en linea Pacman</h1>
                                             <div>
-                                                <div class="imgfichas"><img src="imgs/fichas/pacman1.png" id="imgFicha"
-                                                        data-player="1" data-group="buenos" alt="pacman"></div>
-                                                <div class="imgfichas"><img src="imgs/fichas/pacman2.png" id="imgFicha"
-                                                        data-player="1" data-group="buenos" alt="pacman"></div>
-                                                <div class="imgfichas"><img src="imgs/fichas/pacman3.png" id="imgFicha"
-                                                        data-player="1" data-group="buenos" alt="pacman"></div>
-                                                <div class="imgfichas"><img src="imgs/fichas/pacman4.png" id="imgFicha"
-                                                        data-player="1" data-group="buenos" alt="pacman"></div>
+                                                <h1 class="h1 resaltado">Cada jugador elige su personaje</h1>
                                             </div>
-                                        </div>
 
-                                        <div class="lineablanca"></div>
-
-                                        <div class="elegirJugador">
-                                            <h1 class="titulojugador jugador resaltado">Jugador 2</h1>
-                                            <div class="margendiv">
-                                                <div class="imgfichas"><img src="imgs/fichas/fantasmita1.png"
-                                                        id="imgFicha" data-player="2" data-group="malos" alt="fantasma">
-                                                </div>
-                                                <div class="imgfichas"><img src="imgs/fichas/fantasmita2.png"
-                                                        id="imgFicha" data-player="2" data-group="malos" alt="fantasma">
-                                                </div>
-                                                <div class="imgfichas"><img src="imgs/fichas/fantasmita3.png"
-                                                        id="imgFicha" data-player="2" data-group="malos" alt="fantasma">
-                                                </div>
-                                                <div class="imgfichas"><img src="imgs/fichas/fantasmita4.png"
-                                                        id="imgFicha" data-player="2" data-group="malos" alt="fantasma">
+                                            <div class="elegirJugador">
+                                                <h1 class="titulojugador jugador resaltado">Jugador 1</h1>
+                                                <div>
+                                                    <div class="imgfichas"><img src="imgs/fichas/pacman1.png"
+                                                            id="imgFicha" data-player="1" data-group="buenos"
+                                                            alt="pacman"></div>
+                                                    <div class="imgfichas"><img src="imgs/fichas/pacman2.png"
+                                                            id="imgFicha" data-player="1" data-group="buenos"
+                                                            alt="pacman"></div>
+                                                    <div class="imgfichas"><img src="imgs/fichas/pacman3.png"
+                                                            id="imgFicha" data-player="1" data-group="buenos"
+                                                            alt="pacman"></div>
+                                                    <div class="imgfichas"><img src="imgs/fichas/pacman4.png"
+                                                            id="imgFicha" data-player="1" data-group="buenos"
+                                                            alt="pacman"></div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
+                                            <div class="lineablanca"></div>
 
-                    </section>
-                    <section class="info-game-Instrucciones btn">
-                        <div class="deQueTrata">
-                            <div class="ult-coment-titulo">
-                                <div class="tituloComentarios">
-                                    <h2>Instrucciones:</h2>
-                                </div>
-                            </div>
-                            <div class="descripcionJuego">
-                                <ol>
-                                    <li>Elige un personaje para cada jugador</li>
-                                    <li>Elige el tablero</li>
-                                    <li>Elige la columna donde dejarás caer la ficha</li>
-                                    <li>Intenta bloquear a tu oponente</li>
-                                    <li>Gana quien logra ubicar cuatro fichas alineadas en forma vertical, horizontal u
-                                        oblícua. </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="info-game btn">
-                        <div class="deQueTrata">
-                            <h1>¿De que trata el 4 en linea Pacman?</h1>
-                            <div class="descripcion">
-                                <p>Divertite jugando al cuatro en línea con los personajes del Pacman, utiliza todo tu
-                                    ingenio para alinear las fichas y vencer a tu oponente. A disfrutar!!!</p>
-                            </div>
-                            <div class="imgsGameJuego">
-                                <img src="imgs/1.png">
-                                <img src="imgs/2.png">
-                                <img src="imgs/3.png">
-                                <img src="imgs/4.png">
-                            </div>
-
-                            <div class="MomentosIncreiblesJuego">
-                                <h1>Momentos increibles del 4 en linea Pacman</h1>
-                                <div class="videosJuego">
-                                    <!--se rompieron los videos?-->
-                                    <video src="videos/video1.mp4" controls></video>
-                                    <video src="videos/video2.mp4" controls></video>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="community-section">
-                </div>
-
-                <div class="dejaTuComentario">
-                    <div class="ponerReseña">
-                        <div class="ult-coment-titulo">
-                            <div class="tituloComentarios">
-                                <h2>Dejá tu comentario:</h2>
-                            </div>
-                        </div>
-                        <div class="tituloLogoInput">
-                            <div class="inputReseña">
-                                <div class="reseñaInterna">
-                                    <div class="imgUser">
-                                        <img src="./imgs/iconos/user.png">
-                                    </div>
-                                    <div class="textoReseña">
-                                        <div class="cj1Reseña">
-                                            <p class="username">
-                                                Interfaces
-                                            </p>
-                                            <div class="estrellas estrReseña">
-                                                <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
-                                                    alt="estrella 1">
-                                                <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
-                                                    alt="estrella 2">
-                                                <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
-                                                    alt="estrella 3">
-                                                <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
-                                                    alt="estrella 4">
-                                                <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
-                                                    alt="estrella 5">
-                                            </div>
-
-                                        </div>
-                                        <div class="cj2Reseña">
-                                            <p>Dejá tu comentario...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn-comment">
-                                    <button class="primer-hover-boton">Comentar</button>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="reseñas">
-                            <div class="ult-coment-titulo">
-                                <div class="tituloComentarios">
-                                    <h2>Otros jugadores dicen:</h2>
-                                </div>
-                            </div>
-                            <div class="reseña">
-                                <div class="reseñaInterna">
-                                    <div class="imgUser">
-                                        <img src="./imgs/iconos/cara3.jpg">
-                                    </div>
-                                    <div class="textoReseña">
-                                        <div class="cj1Reseña">
-                                            <p class="username">
-                                                Juan885
-                                            </p>
-                                            <div class="estrellas estrReseña">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
+                                            <div class="elegirJugador">
+                                                <h1 class="titulojugador jugador resaltado">Jugador 2</h1>
+                                                <div class="margendiv">
+                                                    <div class="imgfichas"><img src="imgs/fichas/fantasmita1.png"
+                                                            id="imgFicha" data-player="2" data-group="malos"
+                                                            alt="fantasma">
+                                                    </div>
+                                                    <div class="imgfichas"><img src="imgs/fichas/fantasmita2.png"
+                                                            id="imgFicha" data-player="2" data-group="malos"
+                                                            alt="fantasma">
+                                                    </div>
+                                                    <div class="imgfichas"><img src="imgs/fichas/fantasmita3.png"
+                                                            id="imgFicha" data-player="2" data-group="malos"
+                                                            alt="fantasma">
+                                                    </div>
+                                                    <div class="imgfichas"><img src="imgs/fichas/fantasmita4.png"
+                                                            id="imgFicha" data-player="2" data-group="malos"
+                                                            alt="fantasma">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="cj2Reseña">
-                                            <p>Buen juego</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reseña">
-                                <div class="reseñaInterna">
-                                    <div class="imgUser">
-                                        <img src="./imgs/iconos/cara1.jpg">
-                                    </div>
-                                    <div class="textoReseña">
-                                        <div class="cj1Reseña">
-                                            <p class="username">
-                                                Maria1234
-                                            </p>
-                                            <div class="estrellas estrReseña">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                            </div>
-                                        </div>
-                                        <div class="cj2Reseña">
-                                            <p>Recomendable</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reseña">
-                                <div class="reseñaInterna">
-                                    <div class="imgUser">
-                                        <img src="./imgs/iconos/cara2.jpg">
-                                    </div>
-                                    <div class="textoReseña">
-                                        <div class="cj1Reseña">
-                                            <p class="username">
-                                                Matias78
-                                            </p>
-                                            <div class="estrellas estrReseña">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                            </div>
-                                        </div>
-                                        <div class="cj2Reseña">
-                                            <p>Muy buen juego, me encantó</p>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="reseña">
-                                <div class="reseñaInterna">
-                                    <div class="imgUser">
-                                        <img src="./imgs/iconos/cara4.jpg">
+                        </section>
+                        <section class="info-game-Instrucciones btn">
+                            <div class="deQueTrata">
+                                <div class="ult-coment-titulo">
+                                    <div class="tituloComentarios">
+                                        <h2>Instrucciones:</h2>
                                     </div>
-                                    <div class="textoReseña">
-                                        <div class="cj1Reseña">
-                                            <p class="username">
-                                                Carla24
-                                            </p>
-                                            <div class="estrellas estrReseña">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaRellena.png">
-                                                <img src="./imgs/iconos/estrellaVacia.png">
-                                            </div>
-                                        </div>
-                                        <div class="cj2Reseña">
-                                            <p>Excelente juego, me pareció muy divertido jugar con la temática del
-                                                pacman en el cuatro en línea!!</p>
-                                        </div>
+                                </div>
+                                <div class="descripcionJuego">
+                                    <ol>
+                                        <li>Elige un personaje para cada jugador</li>
+                                        <li>Elige el tablero</li>
+                                        <li>Elige la columna donde dejarás caer la ficha</li>
+                                        <li>Intenta bloquear a tu oponente</li>
+                                        <li>Gana quien logra ubicar cuatro fichas alineadas en forma vertical,
+                                            horizontal u
+                                            oblícua. </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="info-game btn">
+                            <div class="deQueTrata">
+                                <h1>¿De que trata el 4 en linea Pacman?</h1>
+                                <div class="descripcion">
+                                    <p>Divertite jugando al cuatro en línea con los personajes del Pacman, utiliza todo
+                                        tu
+                                        ingenio para alinear las fichas y vencer a tu oponente. A disfrutar!!!</p>
+                                </div>
+                                <div class="imgsGameJuego">
+                                    <img src="imgs/1.png">
+                                    <img src="imgs/2.png">
+                                    <img src="imgs/3.png">
+                                    <img src="imgs/4.png">
+                                </div>
+
+                                <div class="MomentosIncreiblesJuego">
+                                    <h1>Momentos increibles del 4 en linea Pacman</h1>
+                                    <div class="videosJuego">
+                                        <!--se rompieron los videos?-->
+                                        <video src="videos/video1.mp4" controls></video>
+                                        <video src="videos/video2.mp4" controls></video>
                                     </div>
                                 </div>
                             </div>
-
-
-                            <div class="btn-comment"><button class="segundo-hover-boton">Ver más</button></div>
-                        </div>
-
+                        </section>
+                        <section class="community-section">
                     </div>
 
-                    <div class="MomentosIncreibles">
-                        <div class="ult-coment-titulo">
-                            <div class="tituloComentarios">
-                                <h2>Fotos y videos:</h2>
+                    <div class="dejaTuComentario">
+                        <div class="ponerReseña">
+                            <div class="ult-coment-titulo">
+                                <div class="tituloComentarios">
+                                    <h2>Dejá tu comentario:</h2>
+                                </div>
                             </div>
+                            <div class="tituloLogoInput">
+                                <div class="inputReseña">
+                                    <div class="reseñaInterna">
+                                        <div class="imgUser">
+                                            <img src="./imgs/iconos/user.png">
+                                        </div>
+                                        <div class="textoReseña">
+                                            <div class="cj1Reseña">
+                                                <p class="username">
+                                                    Interfaces
+                                                </p>
+                                                <div class="estrellas estrReseña">
+                                                    <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
+                                                        alt="estrella 1">
+                                                    <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
+                                                        alt="estrella 2">
+                                                    <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
+                                                        alt="estrella 3">
+                                                    <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
+                                                        alt="estrella 4">
+                                                    <img class="estrella" src="./imgs/iconos/estrellaVaciaInput.png"
+                                                        alt="estrella 5">
+                                                </div>
+
+                                            </div>
+                                            <div class="cj2Reseña">
+                                                <p>Dejá tu comentario...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-comment">
+                                        <button class="primer-hover-boton">Comentar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="reseñas">
+                                <div class="ult-coment-titulo">
+                                    <div class="tituloComentarios">
+                                        <h2>Otros jugadores dicen:</h2>
+                                    </div>
+                                </div>
+                                <div class="reseña">
+                                    <div class="reseñaInterna">
+                                        <div class="imgUser">
+                                            <img src="./imgs/iconos/cara3.jpg">
+                                        </div>
+                                        <div class="textoReseña">
+                                            <div class="cj1Reseña">
+                                                <p class="username">
+                                                    Juan885
+                                                </p>
+                                                <div class="estrellas estrReseña">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                </div>
+                                            </div>
+                                            <div class="cj2Reseña">
+                                                <p>Buen juego</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reseña">
+                                    <div class="reseñaInterna">
+                                        <div class="imgUser">
+                                            <img src="./imgs/iconos/cara1.jpg">
+                                        </div>
+                                        <div class="textoReseña">
+                                            <div class="cj1Reseña">
+                                                <p class="username">
+                                                    Maria1234
+                                                </p>
+                                                <div class="estrellas estrReseña">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                </div>
+                                            </div>
+                                            <div class="cj2Reseña">
+                                                <p>Recomendable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reseña">
+                                    <div class="reseñaInterna">
+                                        <div class="imgUser">
+                                            <img src="./imgs/iconos/cara2.jpg">
+                                        </div>
+                                        <div class="textoReseña">
+                                            <div class="cj1Reseña">
+                                                <p class="username">
+                                                    Matias78
+                                                </p>
+                                                <div class="estrellas estrReseña">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                </div>
+                                            </div>
+                                            <div class="cj2Reseña">
+                                                <p>Muy buen juego, me encantó</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="reseña">
+                                    <div class="reseñaInterna">
+                                        <div class="imgUser">
+                                            <img src="./imgs/iconos/cara4.jpg">
+                                        </div>
+                                        <div class="textoReseña">
+                                            <div class="cj1Reseña">
+                                                <p class="username">
+                                                    Carla24
+                                                </p>
+                                                <div class="estrellas estrReseña">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaRellena.png">
+                                                    <img src="./imgs/iconos/estrellaVacia.png">
+                                                </div>
+                                            </div>
+                                            <div class="cj2Reseña">
+                                                <p>Excelente juego, me pareció muy divertido jugar con la temática del
+                                                    pacman en el cuatro en línea!!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="btn-comment"><button class="segundo-hover-boton">Ver más</button></div>
+                            </div>
+
                         </div>
-                        <div class="imgsGame">
-                            <img src="imgs/niños jungando 4 en linea.jpg">
-                            <img src="imgs/4 en linea futbol.jpg">
-                        </div>
-                        <div class="videos">
-                            <video src="./videos/gif2.mp4" controls></video>
-                            <video src="./videos/gif1.mp4" controls></video>
-                        </div>
-                        <div class="ult-coment-titulo">
-                            <div class="tituloComentarios">
-                                <h2>Links:</h2>
+
+                        <div class="MomentosIncreibles">
+                            <div class="ult-coment-titulo">
+                                <div class="tituloComentarios">
+                                    <h2>Fotos y videos:</h2>
+                                </div>
+                            </div>
+                            <div class="imgsGame">
+                                <img src="imgs/niños jungando 4 en linea.jpg">
+                                <img src="imgs/4 en linea futbol.jpg">
+                            </div>
+                            <div class="videos">
+                                <video src="./videos/gif2.mp4" controls></video>
+                                <video src="./videos/gif1.mp4" controls></video>
+                            </div>
+                            <div class="ult-coment-titulo">
+                                <div class="tituloComentarios">
+                                    <h2>Links:</h2>
+
+                                </div>
+                            </div>
+                            <div class="listaLinks">
+                                <ul class="links">
+                                    <li><a href="">Aprende a jugar al cuatro en línea</a></li>
+                                    <li><a href="">Records de juegos de estrategia</a></li>
+                                    <li><a href="">Historia del pacman</a></li>
+                                    <li><a href="">Estrategias para ganar al cuatro en línea</a></li>
+                                </ul>
+                            </div>
+                            <div class="ult-coment-titulo">
+                                <div class="tituloComentarios">
+                                    <h2>Comparte el juego con tus amigos:</h2>
+                                </div>
+                            </div>
+                            <div class="imgsRedes">
+                                <img src="imgs/iconos/redes.png">
 
                             </div>
-                        </div>
-                        <div class="listaLinks">
-                            <ul class="links">
-                                <li><a href="">Aprende a jugar al cuatro en línea</a></li>
-                                <li><a href="">Records de juegos de estrategia</a></li>
-                                <li><a href="">Historia del pacman</a></li>
-                                <li><a href="">Estrategias para ganar al cuatro en línea</a></li>
-                            </ul>
-                        </div>
-                        <div class="ult-coment-titulo">
-                            <div class="tituloComentarios">
-                                <h2>Comparte el juego con tus amigos:</h2>
-                            </div>
-                        </div>
-                        <div class="imgsRedes">
-                            <img src="imgs/iconos/redes.png">
-
                         </div>
                     </div>
-                </div>
 
-                </section>
+                    </section>
+                </div>
             </div>
-        </div>
-    </main>
-    <footer class="footerhome">
-        <div>
+        </main>
+
+        <footer class="footerhome">
+            <div class="footer-logo">
+                <h1 class="logo-retrogemas">Retrogemas</h1>
+                <p class="footer-copyright">&copy; 2024 Retrogemas. Todos los derechos reservados.</p>
+            </div>
             <div class="btnfooter">
                 <button type="button">Categorias<img src="imgs/iconos/desplegablehaciaabajo.png"
                         id="footer-btn"></button>
@@ -461,41 +479,40 @@
                     <li>Valoración</li>
                 </ul>
             </div>
+            <div>
+                <button type="button">Redes Sociales <img src="imgs/iconos/desplegablehaciaabajo.png"
+                        id="footer-btn"></button>
+                <ul class="footerulhidden colorblanco">
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
 
-        </div>
+            <div>
+                <button type="button">Mi cuenta <img src="imgs/iconos/desplegablehaciaabajo.png"
+                        id="footer-btn"></button>
+                <ul class="footerulhidden colorblanco">
+                    <li>Ingresá</li>
+                    <li>Comprar</li>
+                    <li>Favoritos</li>
+                </ul>
+            </div>
 
-        <div>
-            <button type="button">Redes Sociales <img src="imgs/iconos/desplegablehaciaabajo.png"
-                    id="footer-btn"></button>
-            <ul class="footerulhidden colorblanco">
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>Youtube</li>
-                <li>Twitter</li>
-            </ul>
-        </div>
+            <div>
+                <button type="button">Ayuda <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
+                <ul class="footerulhidden colorblanco">
+                    <li>Terminos y condiciones</li>
+                    <li>Como cuidamos tu privacidad</li>
+                    <li>Resolución de problemas</li>
+                    <li>Centro de seguridad</li>
+                </ul>
+            </div>
 
-        <div>
-            <button type="button">Mi cuenta <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
-            <ul class="footerulhidden colorblanco">
-                <li>Ingresá</li>
-                <li>Comprar</li>
-                <li>Favoritos</li>
-            </ul>
-        </div>
+        </footer>
+    </main>
 
-        <div>
-            <button type="button">Ayuda <img src="imgs/iconos/desplegablehaciaabajo.png" id="footer-btn"></button>
-            <ul class="footerulhidden colorblanco">
-                <li>Terminos y condiciones</li>
-                <li>Como cuidamos tu privacidad</li>
-                <li>Resolución de problemas</li>
-                <li>Centro de seguridad</li>
-            </ul>
-        </div>
-
-    </footer>
-    </section>
 
     <script src="js/nav-loader.js"></script>
     <script src="js/juego/Ficha.js"></script>

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
 * {
     box-sizing: border-box;
@@ -247,14 +247,16 @@ button {
     height: 30px;
     width: 40px;
 }
-/*FOOTER*/
+/*footer*/
 .footerhome{
     display: flex;
-    flex-direction: column;
-    height: auto;
+    flex-direction: row;
+    height: 12em;
     background-color: rgba(57, 49, 49, 1);
     width: auto;
+    justify-content: space-evenly;
 }
+
 .footerhome button {
     text-align: left;
     display: flex;
@@ -265,9 +267,7 @@ button {
     color: var(--blanco);
     cursor: pointer;
 }
-.footerhome{
-    padding-left: 5%;
-}
+
 .footerhome div ul.show {
     display: block;
     color: var(--blanco);
@@ -282,11 +282,7 @@ button {
     margin-bottom: 0.5em;
     color: var(--blanco);
 }
-.footerhome{   
-    display: flex;
-    flex-direction: row;
-    height: 12em;
-}
+
 .footerhome button {
     display: flex;
     align-items: center;
@@ -308,10 +304,7 @@ button {
 .footerhome .footerulhidden {
     display: flex;
 }
-.footerhome {
-    width: 100%;
-    justify-content: space-evenly;
-}
+
 .footerulhidden {
     flex-direction: column;
     list-style: none;
@@ -335,5 +328,33 @@ button {
 .footerhome div ul.show {
    margin: 0;
 }
+.footer-logo {
+    display: flex; /* Permite el uso de flexbox */
+    flex-direction: column; /* Coloca los elementos (logo y copyright) en columna */
+    width: 14%;
+    padding-top: 30px;
+}
+
+.logo-retrogemas {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem; /* Tamaño más pequeño del logo */
+    color: var(--acento-luz);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000;
+    letter-spacing: 2px;
+    margin-bottom: 0.5em; /* Espacio entre el logo y el texto de copyright */
+}
+
+.footer-copyright {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 8px;
+    font-size: 0.5rem; /* Tamaño más pequeño para el texto de copyright */
+    color: #aaa;
+    text-shadow: 1px 1px 2px #000;
+    letter-spacing: 2px; /* Ajusta la separación entre las letras */
+    line-height: 1.5;
+    
+}
+
 
 
