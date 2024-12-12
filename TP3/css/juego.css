@@ -37,153 +37,196 @@ body {
     min-height: 100vh;      /* Asegura que ocupe toda la altura de la ventana */
     margin: 0;              /* Elimina márgenes predeterminados */
     background-color: var(--prim); /* Fondo opcional */
+    padding: 0;
+    overflow-x: hidden;
 }
 
-button {
-    background-color: #E63946;
-    display: flex;
-    width: 345px;
-    height: 54px;
-    align-items: center;
-    justify-items: center;
-}
+
 
 .primariosombra2{
     background-color: rgba(57, 49, 49, 1);
 }
 
+/*NAV-HOME*/
 .navhome {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 3.5em;
+    min-width: 100%;
+    height: 4.8125rem;
+    background-color: rgba(57, 49, 49, 1);
+    padding: 0 1em;
+    z-index: 1000;
+    position: relative;
+    flex-wrap: nowrap; /* Impide que los elementos se desborden */
 }
-
-.logoplaneta {
-    width: 80%;
-    height: 50%;
+.navhome button:hover img {
+    transform: scale(1.1);
 }
-
-.hamburguer-menu{
-    width: 15%;
-}
-
-.hamburguer-menu button{
-    margin-left: 1em;
-    margin-right: 1em;
-    border: 0;
-}
-
-#imgburguer {
-    width: 1rem;
-    height: 1rem;
-}
-
-.logoretrogemas{
-    width: 80%;
+/* Logo */
+.logoretrogemas {
     display: flex;
     align-items: center;
-}
-
-.imglogoretrogemas{
     width: 40%;
-    display: flex;
-    align-items: center;
 }
-
 .titulo {
     display: flex;
     align-items: center;
+    height: 4.6em;
 }
-
-.titulo h1{
-    margin-left: 0.25em;
-    font-size: medium;
-}
-
-.iconosnav{
-    width: 20%;
-    display: flex;
-    align-items: center;
-    padding-right: 1em;
-    padding-left: 0.5em;
-}
-
-.buscarnav{
-    width: 0%;
-    display: flex;
-    align-items: center;
-    text-align: right;
-}
-
-.img-buscar {
-    width: 100%;
-    display: flex;
-    width: 75%;
-}
-
-.carritoDesplegado{
-    padding: 0.1em;
-    width: auto;
-    height: auto;
-    background-color: var(--prim-sombra3);
-    position: absolute;
-    
-    top: 7.5%;
-    display: flex;
-    z-index: 3;
-    color: var(--negro);
-
-}   
-
-.carritoDesplegado{
-    display: none;
-}
-
-.carrito button {
-
-    width: 1em;
-    height: 1em;
-    border: 0;
-    justify-content: right;
-}
-
-.carrito button img {
-    width: 100%;
-    
-}
-
-.perfil, .carrito{
-    width: auto;
-    height: 50%;
-    text-align: right;
-    margin-right: 10px;
-    padding-left: 5px;
-}
-
-.perfil button{
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 9em;
-    margin-right: 0.8em;
-    border: 0;
-}
-
-.perfil button img {
-    width: 100%;
-    border-radius: 50%;
-    object-fit:cover;
-    display: flex;
+#imgburguer {
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
     margin-right: 1em;
 }
+.imglogoretrogemas {
+    width: 40%;
+    display: block;
+}
+/* Barra de Búsqueda */
+.buscarnav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+.img-buscar {
+    width: 75%;
+    display: block;
+}
+/* Iconos de Navegación (Perfil y Carrito) */
+.iconosnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+    gap: 1.5em; /* Añade espacio entre los íconos */
+}
+.perfil button,
+.carrito button {
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    margin-left: 1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Imagen del Perfil */
+.perfil button img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+/* Imagen del Carrito */
+.carrito button img {
+    width: 2.5rem;  /* Ajusta la imagen del carrito */
+    height: 2.5rem;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    display: block;
+}
+/* Menús Desplegables */
+.perfilDesplegado,
+.carritoDesplegado,
+.hamburguer-menu-desplegado {
+    display: none; /* Ocultos por defecto */
+    position: absolute;
+    background-color: rgba(57, 49, 49, 1);
+    color: var(--blanco);
+    padding: 1em;
+    z-index: 100;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+.perfilDesplegado ul,
+.carritoDesplegado ul,
+.hamburguer-menu-desplegado ul {
+    list-style: none;
+}
+.perfilDesplegado ul li,
+.carritoDesplegado ul li,
+.hamburguer-menu-desplegado ul li {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0.8em 0;
+    cursor: pointer;
+}
+header ul a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+/* Mostrar Menús Desplegables */
+.perfilDesplegado.show {
+    display: block;
+    top: 4.8125rem;
+    right: 0;
+    width: 8.1rem;
+}
+.carritoDesplegado.show {
+    display: block;
+    top: 4.8125rem;
+    right: 7.5em; /* Mejor alineación */
+    width: 8rem; 
+    padding: 1em;
+    height: auto;
+}
+.hamburguer-menu-desplegado.show {
+    display: block;
+    top: 4.8125rem;
+    left: 0;
+    width: 8rem;
+}
+/* Hover Effects */
+.navhome button:hover img,
+.perfil button:hover img,
+.carrito button:hover img {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+.perfilDesplegado ul li:hover,
+.carritoDesplegado ul li:hover,
+.hamburguer-menu-desplegado ul li:hover {
+    color: var(--acento-luz);
+    transition: color 0.2s ease-in-out;
+}
+.perfilDesplegado ul li:hover a {
+    color: var(--acento-luz);
+    transition: color 0.2s ease-in-out;
+}
+/* Menu Hamburguesa */
+.hamburguer-menu button {
+    background: none; /* Sin fondo */
+    border: none; /* Elimina el borde */
+    outline: none; /* Elimina cualquier contorno */
+    padding: 0; /* Elimina el padding extra */
+    cursor: pointer;
+}
+.hamburguer-menu img {
+    width: 3em;
+    height: 3em;
+    object-fit: contain; /* Asegura que la imagen no se distorsione */
+}
+.hamburguer-menu img,
+.hamburguer-menu button {
+    border: 0; /* Sin borde */
+    outline: none; /* Sin contorno */
+}
 
+/*FOOTER*/
 .footerhome{
     display: flex;
-    flex-direction: column;
-    height: auto;
-    background-color: rgba(57, 49, 49, 1);;
+    flex-direction: row;
+    height: 12em;
+    background-color: rgba(57, 49, 49, 1);
     width: auto;
+    justify-content: space-evenly;
 }
 
 .footerhome button {
@@ -197,35 +240,6 @@ button {
     cursor: pointer;
 }
 
-/* desplegables footer */
-.btnfooter button li{
-    font-size: 8px;
-    color: var(--blanco);
-}
-
-.btnfooter{
-    font-size: 8px;
-    color: var(--blanco);
-}
-
-.footerulhidden {
-    display: none;
-}
-
-.footerulhidden li a{
-    font-size: 8px;
-    color: var(--blanco);
-    text-decoration: none;
-}
-
-.footerhome div ul {
-    display: none;
-}
-
-.footerhome{
-    padding-left: 5%;
-}
-
 .footerhome div ul.show {
     display: block;
     color: var(--blanco);
@@ -233,14 +247,84 @@ button {
     margin-left: 1.5em;
     list-style: none;
 }
-
 .footerhome div ul li:hover {
     color: var(--prim);
 }
-
 .footerhome div ul li {
     margin-bottom: 0.5em;
     color: var(--blanco);
+}
+
+.footerhome button {
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: 7em;
+    margin-left: 0;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: default;
+    margin-bottom: 0.5em;
+}
+.footerhome button img {
+    display: none;
+}
+.footerhome .footerulhidden {
+    display: flex;
+}
+
+.footerulhidden {
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+}
+.footerhome div {
+    text-align: left;
+    margin-top: 1em;
+}
+.footerhome ul li {
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5em;
+}
+.footerhome ul {
+    margin-right: 1em;
+}
+.footerhome div ul.show {
+   margin: 0;
+}
+.footer-logo {
+    display: flex; /* Permite el uso de flexbox */
+    flex-direction: column; /* Coloca los elementos (logo y copyright) en columna */
+    width: 14%;
+    padding-top: 30px;
+}
+
+.logo-retrogemas {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem; /* Tamaño más pequeño del logo */
+    color: var(--acento-luz);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000;
+    letter-spacing: 2px;
+    margin-bottom: 0.5em; /* Espacio entre el logo y el texto de copyright */
+}
+
+.footer-copyright {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 8px;
+    font-size: 0.5rem; /* Tamaño más pequeño para el texto de copyright */
+    color: #aaa;
+    text-shadow: 1px 1px 2px #000;
+    letter-spacing: 2px; /* Ajusta la separación entre las letras */
+    line-height: 1.5;
 }
 
 .btn {
@@ -286,6 +370,7 @@ main {
     background-size: cover;
     display: flex;
     justify-content:center;
+    position: relative;
 }
 
 .sub-container {
@@ -379,10 +464,6 @@ main {
 }
 
 li:hover {
-    color: var(--prim);
-}
-
-.cerrarSesion {
     color: var(--prim);
 }
 
@@ -823,69 +904,6 @@ li:hover {
 }
 
 
-/* PERFIL */
-
-.perfilDesplegado, .carritoDesplegado, .hamburguer-menu-desplegado {
-    display: none;
-}
-
-.perfilDesplegado.show, .carritoDesplegado.show, .hamburguer-menu-desplegado.show {
-    padding: 0.1em;
-    width: 8.5rem;
-    height: 7rem;
-    left: 66rem;
-    background-color: rgba(57, 49, 49, 1);
-    position: absolute;
-    top: 3.5rem;
-    display: flex;
-    z-index: 3;
-    color: var(--blanco);
-}
-
-.perfilDesplegado.show {
-    right: 0;
-} 
-
-
-.carritoDesplegado.show {
-
-    /* left: 15.8em; */
-    right: 8%;
-} 
-
-
-.hamburguer-menu-desplegado.show {
-    left: 0;
-}
-
-
-
-.perfilDesplegado.show ul, .carritoDesplegado.show ul, .hamburguer-menu-desplegado.show ul {
-    font-size: 8px;
-    padding-top: 0.6em;
-    padding-bottom: 0.6em;
-    padding-left: 0.5em;
-    list-style: none;
-}
-
-.perfilDesplegado.show li, .carritoDesplegado.show li , .hamburguer-menu-desplegado.show li {
-    text-decoration: none;
-    color: var(--blanco);
-    padding-top: 0.6em;
-    padding-bottom: 0.6em;
-}
-.perfilDesplegado.show li a {
-    text-decoration: none;
-    color: var(--blanco);
-}
-
-
-.perfilDesplegado.show ul a:hover, .carritoDesplegado.show ul a:hover, .hamburguer-menu-desplegado.show ul a:hover {
-    text-decoration: none;
-    color: var(--prim);
-}
-
-
 /* Hovers botones*/
 
 /* primer-hover-boton */
@@ -1038,87 +1056,6 @@ li:hover {
     transform: scale(1, 1) rotate(0deg);
 }
 
-/* menus desplegados desktop */
-.perfilDesplegado.show {
-    width: 10em;
-    height: 16em;
-    position: absolute;
-    top:  4.8125rem;
-    left: 69.85em;
-    display: flex;
-    padding: 0.5em 0.5em 2.5em 1.5em;
-    text-align: left;
-    align-items: center;
-    opacity: 0.9;
-    justify-content: center;
-    z-index: 3;
-} 
-
-.perfilDesplegado.show ul li {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
-    text-align: left;
-    
-}
-
-.perfilDesplegado.show ul li:first-child {
-    margin-top: 20%;
-    
-}
-
-.perfilDesplegado.show {
-    width: 10em;
-    height: 16em;
-    position: absolute;
-    top:  4.8125rem;
-    left: 69.5rem;
-    display: flex;
-    padding: 0.5em 0.5em 2.5em 1.5em;
-    background-color: rgba(57, 49, 49, 1);
-    text-align: left;
-    align-items: center;
-    opacity: 0.9;
-    justify-content: center;
-    z-index: 3;
-} 
-
-.carritoDesplegado.show ul li {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
-    text-align: left;
-}
-
-.hamburguer-menu-desplegado.show {
-
-    width: 7em;
-    height: 15em;
-    background-color: rgba(57, 49, 49, 1);
-    position: absolute;
-    top:  4.8125rem;
-    left: 0;
-    display: flex;
-    justify-content:left;
-    align-items: center;
-    z-index: 3;
-}
-
-.hamburguer-menu-desplegado.show ul li {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
-    text-align: left;
-}
 
 header ul {
     list-style: none;
@@ -1133,177 +1070,6 @@ header ul a {
 button {
     cursor: pointer;
 }
-
-/* nav responsive */
-
-.navheader{
-    max-width: 1340px;  
-}
-
-.primariosombra2{
-    background-color: rgba(57, 49, 49, 1);
-}
-
-.navhome {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 4.8125rem;
-
-}
-.logoplaneta {
-    width: 18em;
-    height: 2em;
-}
-
-
-.hamburguer-menu button{
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-left: 1.5em;
-    border: 0;
-}
-.logoretrogemas{
-    width: 40%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.buscarnav{
-    width: 30%;
-    display: flex;
-    align-items: center;
-}
-
-.img-buscar {
-    width: 100%;
-    display: flex;
-    width: 75%;
-      
-}
-
-.titulo {
-    display: flex;
-    align-items: center;
-    height: 4.6em;
-}
-
-.titulo h1 {
-   font-size: 2em;
-}
-
-
-
-.iconosnav{
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.carrito {
-    width: auto;
-}
-
-.carrito button {
-   width: 1.96938rem;
-    height: 1.875rem;
-    border: 0;
-}
-.carrito button img {
-    width: 100%;
-}
-
-#imgburguer {
-    width: 3em;
-    height: 3em;
-}
-
-.perfil button{
-    width: 4rem;
-    height: 3.6875rem;
-    border-radius: 9em;
-    margin-left: 3.5em; /* mover carrito */
-    margin-right: 0.5em;
-    border: 0;
-}
-.perfil button img {
-    width: 70%;
-}
-/*footer */
-
-.footerhome{
-    max-width: 1340px;
-    display: flex;
-    flex-direction: row;
-    height: 12em;
-}
-
-.footerhome button {
-    display: flex;
-    align-items: center;
-    border: 0;
-    width: 7em;
-    margin-left: 0;
-    color: var(--blanco);
-    cursor: pointer;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    cursor: default;
-    margin-bottom: 0.5em;
-}
-
-.footerhome button img {
-    display: none;
-}
-
-.footerhome .footerulhidden {
-    display: flex;
-}
-
-.footerhome {
-    width: 100%;
-    justify-content: space-evenly;
-}
-
-.footerulhidden {
-    flex-direction: column;
-    list-style: none;
-    text-align: left;
-}
-
-.footerhome div {
-    text-align: left;
-    margin-top: 1em;
-}
-
-
-.footerhome ul li {
-    font-family: Roboto;
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-bottom: 0.5em;
-}
-.footerhome ul {
-    margin-right: 1em;
-}
-.diverror {
-    background-color: red;
-}
-.footerhome div ul.show {
-   margin: 0;
-}
-
-
-
-
-
 
 
 .juegoColocado {
@@ -1720,5 +1486,8 @@ display: flex;
     filter: grayscale(100%); /* Opcional: desaturar los colores */
     transition: opacity 0.3s ease; /* Suaviza el cambio de opacidad */
 }
+
+
+
 
   
