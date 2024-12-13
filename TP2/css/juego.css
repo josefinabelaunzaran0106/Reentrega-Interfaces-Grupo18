@@ -291,7 +291,7 @@ header ul a {
 }
 
 .juegoColocado:hover {
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    transform: scale(1.02); /* Efecto de zoom al pasar el mouse */
 }
 
 .juegoColocado img {
