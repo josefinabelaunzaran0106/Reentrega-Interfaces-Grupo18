@@ -320,10 +320,10 @@ header ul a {
     opacity: 70%;
 }
 .btn-left-cards{
-    left: -2em; 
+    left: -0.5em; 
 }
 .btn-right-cards{
-    right: -8em;
+    right: -9.7em;
 }
 /*CARRUSELES*/
 /*titulo*/
@@ -372,7 +372,7 @@ header ul a {
     max-width: 1200px;
     transform: translateX(0); /* Posición inicial */
     transition: transform 1s ease-in-out; /* Transición suave */
-    margin-right: 110px;
+    margin-right: 150px;
     padding-top: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
@@ -398,6 +398,13 @@ header ul a {
 .cincocards-ocultas.mostrar {
     display: flex;
     opacity: 1;
+}
+.cincocards,
+.cincocards-ocultas {
+    left: 0;
+    width: 100%;
+    height: auto; /* Ajusta la altura según el contenido */
+    box-sizing: border-box; /* Incluye padding y borde dentro del tamaño */
 }
 /* Card individual */
 /* Efecto en la card al pasar el mouse */

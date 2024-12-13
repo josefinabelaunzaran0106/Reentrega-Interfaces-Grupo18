@@ -19,3 +19,13 @@ for (let i = 0; i < estrellas.length; i++) {
         }
     });
 }
+document.getElementById("toggleButton").addEventListener("click", function () {
+    const descripcion = document.getElementById("descripcionJuego");
+    if (descripcion.style.display === "none") {
+        descripcion.style.display = "block";
+        this.textContent = "Ocultar Instrucciones"; // Cambia el texto del botón
+    } else {
+        descripcion.style.display = "none";
+        this.textContent = "Mostrar Instrucciones";
+    }
+});

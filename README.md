@@ -24,4 +24,10 @@ Correcciones de Cristian:
   -El form de suscribirse, que haga alguna animación cuando se clickea "Suscribirse"
   -Los sprite sheet del final son muy grandes. El personaje 3 se ve cortado
 
-Link GH-pages: https://josefinabelaunzaran0106.github.io/Reentrega-Interfaces-Grupo18/
+
+  GH-PAGES TP2: https://josefinabelaunzaran0106.github.io/Reentrega-Interfaces-Grupo18/TP2/
+
+  GH-PAGES TP3: file:///C:/Users/usuario/Desktop/REENTREGA/Reentrega-Interfaces-Grupo18/TP3/
+
+  GH-PAGES TP: https://josefinabelaunzaran0106.github.io/Reentrega-Interfaces-Grupo18/TP4/
+  
