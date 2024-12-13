@@ -35,6 +35,7 @@ body {
     font-family: 'Roboto', sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
+    background-color:#271010;
 }
 button {
     background-color: #E63946;
@@ -229,11 +230,14 @@ header ul a {
 /* SECCIÓN JUEGO*/
 .main-game-container {
     width: 100%;
+    max-width: 1200px; /* Establece un ancho máximo */
     height: auto;
     background-color: #271010;  /* Variable: acento v3*/
     background-size: cover;
     display: flex;
     justify-content:space-between;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho */
 }
 
 .sub-container {
