@@ -371,7 +371,7 @@ main {
 /* Seccion Juego */
 
 .main-game-container {
-    max-width: 1340px;
+    max-width: 1200px;
     width: 100%;
     height: auto;
     background-color: #271010;  /* Variable: acento v3*/
@@ -379,7 +379,10 @@ main {
     display: flex;
     justify-content:center;
     position: relative;
+    margin: 0 auto; /* Centrar */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten en filas si no caben */
 }
+
 
 .sub-container {
     width: 90%;
@@ -415,6 +418,30 @@ main {
     color: #00ffff;
     text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
 }
+#descripcionJuego {
+    display: none; /* Inicialmente oculto */
+    transition: opacity 0.3s ease-in-out; /* Transición suave */
+}
+
+#descripcionJuego.mostrar {
+    display: block;
+    opacity: 1;
+}
+.toggleButton {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.toggleButton:hover {
+    background-color: #004d99;
+}
+
 
 .TextosBroadcrum {
     display: flex;
