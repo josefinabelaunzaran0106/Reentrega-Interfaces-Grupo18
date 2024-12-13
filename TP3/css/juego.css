@@ -1471,6 +1471,7 @@ display: flex;
     font-family: 'Press Start 2P', cursive; /* Fuente retro */
     height: auto;
     margin-bottom: 100px;
+    margin-top: -2rem;
 }
 .btn-comment {
     display: flex;
