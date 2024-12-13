@@ -225,7 +225,7 @@ header ul a {
     flex-direction: row;
     height: 12em;
     background-color: rgba(57, 49, 49, 1);
-    width: auto;
+    width: 100%;
     justify-content: space-evenly;
 }
 
@@ -338,6 +338,14 @@ main {
     background-color: #271010;
     background-size: cover;
     overflow: hidden;    
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .h2 {
