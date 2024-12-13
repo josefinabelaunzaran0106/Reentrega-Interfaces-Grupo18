@@ -33,12 +33,12 @@ body {
     flex-direction: column; /* Mantiene la dirección en columna */
     justify-content: center; /* Centra el contenido verticalmente dentro del body */
     align-items: center;    /* Centra horizontalmente todo el contenido */
-    width: 100%;            /* Asegura que ocupe todo el ancho disponible */
     min-height: 100vh;      /* Asegura que ocupe toda la altura de la ventana */
     margin: 0;              /* Elimina márgenes predeterminados */
     background-color: var(--prim); /* Fondo opcional */
     padding: 0;
     overflow-x: hidden;
+    max-width: 100vw;
 }
 
 
@@ -58,7 +58,6 @@ body {
     background-color: rgba(57, 49, 49, 1);
     padding: 0 1em;
     z-index: 1000;
-    position: relative;
     flex-wrap: nowrap; /* Impide que los elementos se desborden */
 }
 .navhome button:hover img {
@@ -338,14 +337,6 @@ main {
     background-color: #271010;
     background-size: cover;
     overflow: hidden;    
-}
-
-.all {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
 }
 
 .h2 {
