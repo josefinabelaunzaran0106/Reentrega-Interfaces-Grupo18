@@ -363,6 +363,7 @@ header ul a {
     height: auto;
     font-size: 0.9em;
     padding-bottom: 5px;
+    color: var(--blanco);
 }
 .precio{ 
     display: flex;
