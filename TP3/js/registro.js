@@ -33,7 +33,7 @@ function registrar(e) { //paso x parametros el evento de submit}
     }
     if ((pass == pass2) && (!estaRegistrado(user)) && captchacompletado) {
         usuarios.push(user);
-        mostrarPopup('<span class="check-icon">✔️</span> Se ha registrado con éxito');
+        mostrarPopup('<span class="check-icon">✔️</span> SE REGISTRO CON ÉXITO');
         setTimeout("redireccionar()", 3000);
     }
     else {
@@ -41,11 +41,11 @@ function registrar(e) { //paso x parametros el evento de submit}
             diverror.innerHTML = " ";
             diverror.classList.add("diverrorvisible");
             registrocorrecto.classList.remove("pulse");
-            mostrarPopup('<span class="error-icon">❌</span> El usuario ya existe');
+            mostrarPopup('<span class="error-icon">❌</span> EL USUARIO YA EXISTE');
         }
         else {
             passerror.innerHTML = " ";
-            mostrarPopup('<span class="error-icon">❌</span> Las contraseñas no coinciden');
+            mostrarPopup('<span class="error-icon">❌</span> LAS CONTRASEÑAS NO COINCIDEN');
         }
     }
 }

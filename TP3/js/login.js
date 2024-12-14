@@ -32,23 +32,23 @@ function verificarLogin(e) {
 
     if (nombreLogin == userLogin.name && contraLogin == userLogin.password) {
         console.log("logueado correctamente");
-        mostrarPopupElement('<span class="check-icon">✔️</span> Logueado con éxito');
+        mostrarPopupElement('<span class="check-icon">✔️</span> LOGUEADO CON ÉXITO');
         setTimeout("redireccionar()", 3000);
     }
 
     else if (nombreLogin != userLogin.name && contraLogin == userLogin.password) {
         console.log("nombre incorrecto");
-        mostrarPopupElement('<span class="error-icon">❌</span> Nombre de usuario incorrecto');
+        mostrarPopupElement('<span class="error-icon">❌</span> NOMBRE DE USUARIO INCORRECTO');
 
     }
     else if (nombreLogin == userLogin.name && contraLogin != userLogin.password) {
         console.log("nombre incorrecto");
-        mostrarPopupElement('<span class="error-icon">❌</span> Contraseña incorrecta');
+        mostrarPopupElement('<span class="error-icon">❌</span> CONTRASEÑA INCORRECTA');
 
     }
     else {
         console.log("incorrecto");
-        mostrarPopupElement('<span class="error-icon">❌</span> Nombre de usuario y contraseña incorrecta');
+        mostrarPopupElement('<span class="error-icon">❌</span> NOMBRE DE USUARIO Y CONTRASEÑA INCORRECTA');
     }
 }
 function mostrarPopup(mensaje) {
