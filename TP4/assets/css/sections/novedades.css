@@ -99,6 +99,11 @@
   align-items: center;
   width: 780px;
   /* Ajusta el tamaño del contenedor si es necesario */
+  transform: translateY(100);
+}
+
+input-button-container animate {
+  animation: fadeIn 1s;
 }
 
 /* Estilo del input */
@@ -115,7 +120,7 @@
   border-color: #ffffff;
   background: #ececec;
   border: 9px solid #ffffff;
-  margin-left: 60px;
+  margin-left: 75px;
   z-index: 3; /* Asegura que el input esté encima de las imágenes */
 }
 
@@ -183,4 +188,8 @@
   height: 350px;
   height: 150px;
   z-index: 1;
+}
+
+#button {
+  z-index: 10;
 }

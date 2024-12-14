@@ -5,6 +5,7 @@
   height: 990px;
   position: relative;
   background-color: #5829bf;
+  overflow: hidden;
 }
 
 /*se agrega elemento para efecto concavo superior*/
@@ -66,6 +67,8 @@
 #seis-numeros {
   position: relative;
   display: inline-block;
+  left: -10px;
+  bottom: -15px;
 }
 
 #game-image {
