@@ -24,8 +24,46 @@ window.addEventListener("load", function () {
 });
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 14600) {
+  let started = false;
+
+  if (window.scrollY > 14000) {
     video.style.transform = `translateX(${0}px)`;
     image.style.transform = `translateX(0)`;
   }
+
+  if (
+    this.window.devicePixelRatio > 1 &&
+    window.devicePixelRatio <= 1.5 &&
+    !started
+  ) {
+    if (window.scrollY > 12000) {
+      started = true;
+      video.style.transform = `translateX(${0}px)`;
+      image.style.transform = `translateX(0)`;
+    }
+  } else if (
+    this.window.devicePixelRatio >= 2 &&
+    window.devicePixelRatio <= 2.5 &&
+    !started
+  ) {
+    if (window.scrollY > 8000) {
+      started = true;
+      video.style.transform = `translateX(${0}px)`;
+      image.style.transform = `translateX(0)`;
+    }
+  } else if (this.window.devicePixelRatio >= 2.5 && !started) {
+    if (window.scrollY > 12000) {
+      started = true;
+      video.style.transform = `translateX(${0}px)`;
+      image.style.transform = `translateX(0)`;
+    }
+  }
+
+  console.log(window.devicePixelRatio);
+  console.log(window.scrollY);
+
+  // 1.25 12.000
+  // 1
+  // 2
+  // 2.5
 });
