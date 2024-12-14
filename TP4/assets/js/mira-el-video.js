@@ -31,28 +31,26 @@ window.addEventListener("scroll", function () {
     image.style.transform = `translateX(0)`;
   }
 
-  if (
-    this.window.devicePixelRatio > 1 &&
-    window.devicePixelRatio <= 1.5 &&
-    !started
-  ) {
+  if (this.window.devicePixelRatio > 1 && !started) {
     if (window.scrollY > 12000) {
       started = true;
       video.style.transform = `translateX(${0}px)`;
       image.style.transform = `translateX(0)`;
     }
-  } else if (
-    this.window.devicePixelRatio >= 2 &&
-    window.devicePixelRatio <= 2.5 &&
-    !started
-  ) {
+  } else if ((this.window.devicePixelRatio = 1.5 && !started)) {
+    if (window.scrollY > 10000) {
+      started = true;
+      video.style.transform = `translateX(${0}px)`;
+      image.style.transform = `translateX(0)`;
+    }
+  } else if ((this.window.devicePixelRatio = 2 && !started)) {
     if (window.scrollY > 8000) {
       started = true;
       video.style.transform = `translateX(${0}px)`;
       image.style.transform = `translateX(0)`;
     }
-  } else if (this.window.devicePixelRatio >= 2.5 && !started) {
-    if (window.scrollY > 12000) {
+  } else if ((this.window.devicePixelRatio = 2.5 && !started)) {
+    if (window.scrollY > 6000) {
       started = true;
       video.style.transform = `translateX(${0}px)`;
       image.style.transform = `translateX(0)`;
