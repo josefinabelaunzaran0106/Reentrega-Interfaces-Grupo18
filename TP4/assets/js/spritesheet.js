@@ -127,7 +127,7 @@ function animateSprite() {
 
     index = (index + 1) % spritesUno.length; // Esto reinicia el índice al llegar al final del array
     index2 = (index2 + 1) % spritesNueve.length; // Esto reinicia el índice al llegar al final del array
-  }, 30); // 300ms entre cada cambio de imagen
+  }, 30); // 30ms entre cada cambio de imagen
 }
 
 // Inicia la animación
