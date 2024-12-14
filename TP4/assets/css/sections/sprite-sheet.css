@@ -9,7 +9,7 @@
 
 #container-sheet {
   display: flex;
-  flex-direction: column; /* Asegura que el texto y los sprites estén en columnas */
+  flex-direction: row; /* Asegura que el texto y los sprites estén en columnas */
   justify-content: center;
   align-items: center;
   width: 1080px;
@@ -78,8 +78,18 @@
 }
 
 /* Imagen central */
-#sprite-sheett {
-  width: 125px; /* Ajusta el tamaño de la imagen central */
+#gif-uno {
+  width: 400px; /* Ajusta el tamaño de la imagen central */
+  height: auto;
+}
+
+#gif-cuatro {
+  width: 400px; /* Ajusta el tamaño de la imagen central */
+  height: auto;
+}
+
+#gif-nueve {
+  width: 400px; /* Ajusta el tamaño de la imagen central */
   height: auto;
 }
 
