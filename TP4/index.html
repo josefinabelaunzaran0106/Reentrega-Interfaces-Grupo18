@@ -82,8 +82,9 @@
                     a niños a partir de 3 años, con un grupo de edad principal de 4 a 6 años, creada por el equipo de
                     Alphablocks Ltd. y Blue Zoo Animations Studio, ganador de un premio BAFTA.</p>
             </div>
-            <img id="slider-img"
-                src="assets\images\Section La app más divertida y educativa y para niños de 3 años\img1.png" alt="">
+            <div id="slider-container">
+                <img id="slider-img" src="assets\images\Section La app más divertida y educativa y para niños de 3 años\img1.png" alt="">
+            </div>
         </section>
         <section id="la-app-mas-divertida2">
             <img id="img-personajeverde"
@@ -250,7 +251,7 @@
                 <h1>Mira el video y descubre el sorprendente mundo de los NumberBlocks!</h1>
             </div>
             <div id="container">
-                <div class="video-container parallax-video hidden">
+                <div id="video" class="video-container parallax-video hidden">
                     <iframe src="https://www.youtube.com/embed/0YKa9DQYdRg?autoplay=1&mute=1"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -309,10 +310,13 @@
             <div id="textoPrincipal">
                 <h1>¿Quieres ser el primero en enterarse de todas las novedades?</h1>
             </div>
+
             <div class="input-button-container">
-                <input type="email" placeholder="Ingresa aqui tu correo" class="input-field">
-                <button class="btn-novedades">SUSCRIBIRSE</button>
+                <input type="email" placeholder="Ingresa aqui tu correo" class="input-field"></input>
+                <button id="button" type="button" onclick="click()" class="btn-novedades">SUSCRIBIRSE</button>
+                
             </div>
+
             <div id="subscribirse"></div>
             <div id="textoSuscripcion">
                 <p>Al inscribirse en nuestra lista de correo, nos autoriza a ponernos
@@ -338,26 +342,7 @@
                 <img src="assets/images/Section novedades/pasto.png" alt="">
             </div>
         </section>
-        <section id="sprite-sheet">
-            <div id="container-sheet">
-                <div id="texto-sheet">
-                    <h1>¡Gracias por visitar nuestra página!</h1>
-                    <p>¡Esperamos que te haya gustado!</p>
-                </div>
-                <div id="sprites-container">
-                    <!-- Primer spritesheet -->
-                    <div id="animation-container-left">
-                        <div class="character"></div>
-                    </div>
-                    <!-- Imagen central -->
-                    <img id="sprite-sheett" src="assets/images/Seccion sprite-sheet/sps/uno.png" alt="">
-                    <!-- Segundo spritesheet -->
-                    <div id="animation-container-right">
-                        <div class="character"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <section id="footer">
             <div id="footer-img">
                 <img src="assets/images/Sectior footer/footer.png" alt="">
@@ -380,6 +365,15 @@
                     U.S. and/or other countries.The ESRB rating icons are registered trademarks of
                     the Entertainment Software Association.</p>
             </div>
+
+            
+            <div id="container-sheet">
+                <img id="gif-uno" src="" alt="">
+                <img id="gif-nueve" src="" alt="">
+                <img id="gif-cuatro" src="" alt="">
+            </div>
+         
+
             <div id="link">
                 <a href="https://privacy.sega.com/en/sega-cookie-policy">COOKIE POLICY PRIVACY POLICY</a>
             </div>
@@ -401,5 +395,6 @@
     <script src="assets/js/mas-amigos-mas-diversion.js"></script>
     <script src="assets/js/mira-el-video.js"></script>
     <script src="assets/js/spritesheet.js"></script>
+    <script src="assets/js/form.js"></script>
 </body>
 </html>
