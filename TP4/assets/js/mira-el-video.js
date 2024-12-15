@@ -15,53 +15,64 @@ window.addEventListener("scroll", function () {
 });
 */
 
-const video = document.getElementById("video");
-const image = document.getElementById("img-tres");
-
+/*
 window.addEventListener("load", function () {
   video.style.transform = `translateX(${-275}px)`;
   image.style.transform = `translateX(400px)`;
 });
 
 window.addEventListener("scroll", function () {
-  let started = false;
-
-  if (window.scrollY > 14000) {
-    video.style.transform = `translateX(${0}px)`;
-    image.style.transform = `translateX(0)`;
-  }
-
-  if (this.window.devicePixelRatio > 1 && !started) {
+  if ((window.devicePixelRatio = 1)) {
+    console.log("TRIGGER 1");
     if (window.scrollY > 12000) {
-      started = true;
       video.style.transform = `translateX(${0}px)`;
       image.style.transform = `translateX(0)`;
     }
-  } else if ((this.window.devicePixelRatio = 1.5 && !started)) {
-    if (window.scrollY > 10000) {
-      started = true;
+  } else if ((window.devicePixelRatio = 1.5)) {
+    console.log("TRIGGER 1.5");
+    if (window.scrollY > 4000) {
       video.style.transform = `translateX(${0}px)`;
       image.style.transform = `translateX(0)`;
     }
-  } else if ((this.window.devicePixelRatio = 2 && !started)) {
+  } else if ((window.devicePixelRatio = 2)) {
+    console.log("TRIGGER 2");
     if (window.scrollY > 8000) {
-      started = true;
       video.style.transform = `translateX(${0}px)`;
       image.style.transform = `translateX(0)`;
     }
-  } else if ((this.window.devicePixelRatio = 2.5 && !started)) {
+  } else if ((window.devicePixelRatio = 2.5)) {
+    console.log("TRIGGER 2.5");
     if (window.scrollY > 6000) {
-      started = true;
       video.style.transform = `translateX(${0}px)`;
       image.style.transform = `translateX(0)`;
     }
   }
 
-  console.log(window.devicePixelRatio);
-  console.log(window.scrollY);
+  console.log("DEVICE PIXEL RATIO: " + window.devicePixelRatio);
+  console.log("SCROLL Y: " + window.scrollY);
 
   // 1.25 12.000
   // 1
   // 2
   // 2.5
+});
+*/
+
+const video = document.getElementById("video");
+const image = document.getElementById("img-tres");
+
+window.addEventListener("scroll", () => {
+  const scrollNormalized = window.scrollY / document.body.clientHeight;
+  const triggerPoint = 0.6; // Porcentaje del documento donde se activa
+
+  console.log("SCROLL NORMALIZED: " + scrollNormalized);
+  console.log("TRIGGER POINT: " + triggerPoint);
+
+  if (scrollNormalized > triggerPoint) {
+    video.style.transform = `translateX(${0}px)`;
+    image.style.transform = `translateX(0)`;
+  } else {
+    video.style.transform = `translateX(${-275}px)`;
+    image.style.transform = `translateX(400px)`;
+  }
 });
