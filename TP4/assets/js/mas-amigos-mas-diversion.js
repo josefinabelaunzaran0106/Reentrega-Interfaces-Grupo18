@@ -1,24 +1,38 @@
-// Seleccionamos todos los contenedores
-const contenedores = document.querySelectorAll('.contenedor');
+/* ---------- logica para la seccion de "mas amigos, mas diversion" ---------- */
+/*
+    aca el observer va a detectar que seccion esta visible en el viewport
+    y va a cambiar la clase 'active' a la seccion que esta visible
+*/
+const sections = document.querySelectorAll('.char-info');
+const images = document.querySelectorAll('.character-img');
+const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+const stickyColumn = document.querySelector('.sticky-column');
 
-// Función para detectar qué contenedor está en el centro del viewport
-function onScroll() {
-    contenedores.forEach((contenedor) => {
-        const rect = contenedor.getBoundingClientRect();
-        const isVisible = rect.top >= 0 && rect.top <= window.innerHeight * 0.5;
+let currentIndex = 0;
+const observerStickySections = new IntersectionObserver(
+    (entries) => { 
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const index = Array.from(sections).indexOf(entry.target);
 
-        if (isVisible) {
-            // Activamos el contenedor visible
-            contenedor.classList.add('active');
-        } else {
-            // Ocultamos los contenedores no visibles
-            contenedor.classList.remove('active');
-        }
-    });
-}
+                // Actualiza las clases activas solo si cambia la sección
+                if (currentIndex !== index) {
+                    sections[currentIndex].classList.remove('active');
+                    images[currentIndex].classList.remove('active');
 
-// Escuchamos el evento de scroll
-window.addEventListener('scroll', onScroll);
+                    sections[index].classList.add('active');
+                    images[index].classList.add('active');
 
-// Mostrar el primer contenedor al cargar la página
-window.onload = onScroll;
+                    currentIndex = index;
+                }
+            }
+        });
+    },
+    {
+        root: null, 
+        rootMargin: `-${headerHeight}px 0px 0px 0px`, // Considera el header
+        threshold: 0.4, // Activa cuando el 40% de la sección es visible
+    }
+);
+
+sections.forEach((section) => observerStickySections.observe(section));
