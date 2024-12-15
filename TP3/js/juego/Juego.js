@@ -238,45 +238,52 @@ function seleccionarPersonajes() {
 
 
 
-//se encarga de crear cada tablero depende de cual elija el usuario
 function cargarJuego() {
-    function manejarSeleccion(tableroId, crearXenLineaArgs) {
-        // Obtener el botón correspondiente
+    function manejarSeleccion(tableroId, crearXenLineaArgs, mensajeModoJuego) {
         const btn = document.getElementById(tableroId);
 
         btn.addEventListener('click', function () {
-            // Agregar clase para marcar el tablero seleccionado
+            // Marcar visualmente el botón seleccionado
             btn.classList.add('seleccionado');
 
-            // Esperar 500ms antes de continuar
             setTimeout(() => {
-                btn.classList.remove('seleccionado'); // Remover la clase después de medio segundo
+                btn.classList.remove('seleccionado'); // Remover clase 'seleccionado' después de medio segundo
 
-                // Resto del flujo del juego
-                reset();
+                // Actualizar el mensaje del modo de juego en el tablero
+                const mensajeModoJuegoDiv = document.getElementById('mensajeModoJuego');
+                mensajeModoJuegoDiv.textContent = mensajeModoJuego;
+                mensajeModoJuegoDiv.classList.remove('hidden'); // Mostrar mensaje
+
+                // Configurar la pantalla y el flujo del juego
+                reset(); // Reiniciar cualquier estado previo
+
                 if (mensaje == " ") {
-                    timer();
+                    timer(); // Iniciar el temporizador si está vacío
                 }
+
                 contadortimer.classList.remove("hidden");
                 contadortimer.classList.add("timer");
                 modoJuego.classList.remove("modosJuego");
                 modoJuego.classList.add("hiddendos");
+
+                // Configurar el tablero según los parámetros elegidos
                 crearXenLinea(...crearXenLineaArgs);
                 clearCanvas();
                 drawTablero();
                 rellenarTablero();
                 crearPosicionesFicha();
                 crearTodasFichas();
-            }, 500);
+            }, 500); // Dar tiempo para la animación del botón
         });
     }
 
-    // Asociar cada botón a su acción y parámetros
-    manejarSeleccion("4enlinea", [7, 6, 4, 28, 70, 110, 20, 21, 60]);
-    manejarSeleccion("5enlinea", [8, 7, 5, 28, 62, 100, 15, 28, 60]);
-    manejarSeleccion("6enlinea", [9, 8, 6, 26, 55, 88, 12, 36, 55]);
-    manejarSeleccion("7enlinea", [10, 9, 7, 20, 49.5, 80, 9.5, 45, 42]);
+    // Asociar cada botón con sus parámetros y el mensaje del modo de juego
+    manejarSeleccion("4enlinea", [7, 6, 4, 28, 70, 110, 20, 21, 60], "4 en línea para ganar");
+    manejarSeleccion("5enlinea", [8, 7, 5, 28, 62, 100, 15, 28, 60], "5 en línea para ganar");
+    manejarSeleccion("6enlinea", [9, 8, 6, 26, 55, 88, 12, 36, 55], "6 en línea para ganar");
+    manejarSeleccion("7enlinea", [10, 9, 7, 20, 49.5, 80, 9.5, 45, 42], "7 en línea para ganar");
 }
+
 
 
 

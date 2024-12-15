@@ -21,7 +21,7 @@ textcontainer2.style.transform = "translateX(-500px)";
 personajeazul.style.transform = "translateX(500px)";
 
 window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY - 450;
+  const scrollPosition = window.scrollY - 20;
 
   // Move textcontainer1 from left to right as you scroll
   const moveInDistance1 = Math.min(scrollPosition, 500); // Max distance it should move in

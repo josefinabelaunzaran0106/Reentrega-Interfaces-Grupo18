@@ -31,5 +31,5 @@ window.addEventListener("load", function () {
     audio.pause(); // Detenemos la música
     audio.currentTime = 0; // Retrocedemos la música al inicio
     loader.style.display = "none"; // Ocultar el loader después de 5 segundos
-  }, 0); // 5 segundos para ocultar el loader
+  }, 5500); // 5 segundos para ocultar el loader
 });

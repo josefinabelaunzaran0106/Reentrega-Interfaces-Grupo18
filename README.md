@@ -17,7 +17,8 @@ Correcciones de Cristian:
   -El tanero del 4 en Línea con el mapa de Pacman de fondo no funciona, tiene poco contraste y confunde
   -Quise jugarlo y nunca pude jugar con el Jugador2
 
-- TP4: -En la sección "La app mas divertida y educativa para niños de 3 años" puede hacerse alguna animación para el cambio de las imágenes cada 3 segs.
+- TP4:
+  -En la sección "La app mas divertida y educativa para niños de 3 años" puede hacerse alguna animación para el cambio de las imágenes cada 3 segs.
   -La sección de las tres cards con texto debajo no se nota demasiado o según la velocidad del scroll, aparece todo junto. Debiera aparecer primero un card, luego la 2da y luego la 3era.
   -La sección d dos columnas (personaje + texto) aparece todo unto: personaje y texto, esto podría mejorarse haciendo que por un lado se muevan los personajes y por otro el texto.
   -La sección del video, el personaje y la caja de video se cruzan. Cambiar la animación para que esto no suceda
