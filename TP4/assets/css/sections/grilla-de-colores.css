@@ -5,6 +5,8 @@
     width: 100%;
     height: 700px;
     overflow: hidden; /* Evitar el desbordamiento */
+    position: relative;
+    z-index: 100;
 }
 
 #container-colores {
