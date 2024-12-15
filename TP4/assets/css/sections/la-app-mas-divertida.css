@@ -5,6 +5,7 @@
   height: 894px;
   background-size: cover;
   position: relative;
+  z-index: 1;
 }
 
 /*   --------------------------------------------------------------------------------------   */
@@ -15,6 +16,7 @@
   position: absolute;
   top: 50.5px;
   left: 84px;
+  z-index: 100;
 }
 
 #text-container1 p {
@@ -22,7 +24,7 @@
   color: #1b428f;
   margin: 0;
   padding: 0;
-
+z-index: 100;
   font-family: "Lato", sans-serif;
   font-weight: 550;
   font-style: SemiBold;
@@ -34,6 +36,7 @@
   position: absolute;
   top: 200.5px;
   left: 84px;
+  z-index: 100;
 }
 
 #text-container2 p {
@@ -60,8 +63,12 @@
 
   outline: 24px solid #1b5f99;
   outline-offset: 0px;
-
+  z-index: 100;
   transition: opacity 0.5s ease;
+}
+#slider-container {
+ position: relative;
+ z-index: 100;
 }
 
 /*   --------------------------------------------------------------------------------------   */
@@ -71,23 +78,44 @@
 #la-app-mas-divertida2 {
   height: 890px;
   position: relative;
-  z-index: 0;
+  z-index: 1;
+  overflow: visible;
+}
+
+#la-app-mas-divertida2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Máscara sobre los elementos fijos */
+  background-color: #ffffff; /* Color del fondo de la sección */
+  pointer-events: none; /* Asegura que no interfiera con clics o interacciones */
 }
 
 #img-personajeverde {
-  height: 505px;
-  width: 510px;
-  position: absolute;
-  top: -370px;
+    height: 505px;
+    width: 510px;
+    position: absolute;
+    top: -370px; /* Si es demasiado negativo, lo sube fuera del área */
+    left: 50px; /* Ajusta esta posición si está muy a la izquierda */
+    z-index: 3;
+}
+.personajes-azul-verde#img-personajeverde {
+position: relative;
+  z-index: 1000;
 }
 
 #img-personajeazul {
-  width: 386px;
-  height: 1150px;
-  position: absolute;
-  top: -975px;
-  right: 0;
+    width: 386px;
+    height: 1150px;
+    position: absolute;
+    top: -975px; /* Ajusta esta posición */
+    right: 0;
+    z-index: 999;
 }
+
 
 #img-cards-1 {
   position: absolute;
@@ -97,6 +125,7 @@
   border-radius: 41px;
   left: 84.5px;
   top: 220px;
+  z-index: 9999;
 }
 
 #img-cards-2 {
@@ -107,6 +136,7 @@
   border-radius: 41px;
   left: 399.5px;
   top: 220px;
+  z-index: 9999;
 }
 
 #img-cards-3 {
@@ -117,6 +147,8 @@
   border-radius: 41px;
   left: 714.5px;
   top: 220px;
+  z-index: 9999;
+  
 }
 
 /*   --------------------------------------------------------------------------------------   */
@@ -132,7 +164,7 @@
   font-style: Regular;
   margin: 0;
   padding: 0;
-
+  z-index: 100;
   position: absolute;
   width: 280px;
   height: 184px;
@@ -145,6 +177,7 @@
   font-family: "Lato", sans-serif;
   font-weight: 500;
   font-style: Regular;
+  z-index: 100;
   margin: 0;
   padding: 0;
 
@@ -162,7 +195,7 @@
   font-style: Regular;
   margin: 0;
   padding: 0;
-
+  z-index: 100;
   position: absolute;
   width: 280px;
   height: 184px;
