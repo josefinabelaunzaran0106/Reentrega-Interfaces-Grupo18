@@ -2,8 +2,10 @@
 
 #footer {
   width: 1280px; /* Cambia este valor para aumentar el tamaño */
-  height: 1150px; /* Mantén las proporciones originales */
+  height: auto; /* Mantén las proporciones originales */
   background-color: #5e5e5d;
+  z-index: 100;
+  position: relative;
 }
 #footer-img {
   width: 100%; /* Asegura que el div ocupe el ancho completo de su contenedor */
@@ -42,7 +44,7 @@
 }
 #redes {
   width: 60%;
-  margin: 20px 0; /* Espaciado superior e inferior */
+  margin: 0px 0; /* Espaciado superior e inferior */
   padding: 10px 20px; /* Espaciado interno */
 }
 
