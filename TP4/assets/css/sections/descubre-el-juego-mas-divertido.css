@@ -6,6 +6,7 @@
   position: relative;
   background-color: #5829bf;
   overflow: hidden;
+  z-index: 100;
 }
 
 /*se agrega elemento para efecto concavo superior*/
@@ -62,6 +63,10 @@
   color: white;
   cursor: pointer;
   font-size: 30px;
+}
+#seis-numeros .btn:hover {
+  background-color: #76b74c; /* Color ligeramente más oscuro al pasar el mouse */
+  transform: translate(-50%, -50%) scale(1.1); /* Aumenta ligeramente el tamaño */
 }
 
 #seis-numeros {
