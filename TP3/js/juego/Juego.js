@@ -900,7 +900,7 @@ function crearPosicionesFicha(){
 
 //crea las fichas especiales donde estan las ubicaciones disponibles para tirar la ficha
 function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr,anchoFicha) {
-    posY = posY - decrementacion + 10; // bajo 20 el lugar para dejar lass fichas
+    posY = posY - decrementacion + 10; // bajo 10 el lugar para dejar lass fichas
     posX = posX + aumentox;
     let ficha = new Ficha(posX, posY, radio, fill, context,0, anchoFicha);
     arr.push(ficha);

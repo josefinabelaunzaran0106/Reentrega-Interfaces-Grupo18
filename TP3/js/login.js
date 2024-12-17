@@ -10,13 +10,6 @@ let formLogin = document.querySelector('#formlogin');
 console.log(formLogin);
 formLogin.addEventListener("submit", verificarLogin);
 
-function mostrarPopupExito() {
-    const popupSuccess = document.getElementById("popup-success");
-    popupSuccess.classList.remove("hidden");
-    setTimeout(() => {
-        popupSuccess.classList.add("hidden");
-    }, 3000); // Oculta el popup después de 3 segundos
-}
 function verificarLogin(e) {
     e.preventDefault();
 
@@ -51,16 +44,6 @@ function verificarLogin(e) {
         mostrarPopupElement('<span class="error-icon">❌</span> NOMBRE DE USUARIO Y CONTRASEÑA INCORRECTA');
     }
 }
-function mostrarPopup(mensaje) {
-    const popup = document.getElementById("popup-error");
-    const message = document.getElementById("popup-message");
-
-    message.innerHTML = mensaje;
-    popup.classList.remove("hidden");
-
-    // Animación de entrada
-    popup.style.animation = "pop-in 0.5s ease-out";
-}
 
 document.getElementById("close-btn").addEventListener("click", function () {
     const popup = document.getElementById("popup-error");
@@ -72,9 +55,6 @@ document.getElementById("close-btn").addEventListener("click", function () {
     }, 500);
 });
 
-function redireccionar() {
-    window.location = "home.html";
-}
 function mostrarPopupElement(contenido) {
     document.getElementById("popup-message").innerHTML = contenido;
     document.getElementById("popup-error").classList.remove("hidden");
@@ -82,4 +62,8 @@ function mostrarPopupElement(contenido) {
 function togglePasswordVisibility(id) {
     const passwordField = document.getElementById(id);
     passwordField.type = passwordField.type === "password" ? "text" : "password";
+}
+
+function redireccionar() {
+    window.location = "home.html";
 }
